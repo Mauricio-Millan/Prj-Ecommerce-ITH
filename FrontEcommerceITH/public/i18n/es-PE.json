@@ -1,0 +1,981 @@
+{
+  "app": {
+    "skipToContent": "Saltar al contenido"
+  },
+  "header": {
+    "search": {
+      "label": "Buscar productos",
+      "placeholder": "Busca por producto, marca, modelo o número de parte",
+      "submit": "Buscar"
+    },
+    "menu": "Abrir menú de categorías",
+    "categories": "Categorías",
+    "cart": "Carrito",
+    "account": "Cuenta",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "admin": "Panel de administración",
+    "cartCount": "Carrito, {{n}} productos",
+    "cartCountOne": "Carrito, 1 producto",
+    "orders": "Mis pedidos"
+  },
+  "category": {
+    "componentes_pc": "Componentes de PC",
+    "componentes_laptop": "Componentes de laptop",
+    "pantallas": "Pantallas",
+    "repuestos_laptop": "Repuestos de laptop",
+    "perifericos": "Periféricos",
+    "procesadores": "Procesadores",
+    "placas_madre": "Placas madre",
+    "memoria_ram_pc": "Memoria RAM",
+    "almacenamiento": "Almacenamiento",
+    "tarjetas_de_video": "Tarjetas de video",
+    "fuentes_de_poder": "Fuentes de poder",
+    "cases": "Cases",
+    "refrigeracion": "Refrigeración",
+    "ram_so_dimm": "RAM SO-DIMM",
+    "ssd_laptop": "SSD",
+    "tarjetas_wifi": "Tarjetas WiFi",
+    "monitores": "Monitores",
+    "paneles_laptop": "Paneles de laptop",
+    "baterias": "Baterías",
+    "cargadores": "Cargadores",
+    "teclados_laptop": "Teclados de laptop",
+    "otros_repuestos": "Ventiladores, bisagras y carcasas",
+    "mouse": "Mouse",
+    "teclados_perifericos": "Teclados",
+    "otros_perifericos": "Audífonos, webcams y parlantes"
+  },
+  "language": {
+    "label": "Idioma"
+  },
+  "currency": {
+    "label": "Moneda",
+    "PEN": "Soles (S/)",
+    "USD": "Dólares ($)",
+    "penUnavailable": "No disponible: todavía no hay un tipo de cambio registrado. Los precios se muestran en dólares.",
+    "reference": "Referencial · Pagas en soles · TC {{tc}}",
+    "paidInPen": "El pago se realiza en soles. Los precios en dólares son referenciales.",
+    "igvIncluded": "Precios incluyen IGV",
+    "storeRate": "Tipo de cambio de la tienda: {{tc}} · {{fecha}}"
+  },
+  "shipping": {
+    "included": "Envío incluido a todo el Perú"
+  },
+  "footer": {
+    "nav": "Enlaces del sitio",
+    "home": "Inicio",
+    "rights": "© 2026 TechSuply · Prototipo académico"
+  },
+  "home": {
+    "title": "Encuentra la pieza correcta y compatible con tu equipo",
+    "subtitle": "Componentes de PC, repuestos de laptop y periféricos. Te avisamos si algo no es compatible antes de comprar.",
+    "cta": "Ver los productos destacados",
+    "featured": "Productos destacados"
+  },
+  "notFound": {
+    "title": "No encontramos esta página",
+    "body": "Puede que el enlace esté mal escrito o que la página ya no exista. Vuelve al inicio o busca el producto que necesitas.",
+    "home": "Ir al inicio",
+    "search": "Buscar un producto"
+  },
+  "access": {
+    "denied": "No tienes acceso a esta sección. Inicia sesión con una cuenta de administrador para entrar."
+  },
+  "auth": {
+    "backToStore": "Volver a la tienda",
+    "login": {
+      "title": "Iniciar sesión",
+      "submit": "Iniciar sesión",
+      "submitting": "Iniciando sesión…"
+    },
+    "register": {
+      "title": "Crear cuenta",
+      "submit": "Crear cuenta",
+      "submitting": "Creando tu cuenta…"
+    },
+    "recover": {
+      "title": "Recuperar contraseña",
+      "help": "Escribe el correo de tu cuenta y te enviaremos las instrucciones.",
+      "submit": "Enviar instrucciones",
+      "sent": "Si existe una cuenta con ese correo, te enviamos las instrucciones para crear una nueva contraseña.",
+      "backToLogin": "Volver a iniciar sesión"
+    },
+    "checkoutContext": "Inicia sesión para completar tu compra. Tu carrito se conservará.",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "show": "Mostrar",
+    "hide": "Ocultar",
+    "firstName": "Nombres",
+    "lastName": "Apellidos",
+    "badCredentials": "El correo o la contraseña no son correctos. Revisa ambos o crea una cuenta",
+    "createAccount": "Crear cuenta",
+    "noAccount": "¿No tienes cuenta?",
+    "createLink": "Créala",
+    "forgot": "¿Olvidaste tu contraseña?",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "loginLink": "Inicia sesión",
+    "prototypeNote": "Prototipo: no uses una contraseña real.",
+    "accept": {
+      "label": "Aceptar los Términos y condiciones y la Política de privacidad",
+      "prefix": "Acepto los",
+      "terms": "Términos y condiciones",
+      "and": "y la",
+      "privacy": "Política de privacidad"
+    },
+    "req": {
+      "length": "Al menos 8 caracteres",
+      "letter": "Al menos una letra",
+      "number": "Al menos un número",
+      "met": "cumplido",
+      "pending": "pendiente"
+    },
+    "hello": "Hola, {{nombres}}",
+    "welcome": "¡Te damos la bienvenida, {{nombres}}! Tu cuenta está lista",
+    "loggedOut": "Cerraste sesión",
+    "terms": {
+      "close": "Cerrar",
+      "sample": "Texto de ejemplo del prototipo: no tiene validez legal.",
+      "terminos": {
+        "title": "Términos y condiciones",
+        "body": "Al crear una cuenta aceptas usar TechSuply para comprar repuestos y componentes tecnológicos de forma legítima, brindar datos verdaderos y respetar las condiciones de envío, garantía y devolución publicadas en la tienda."
+      },
+      "privacidad": {
+        "title": "Política de privacidad",
+        "body": "Usamos tus datos solo para gestionar tu cuenta, tus pedidos y la entrega de tus compras, de acuerdo con la ley peruana de protección de datos personales. Puedes pedir que los actualicemos o los eliminemos cuando quieras."
+      }
+    }
+  },
+  "admin": {
+    "title": "Panel de administración",
+    "nav": "Secciones de gestión",
+    "dashboard": "Resumen",
+    "dashboardBody": "Aquí aparecerán la gestión de productos, stock, tipo de cambio y pedidos.",
+    "backToStore": "Volver a la tienda"
+  },
+  "toast": {
+    "close": "Cerrar aviso"
+  },
+  "common": {
+    "close": "Cerrar",
+    "cancel": "Cancelar",
+    "raw": "{{texto}}"
+  },
+  "research": {
+    "title": "Panel de investigador",
+    "collapse": "Plegar panel",
+    "expand": "Abrir el panel de investigador",
+    "rec": "REC",
+    "paused": "En pausa",
+    "idle": "Sin sesión",
+    "participant": "Participante",
+    "participantHint": "Código P01…P99. Nunca nombres.",
+    "version": "Versión",
+    "versionHint": "v1, v2…",
+    "start": "Iniciar sesión",
+    "error": {
+      "participante": "El código del participante debe ser una P seguida de 2 dígitos (por ejemplo, P03). No uses nombres ni datos personales.",
+      "version": "La versión debe ser una v seguida de un número (por ejemplo, v1).",
+      "import": "No se pudo leer {{archivo}}: no es un JSON exportado por este panel."
+    },
+    "recording": "Grabando",
+    "events": "{{n}} eventos",
+    "storage": "Almacenamiento: {{p}} %",
+    "storageWarning": "El almacenamiento está casi lleno. Exporta y borra los datos de la sesión.",
+    "storageFull": "Almacenamiento lleno: ya no se registra el movimiento del mouse. Exporta ahora.",
+    "task": "Tarea",
+    "startTask": "Iniciar tarea",
+    "current": "En curso: {{tarea}}",
+    "success": "Éxito",
+    "failure": "Fracaso",
+    "abandon": "Abandono",
+    "help": "Ayuda solicitada",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "susOpen": "Cuestionario SUS",
+    "susDone": "SUS respondido: {{puntaje}} / 100",
+    "export": "Exportar",
+    "close": "Cerrar sesión",
+    "delete": "Borrar datos de la sesión",
+    "confirmDelete": "¿Borrar todos los eventos y el SUS de {{sesion}}? Exporta antes: esta acción no se puede deshacer.",
+    "restore": "Restaurar datos de ejemplo",
+    "confirmRestore": "¿Restaurar los datos de ejemplo? Se reinician el catálogo, el stock, el carrito, los pedidos y el usuario simulado. Los datos de investigación se conservan.",
+    "simulatedUser": "Usuario simulado",
+    "noUser": "Sin sesión",
+    "heatmap": "Mapa de calor",
+    "heat": {
+      "title": "Mapa de calor",
+      "close": "Cerrar mapa de calor",
+      "type": "Mostrar",
+      "clicks": "Clics",
+      "moves": "Movimiento",
+      "modal": "Modal",
+      "noModal": "Sin modal",
+      "allModals": "Todos",
+      "import": "Importar JSON exportados",
+      "sessions": "Sesiones",
+      "versions": "Versiones",
+      "redraw": "Actualizar",
+      "points": "{{n}} puntos en {{patron}}",
+      "help": "Para guardar la figura: DevTools → Ctrl+Shift+P → \"Capture full size screenshot\"."
+    },
+    "sus": {
+      "title": "Cuestionario de usabilidad (SUS)",
+      "intro": "Indica qué tan de acuerdo estás con cada afirmación sobre la tienda que acabas de usar. Responde según tu primera impresión.",
+      "disagree": "Totalmente en desacuerdo",
+      "agree": "Totalmente de acuerdo",
+      "submit": "Enviar respuestas",
+      "cancel": "Volver al panel",
+      "missing": "Falta responder la afirmación {{n}}.",
+      "q1": "Creo que me gustaría usar este sistema con frecuencia.",
+      "q2": "Encontré el sistema innecesariamente complejo.",
+      "q3": "Pensé que el sistema era fácil de usar.",
+      "q4": "Creo que necesitaría el apoyo de una persona técnica para poder usar este sistema.",
+      "q5": "Encontré que las diversas funciones de este sistema estaban bien integradas.",
+      "q6": "Pensé que había demasiada inconsistencia en este sistema.",
+      "q7": "Imagino que la mayoría de las personas aprendería a usar este sistema muy rápidamente.",
+      "q8": "Encontré el sistema muy engorroso de usar.",
+      "q9": "Me sentí muy seguro/a usando el sistema.",
+      "q10": "Necesité aprender muchas cosas antes de poder empezar a usar este sistema."
+    }
+  },
+  "attr": {
+    "socket": {
+      "label": "Socket",
+      "help": "El tipo de conexión entre el procesador y la placa madre. Los dos deben tener el mismo."
+    },
+    "nucleos": {
+      "label": "Núcleos",
+      "help": "Cuántas tareas puede hacer a la vez el procesador. Más núcleos rinden mejor en programas pesados."
+    },
+    "hilos": {
+      "label": "Hilos"
+    },
+    "frecuencia_base_ghz": {
+      "label": "Frecuencia base"
+    },
+    "frecuencia_turbo_ghz": {
+      "label": "Frecuencia turbo"
+    },
+    "consumo_w": {
+      "label": "Consumo (TDP)"
+    },
+    "graficos_integrados": {
+      "label": "Gráficos integrados",
+      "help": "El procesador trae su propio video: puedes conectar un monitor sin comprar una tarjeta de video aparte."
+    },
+    "incluye_disipador": {
+      "label": "Incluye disipador",
+      "help": "Si ya trae el ventilador que enfría al procesador, no hace falta comprarlo aparte."
+    },
+    "chipset": {
+      "label": "Chipset",
+      "help": "El conjunto de chips de la placa madre. Define qué funciones y conexiones ofrece."
+    },
+    "tipo_ram": {
+      "label": "Tipo de RAM",
+      "help": "La generación de la memoria (DDR4 o DDR5). Tu placa o tu laptop acepta solo una de ellas."
+    },
+    "formato_ram": {
+      "label": "Formato de RAM"
+    },
+    "ranuras_ram": {
+      "label": "Ranuras de RAM"
+    },
+    "ram_max_gb": {
+      "label": "RAM máxima"
+    },
+    "factor_forma": {
+      "label": "Factor de forma",
+      "help": "El tamaño de la placa madre. Tiene que caber en el case."
+    },
+    "ranuras_m2": {
+      "label": "Ranuras M.2"
+    },
+    "puertos_sata": {
+      "label": "Puertos SATA"
+    },
+    "capacidad_gb": {
+      "label": "Capacidad",
+      "help": "Cuánto espacio o memoria tiene, en gigabytes (GB)."
+    },
+    "velocidad_mhz": {
+      "label": "Velocidad"
+    },
+    "latencia_cl": {
+      "label": "Latencia"
+    },
+    "modulos": {
+      "label": "Módulos"
+    },
+    "tipo_almacenamiento": {
+      "label": "Tipo",
+      "help": "SSD es más rápido y silencioso; HDD guarda más por menos precio."
+    },
+    "interfaz": {
+      "label": "Interfaz",
+      "help": "Cómo se conecta al equipo (NVMe es más rápido que SATA). Tu equipo debe tener ese puerto."
+    },
+    "formato": {
+      "label": "Formato"
+    },
+    "lectura_mbs": {
+      "label": "Lectura"
+    },
+    "escritura_mbs": {
+      "label": "Escritura"
+    },
+    "chip": {
+      "label": "Chip"
+    },
+    "memoria_gb": {
+      "label": "Memoria",
+      "help": "La memoria propia de la tarjeta de video, en gigabytes."
+    },
+    "tipo_memoria": {
+      "label": "Tipo de memoria"
+    },
+    "fuente_recomendada_w": {
+      "label": "Fuente recomendada"
+    },
+    "largo_mm": {
+      "label": "Largo"
+    },
+    "salidas_video": {
+      "label": "Salidas de video"
+    },
+    "potencia_w": {
+      "label": "Potencia",
+      "help": "Los vatios que entrega la fuente. Debe cubrir el consumo de todas las piezas."
+    },
+    "certificacion_80plus": {
+      "label": "Certificación 80+",
+      "help": "Qué tan eficiente es la fuente: Gold aprovecha mejor la energía que Bronze."
+    },
+    "modular": {
+      "label": "Modular"
+    },
+    "formato_fuente": {
+      "label": "Factor de forma"
+    },
+    "factores_soportados": {
+      "label": "Factores de forma soportados",
+      "help": "Los tamaños de placa madre que caben en este case."
+    },
+    "largo_max_gpu_mm": {
+      "label": "Largo máx. de GPU"
+    },
+    "ventiladores_incluidos": {
+      "label": "Ventiladores incluidos"
+    },
+    "panel_lateral": {
+      "label": "Panel lateral"
+    },
+    "tipo_refrigeracion": {
+      "label": "Tipo",
+      "help": "Aire enfría con ventiladores; líquida, con un circuito de agua."
+    },
+    "sockets_soportados": {
+      "label": "Sockets soportados"
+    },
+    "tamano_mm": {
+      "label": "Tamaño"
+    },
+    "tdp_soportado_w": {
+      "label": "TDP soportado"
+    },
+    "voltaje_v": {
+      "label": "Voltaje"
+    },
+    "estandar_wifi": {
+      "label": "Estándar",
+      "help": "La generación del WiFi. Los números más altos son más rápidos."
+    },
+    "bluetooth_version": {
+      "label": "Bluetooth"
+    },
+    "tamano_pulgadas": {
+      "label": "Tamaño",
+      "help": "El tamaño de la pantalla, medido en diagonal en pulgadas."
+    },
+    "resolucion": {
+      "label": "Resolución"
+    },
+    "frecuencia_hz": {
+      "label": "Frecuencia",
+      "help": "Cuántas veces por segundo se actualiza la imagen. Más Hz se ve más fluido."
+    },
+    "tipo_panel": {
+      "label": "Tipo de panel",
+      "help": "La tecnología de la pantalla: IPS tiene mejores colores y ángulos de visión."
+    },
+    "tiempo_respuesta_ms": {
+      "label": "Tiempo de respuesta"
+    },
+    "entradas": {
+      "label": "Entradas"
+    },
+    "conector": {
+      "label": "Conector",
+      "help": "El cable que une el panel con la laptop. Debe ser igual al de tu equipo."
+    },
+    "acabado": {
+      "label": "Acabado"
+    },
+    "tactil": {
+      "label": "Táctil"
+    },
+    "capacidad_wh": {
+      "label": "Capacidad"
+    },
+    "celdas": {
+      "label": "Celdas"
+    },
+    "pn_compatibles": {
+      "label": "P/N compatibles"
+    },
+    "voltaje_salida_v": {
+      "label": "Voltaje de salida"
+    },
+    "amperaje_a": {
+      "label": "Amperaje"
+    },
+    "tipo_conector": {
+      "label": "Tipo de conector"
+    },
+    "idioma_teclado": {
+      "label": "Distribución",
+      "help": "La distribución de las teclas (Español Latinoamérica o inglés US)."
+    },
+    "retroiluminado": {
+      "label": "Retroiluminado"
+    },
+    "con_marco": {
+      "label": "Con marco"
+    },
+    "posicion": {
+      "label": "Posición"
+    },
+    "conexion": {
+      "label": "Conexión",
+      "help": "Cómo se conecta: por cable USB, inalámbrico con receptor, o por Bluetooth."
+    },
+    "dpi_max": {
+      "label": "DPI máximo"
+    },
+    "botones": {
+      "label": "Botones"
+    },
+    "ergonomia": {
+      "label": "Ergonomía"
+    },
+    "tipo_teclado": {
+      "label": "Tipo"
+    },
+    "switch": {
+      "label": "Switch"
+    },
+    "distribucion": {
+      "label": "Distribución"
+    },
+    "retroiluminacion": {
+      "label": "Retroiluminación"
+    },
+    "atributo_clave": {
+      "label": "Característica clave"
+    }
+  },
+  "cart": {
+    "added": "Agregado al carrito",
+    "undo": "Deshacer",
+    "view": "Ver carrito",
+    "maxReached": "Ya tienes en tu carrito todas las unidades disponibles",
+    "addedLimited": "Agregamos {{n}}; solo quedan {{max}} en stock",
+    "pageTitle": "Carrito",
+    "title": "Tu carrito ({{n}} productos)",
+    "titleOne": "Tu carrito (1 producto)",
+    "empty": {
+      "title": "Tu carrito está vacío",
+      "body": "Mira las categorías, busca lo que necesitas o elige entre los productos destacados.",
+      "search": "Ir al buscador"
+    },
+    "remove": "Eliminar",
+    "removeNamed": "Eliminar {{nombre}}",
+    "removed": "Eliminaste «{{nombre}}»",
+    "gone": "«{{nombre}}» ya no está disponible y lo quitamos de tu carrito",
+    "clear": "Vaciar carrito",
+    "clearTitle": "¿Vaciar el carrito?",
+    "clearBody": "Se eliminarán {{n}} productos de tu carrito.",
+    "clearBodyOne": "Se eliminará 1 producto de tu carrito.",
+    "clearConfirm": "Sí, vaciar",
+    "summary": "Resumen",
+    "units": "{{n}} unidades",
+    "unitsOne": "1 unidad",
+    "total": "Total a pagar",
+    "youPay": "Pagarás {{monto}}",
+    "exchangeRate": "Tipo de cambio de la tienda: {{tc}}",
+    "continue": "Continuar al pago",
+    "reasonSoldOut": "Elimina los productos agotados para continuar ({{n}})",
+    "reasonNoRate": "Por ahora no podemos calcular el precio en soles. Intenta más tarde",
+    "soldOut": "Agotado",
+    "adjusted": "Ajustamos la cantidad: solo quedan {{n}}",
+    "merged": "Sumamos los productos que agregaste antes de iniciar sesión",
+    "keepShopping": "Seguir comprando",
+    "totalAnnounce": "Total a pagar: {{monto}}",
+    "batch": "Agregamos {{n}} piezas de tu armado"
+  },
+  "stock": {
+    "disponible": "En stock",
+    "pocas": "¡Quedan {{n}}!",
+    "agotado": "Agotado"
+  },
+  "condition": {
+    "nuevo": {
+      "label": "Nuevo",
+      "help": "Producto nuevo de fábrica, sellado"
+    },
+    "original": {
+      "label": "Original",
+      "help": "Repuesto original del fabricante del equipo"
+    },
+    "compatible": {
+      "label": "Compatible",
+      "help": "Repuesto genérico de otra marca, diseñado para funcionar en los equipos indicados"
+    }
+  },
+  "catalog": {
+    "breadcrumbs": "Ruta de navegación",
+    "home": "Inicio",
+    "loading": "Cargando productos",
+    "showing": "Mostrando {{desde}}–{{hasta}} de {{total}} productos",
+    "subcategories": "Subcategorías",
+    "sort": {
+      "label": "Ordenar por",
+      "destacados": "Destacados",
+      "precio_asc": "Precio: menor a mayor",
+      "precio_desc": "Precio: mayor a menor",
+      "nuevos": "Más nuevos",
+      "relevancia": "Más relevantes"
+    },
+    "pagination": {
+      "label": "Paginación",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "page": "Página {{n}}"
+    },
+    "emptyCategory": {
+      "title": "Por ahora no tenemos productos en esta categoría",
+      "body": "Mira otras categorías o prueba con el buscador."
+    },
+    "otherCategories": "Otras categorías",
+    "useSearch": "Usar el buscador",
+    "notFound": {
+      "title": "No encontramos este producto",
+      "body": "Puede que ya no esté a la venta o que el enlace esté mal escrito."
+    },
+    "toCategory": "Ver {{nombre}}",
+    "toHome": "Ir al inicio",
+    "addToCart": "Agregar al carrito",
+    "soldOut": "Agotado",
+    "quantity": "Cantidad",
+    "quantityDec": "Disminuir cantidad",
+    "quantityInc": "Aumentar cantidad",
+    "onlyN": "Solo quedan {{n}} unidades",
+    "partNumber": "P/N",
+    "sku": "SKU",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "copyPn": "Copiar el número de parte",
+    "warranty": "Garantía de {{n}} meses",
+    "noWarranty": "Sin garantía",
+    "specs": "Especificaciones técnicas",
+    "description": "Descripción",
+    "compatibleWith": "Compatible con",
+    "seeAllModels": "Ver los {{n}} modelos",
+    "hideModels": "Ver menos",
+    "related": "Productos relacionados",
+    "gallery": {
+      "label": "Galería de imágenes",
+      "prev": "Imagen anterior",
+      "next": "Imagen siguiente",
+      "thumb": "Ver la imagen {{n}}"
+    },
+    "yes": "Sí",
+    "no": "No"
+  },
+  "search": {
+    "title": "Resultados para «{{q}}»",
+    "count": "{{n}} productos",
+    "countOne": "1 producto",
+    "interpreted": "Mostrando resultados para «{{q}}»",
+    "exactSearch": "Buscar exactamente «{{q}}»",
+    "exactNow": "Buscando exactamente «{{q}}»",
+    "smartAgain": "Buscar con sugerencias",
+    "exactMatch": "Coincidencia exacta",
+    "others": "Otros resultados",
+    "categories": "Acotar por categoría",
+    "suggestionsCount": "{{n}} sugerencias",
+    "suggestionsLabel": "Sugerencias de productos",
+    "empty": {
+      "title": "No encontramos productos para «{{q}}»",
+      "noQuery": "Escribe qué producto buscas",
+      "similar": "Quizá quisiste buscar",
+      "tips": "Prueba con menos palabras o con el modelo de tu equipo. También puedes mirar las categorías."
+    }
+  },
+  "filters": {
+    "title": "Filtros",
+    "filter": "Filtrar",
+    "withCount": "Filtrar ({{n}})",
+    "close": "Cerrar filtros",
+    "applied": "Filtros aplicados",
+    "more": "Más filtros ({{n}})",
+    "clearAll": "Limpiar todo",
+    "removeNamed": "Quitar filtro {{nombre}}",
+    "showResults": "Ver {{n}} resultados",
+    "showResultsOne": "Ver 1 resultado",
+    "sub": "Subcategoría",
+    "brand": "Marca",
+    "price": "Precio",
+    "availability": "Solo disponibles",
+    "min": "Mínimo",
+    "max": "Máximo",
+    "rangeInvalid": "El mínimo no puede ser mayor que el máximo.",
+    "help": "Qué significa este filtro",
+    "count": "{{n}} productos",
+    "noMatch": {
+      "title": "Ningún producto cumple todos los filtros",
+      "body": "Quita un filtro para ver más productos.",
+      "removeLast": "Quitar el último filtro"
+    }
+  },
+  "compat": {
+    "set": "Listo: mostramos la compatibilidad con tu {{equipo}}",
+    "productInvite": "¿Te sirve para tu laptop?",
+    "tag": {
+      "mine": "Mi equipo: {{equipo}}",
+      "change": "Cambiar",
+      "remove": "Quitar",
+      "ask": "¿Para qué laptop lo buscas?",
+      "indicate": "Indica tu modelo"
+    },
+    "filter": "Compatible con mi equipo",
+    "filterInvite": "Indica tu laptop para ver solo lo compatible",
+    "chip": "Compatible con {{equipo}}",
+    "badge": {
+      "ok": "Compatible con tu equipo",
+      "no": "No compatible con tu equipo",
+      "unknown": "Sin confirmar para tu equipo"
+    },
+    "detail": {
+      "ok": "Compatible con tu {{equipo}}",
+      "no": "No es compatible con tu {{equipo}}.",
+      "unknown": "No tenemos confirmación de compatibilidad con tu equipo.",
+      "unknownHelp": "Revisa la lista «Compatible con» o el número de parte.",
+      "attr": "{{atributo}}: tu laptop usa {{equipo}} y este producto es {{producto}}",
+      "forModels": "Este producto es para: {{modelos}}"
+    },
+    "seeCompatible": "Ver los que sí son compatibles con tu equipo",
+    "seeCompatibleShort": "Ver compatibles",
+    "warning": "Agregaste un producto que no es compatible con tu {{equipo}}",
+    "addedCheck": "Agregado al carrito. Revisa que sea compatible con tu equipo",
+    "selector": {
+      "title": "Indica tu laptop",
+      "close": "Cerrar",
+      "type": "Escribe tu modelo o código",
+      "placeholder": "Ej.: IdeaPad 3, 15ITL6, 82H8",
+      "results": "Modelos encontrados",
+      "notFound": "No encontramos ese modelo",
+      "notFoundHelp": "Busca por el número de parte de la pieza que quieres cambiar (está en la etiqueta de la pieza) o revisa la lista «Compatible con» de cada producto.",
+      "goSearch": "Ir al buscador",
+      "steps": "o elígelo paso a paso",
+      "brand": "Marca",
+      "brandPlaceholder": "Elige la marca",
+      "model": "Modelo"
+    },
+    "help": {
+      "title": "¿Dónde encuentro el modelo?",
+      "alt": "Parte de abajo de una laptop con la etiqueta del modelo resaltada",
+      "place1": "En la etiqueta de la parte de abajo de la laptop.",
+      "place2": "En Windows: Configuración › Sistema › Información."
+    }
+  },
+  "validation": {
+    "required": "Completa este campo",
+    "correo": "Ingresa un correo como nombre@dominio.com",
+    "contrasena": "La contraseña debe tener al menos 8 caracteres, una letra y un número",
+    "existe": "Ya existe una cuenta con este correo.",
+    "aceptar": "Acepta los términos y la política para crear tu cuenta",
+    "summary": "Revisa {{n}} campos",
+    "summaryOne": "Revisa 1 campo",
+    "celular": "Ingresa un celular de 9 dígitos que empiece con 9",
+    "dni": "Ingresa los 8 dígitos de tu DNI",
+    "tarjeta": "Revisa el número de tu tarjeta",
+    "vencimiento": "Escribe la fecha como MM/AA (por ejemplo, 08/28)",
+    "vencida": "Tu tarjeta está vencida. Usa otra",
+    "cvv": "Ingresa los 3 dígitos del reverso de la tarjeta",
+    "codigoYape": "Ingresa los 6 dígitos del código de Yape"
+  },
+  "checkout": {
+    "pageTitle": "Checkout",
+    "secure": "Compra segura",
+    "backToCart": "Volver al carrito",
+    "steps": "Pasos del checkout",
+    "stepShipping": "Envío",
+    "stepPayment": "Revisión y pago",
+    "stepDone": "(completado)",
+    "stepCurrent": "(paso actual)",
+    "savedAddresses": "Tus direcciones",
+    "mainAddress": "Principal",
+    "useOther": "Usar otra dirección",
+    "address": "Dirección (calle y número)",
+    "reference": "Referencia",
+    "optional": "opcional",
+    "recipient": "Nombre de quien recibe",
+    "phone": "Celular de contacto",
+    "saveAddress": "Guardar esta dirección en mi cuenta",
+    "receiptData": "Datos para tu boleta",
+    "holder": "Titular de la cuenta",
+    "dni": "DNI",
+    "dniNote": "Lo guardaremos en tu cuenta para tus próximas compras",
+    "receiptNote": "La boleta se emitirá a nombre del titular de la cuenta",
+    "edit": "Editar",
+    "continue": "Continuar",
+    "viewSummary": "Ver resumen · {{monto}}",
+    "orderSummary": "Resumen del pedido",
+    "shipTo": "Envío a",
+    "change": "Cambiar",
+    "opGravada": "Op. gravada",
+    "igv": "IGV (18 %)",
+    "shipping": "Envío",
+    "included": "Incluido",
+    "paidInSoles": "El pago se realiza en soles",
+    "usdReference": "Referencia: {{monto}}"
+  },
+  "payment": {
+    "method": "Medio de pago",
+    "card": "Tarjeta de crédito o débito",
+    "yape": {
+      "name": "Yape",
+      "step1": "Abre Yape y genera tu código de aprobación.",
+      "step2": "Ingresa tu celular y el código aquí.",
+      "phone": "Celular registrado en Yape",
+      "code": "Código de aprobación (6 dígitos)",
+      "expires": "El código vence en pocos minutos."
+    },
+    "cardNumber": "Número de tarjeta",
+    "cardHolder": "Nombre del titular",
+    "expiry": "Vencimiento",
+    "cvv": "Código de seguridad (CVV)",
+    "cvvHelpLabel": "Qué es el código de seguridad",
+    "cvvHelp": "Son los 3 dígitos del reverso de la tarjeta.",
+    "brand": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express"
+    },
+    "pay": "Pagar {{monto}}",
+    "payWithYape": "Pagar {{monto}} con Yape",
+    "processing": "Procesando pago…",
+    "noCharge": "No se realizó ningún cargo.",
+    "rejected": {
+      "tarjeta": "Tu banco rechazó el pago (fondos insuficientes). Prueba con otra tarjeta o paga con Yape.",
+      "yape": "El código de aprobación no es válido o venció. Genera uno nuevo en Yape o paga con tarjeta."
+    },
+    "noResponse": "No recibimos respuesta. Puedes intentar de nuevo.",
+    "retry": "Reintentar",
+    "soldOutTitle": "Mientras comprabas, se agotó parte de tu pedido:",
+    "soldOutLine": "«{{nombre}}»: pediste {{pedido}}, quedan {{disponible}}",
+    "adjustOrder": "Ajustar mi pedido",
+    "totalChanged": "El total cambió de {{antes}} a {{despues}}. Revisa y confirma de nuevo."
+  },
+  "order": {
+    "pageTitle": "Pedido confirmado",
+    "thanks": "¡Gracias! Tu pago fue aprobado",
+    "code": "Código del pedido",
+    "copyCode": "Copiar código del pedido",
+    "delivery": "Entrega estimada: 2 a 5 días hábiles",
+    "viewOrders": "Ver mis pedidos",
+    "receipt": "Boleta a nombre de {{nombre}} · DNI {{dni}}",
+    "card": "Tarjeta",
+    "cardEnding": "Tarjeta terminada en {{n}}",
+    "notFound": {
+      "title": "No encontramos este pedido",
+      "body": "Revisa el código o mira tus pedidos."
+    }
+  },
+  "ubigeo": {
+    "department": "Departamento",
+    "province": "Provincia",
+    "district": "Distrito",
+    "choose": "Elige…",
+    "chooseDepartmentFirst": "Elige primero el departamento",
+    "chooseProvinceFirst": "Elige primero la provincia"
+  },
+  "orders": {
+    "title": "Mis pedidos",
+    "items": "{{n}} productos",
+    "itemsOne": "1 producto",
+    "viewDetail": "Ver detalle",
+    "empty": {
+      "title": "Aún no tienes pedidos",
+      "body": "Cuando compres, tus pedidos aparecerán aquí."
+    },
+    "buildPc": "Arma tu PC",
+    "status": {
+      "pagado": "Pagado",
+      "enviado": "Enviado",
+      "entregado": "Entregado",
+      "cancelado": "Cancelado"
+    },
+    "statusHelp": {
+      "pagado": "Recibimos tu pago y estamos preparando tu pedido",
+      "enviado": "Tu pedido está en camino",
+      "entregado": "Tu pedido fue entregado",
+      "cancelado": "Este pedido fue cancelado"
+    },
+    "tracking": "Seguimiento del pedido",
+    "pending": "Pendiente",
+    "orderTitle": "Pedido",
+    "backToList": "Volver a mis pedidos",
+    "payment": "Medio de pago",
+    "reorder": "Volver a comprar",
+    "reorderAdded": "Agregamos {{n}} productos a tu carrito",
+    "reorderAddedOne": "Agregamos 1 producto a tu carrito",
+    "reorderSoldOut": "«{{nombre}}» está agotado",
+    "reorderGone": "«{{nombre}}» ya no está disponible",
+    "reorderPrices": "Los precios se actualizaron al día de hoy",
+    "reorderNothing": "No pudimos agregar nada: estos productos ya no están disponibles",
+    "print": "Imprimir boleta",
+    "receipt": {
+      "title": "BOLETA DE VENTA (simulada)",
+      "fictional": "Datos ficticios de prueba",
+      "number": "N.º",
+      "date": "Fecha",
+      "holder": "Titular",
+      "payment": "Medio de pago",
+      "product": "Producto",
+      "qty": "Cant.",
+      "unit": "P. unit.",
+      "subtotal": "Subtotal",
+      "total": "Total pagado"
+    }
+  },
+  "builder": {
+    "nav": "Arma tu PC",
+    "title": "Arma tu PC",
+    "pageTitle": "Arma tu PC",
+    "homeTitle": "Arma tu PC paso a paso",
+    "homeBody": "Te mostramos solo las piezas que calzan entre sí y cuánto llevas gastado.",
+    "steps": "Pasos del armador",
+    "optional": "Opcional",
+    "required": "Obligatorio",
+    "reason": {
+      "sin_igpu": "Tu procesador no tiene gráficos integrados: necesitas una tarjeta de video",
+      "con_igpu": "Tu procesador tiene gráficos integrados: puedes omitir este paso",
+      "sin_disipador": "Tu procesador no incluye disipador: necesitas refrigeración",
+      "con_disipador": "Tu procesador ya incluye disipador"
+    },
+    "helpLabel": "Qué es esta pieza",
+    "step": {
+      "cpu": "Procesador",
+      "placa": "Placa madre",
+      "ram": "Memoria RAM",
+      "gpu": "Tarjeta de video",
+      "almacenamiento": "Almacenamiento",
+      "fuente": "Fuente de poder",
+      "case": "Case",
+      "cooler": "Refrigeración"
+    },
+    "help": {
+      "cpu": "El «cerebro» de la PC: hace los cálculos. Su socket debe coincidir con el de la placa madre.",
+      "placa": "La pieza donde se conectan todas las demás. Define qué procesador y qué memoria puedes usar.",
+      "ram": "La memoria de trabajo: guarda lo que estás usando en el momento. Debe ser del tipo que acepta tu placa.",
+      "gpu": "Dibuja las imágenes que ves en la pantalla. Es clave para juegos y diseño; si tu procesador trae gráficos integrados, puedes omitirla.",
+      "almacenamiento": "Donde se guardan tus archivos y programas. Un SSD es más rápido que un disco duro.",
+      "fuente": "Entrega la electricidad a todas las piezas. Debe tener potencia suficiente para tu armado.",
+      "case": "La caja que guarda y protege las piezas. Debe admitir el tamaño de tu placa madre.",
+      "cooler": "Enfría el procesador. Muchos procesadores ya traen un disipador básico."
+    },
+    "plural": {
+      "cpu": "procesadores",
+      "placa": "placas madre",
+      "ram": "memorias RAM",
+      "gpu": "tarjetas de video",
+      "almacenamiento": "unidades de almacenamiento",
+      "fuente": "fuentes de poder",
+      "case": "cases",
+      "cooler": "sistemas de refrigeración"
+    },
+    "piece": {
+      "cpu": "procesador",
+      "placa": "placa madre",
+      "ram": "memoria RAM",
+      "gpu": "tarjeta de video",
+      "almacenamiento": "almacenamiento",
+      "fuente": "fuente de poder",
+      "case": "case",
+      "cooler": "refrigeración"
+    },
+    "showing": "Mostrando {{piezas}} compatibles con tu {{nombres}}",
+    "showIncompatible": "Mostrar también las no compatibles ({{n}})",
+    "hideIncompatible": "Ocultar las no compatibles ({{n}})",
+    "noData": "? Sin datos para verificar la compatibilidad",
+    "noOptions": "No hay {{piezas}} compatibles con lo que elegiste en stock",
+    "changeLimiting": "Cambiar tu {{pieza}}",
+    "pieces": "Piezas disponibles",
+    "yourPiece": "Tu {{nombre}} ya no calza",
+    "unavailable": "Ya no disponible: elige otra",
+    "budgetPiece": "+{{mas}} · te quedan {{quedan}}",
+    "fits": "(entra)",
+    "exceeds": "(te pasarías)",
+    "skip": "Omitir este paso",
+    "state": {
+      "pendiente": "Pendiente",
+      "completo": "Elegido",
+      "omitido": "Omitido",
+      "conflicto": "Con conflicto",
+      "no_disponible": "Ya no disponible"
+    },
+    "review": {
+      "title": "Resumen de tu armado",
+      "step": "Resumen"
+    },
+    "reviewAction": "Revisar",
+    "summary": "Resumen",
+    "budget": "Tu presupuesto",
+    "budgetPlaceholder": "Ej.: 3375",
+    "noPieces": "Todavía no elegiste piezas",
+    "consumption": "Consumo estimado: {{consumo}} W",
+    "psu": "Fuente: {{potencia}} W",
+    "psuOk": "La fuente alcanza",
+    "psuLow": "La fuente no alcanza",
+    "over": "Te pasas por {{monto}}",
+    "left": "Te quedan {{monto}}",
+    "statusOk": "Todo compatible",
+    "statusConflicts": "{{n}} conflictos",
+    "statusMissing": "Faltan {{n}} piezas obligatorias",
+    "openSummary": "Ver resumen",
+    "conflictBanner": "Hay {{n}} piezas que ya no calzan: {{piezas}}",
+    "conflictBannerOne": "Tu {{piezas}} ya no calza con el resto del armado",
+    "addAll": "Agregar todo al carrito",
+    "resolve": "Resuelve {{n}} conflictos",
+    "resolveOne": "Resuelve 1 conflicto",
+    "missing": "Falta elegir: {{piezas}}",
+    "startOver": "Empezar de nuevo",
+    "startOverTitle": "¿Empezar de nuevo?",
+    "startOverBody": "Se perderán todas las piezas que elegiste.",
+    "startOverConfirm": "Sí, empezar de nuevo",
+    "sent": "Agregamos tu armado al carrito",
+    "buildAnother": "Armar otra PC",
+    "conflict": {
+      "socket": "Socket {{esta}}: no calza con tu {{pieza}} ({{otra}})",
+      "ram_type": "Memoria {{esta}}: no calza con tu {{pieza}} ({{otra}})",
+      "ram_format": "Formato {{esta}}: no calza con tu {{pieza}} ({{otra}})",
+      "form_factor": "Tamaño {{esta}}: no calza con tu {{pieza}} ({{otra}})",
+      "cooler_socket": "Socket {{esta}}: no calza con tu {{pieza}} ({{otra}})",
+      "power": "El armado necesita unos {{consumo}} W y esta fuente entrega {{potencia}} W"
+    },
+    "statusConflictsOne": "1 conflicto"
+  }
+}

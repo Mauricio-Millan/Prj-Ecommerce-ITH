@@ -1,0 +1,38 @@
+/*
+ * ARCHIVO MAESTRO de la paleta (constitución § 3.2.1).
+ * Único lugar con colores, tipografía, radios y sombras. Para cambiar la paleta se edita solo este archivo.
+ * `@theme` publica cada token como variable CSS en :root (--color-primary) y genera sus clases (bg-primary, text-danger…).
+ * Paleta PROVISIONAL (pendiente de branding). Contraste verificado contra blanco (surface):
+ *   primary 8.7:1 · accent 5.2:1 · foreground 17.9:1 · muted 7.6:1 · danger 6.5:1 · success 5.0:1 · warning 7.1:1
+ *   sobre surface-muted todos ≥ 4.5:1 (accent 4.7, success 4.6) · primary-foreground sobre primary 8.7:1
+ */
+@theme {
+  /* Se apagan los colores por defecto de Tailwind: así `bg-blue-700` ni siquiera existe (prohibidos los literales). */
+  --color-*: initial;
+
+  --color-primary: #1e40af;
+  --color-primary-hover: #1e3a8a;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #c2410c;
+  --color-accent-foreground: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f5f9;
+  --color-foreground: #0f172a;
+  --color-muted: #475569;
+  --color-border: #cbd5e1;
+  --color-danger: #b91c1c;
+  --color-success: #15803d;
+  --color-warning: #92400e;
+  --color-focus: #1d4ed8;
+  --color-backdrop: rgb(15 23 42 / 0.5);
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --radius-control: 0.5rem;
+  --radius-card: 0.75rem;
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.1);
+  --shadow-overlay: 0 10px 25px rgb(15 23 42 / 0.18);
+}

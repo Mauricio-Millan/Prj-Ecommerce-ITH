@@ -1,0 +1,19 @@
+{
+  "relleno": ["para", "mi", "de", "del", "la", "el", "los", "las", "un", "una", "que", "con", "por", "en", "y", "quiero", "busco", "for", "my", "the", "a"],
+  "grupos": [
+    ["ram", "memoria", "memoria ram", "memory"],
+    ["almacenamiento", "disco", "ssd", "disco sólido", "storage", "drive"],
+    ["batería", "pila", "battery"],
+    ["inalámbrico", "sin cable", "wireless", "inalámbrica"],
+    ["tarjeta de video", "tarjeta gráfica", "gráfica", "gpu", "graphics card", "video card"],
+    ["fuente de poder", "fuente", "psu", "power supply"],
+    ["procesador", "cpu", "processor"],
+    ["placa madre", "tarjeta madre", "motherboard", "mainboard"],
+    ["teclado", "keyboard"],
+    ["cargador", "adaptador", "charger"],
+    ["mouse", "ratón", "mice"],
+    ["case", "gabinete", "chasis"],
+    ["disipador", "cooler", "ventilador de cpu", "refrigeración"],
+    ["pantalla", "monitor", "display", "screen"]
+  ]
+}

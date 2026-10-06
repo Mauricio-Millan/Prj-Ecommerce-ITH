@@ -1,0 +1,2251 @@
+{
+  "version": 2,
+  "categorias": [
+    {
+      "id": 1,
+      "padre_id": null,
+      "slug": "componentes-pc",
+      "clave_i18n": "category.componentes_pc",
+      "icono": "cpu",
+      "orden": 1
+    },
+    {
+      "id": 2,
+      "padre_id": null,
+      "slug": "componentes-laptop",
+      "clave_i18n": "category.componentes_laptop",
+      "icono": "laptop",
+      "orden": 2
+    },
+    {
+      "id": 3,
+      "padre_id": null,
+      "slug": "pantallas",
+      "clave_i18n": "category.pantallas",
+      "icono": "pantalla",
+      "orden": 3
+    },
+    {
+      "id": 4,
+      "padre_id": null,
+      "slug": "repuestos-laptop",
+      "clave_i18n": "category.repuestos_laptop",
+      "icono": "repuesto",
+      "orden": 4
+    },
+    {
+      "id": 5,
+      "padre_id": null,
+      "slug": "perifericos",
+      "clave_i18n": "category.perifericos",
+      "icono": "periferico",
+      "orden": 5
+    },
+    {
+      "id": 6,
+      "padre_id": 1,
+      "slug": "procesadores",
+      "clave_i18n": "category.procesadores",
+      "orden": 6
+    },
+    {
+      "id": 7,
+      "padre_id": 1,
+      "slug": "placas-madre",
+      "clave_i18n": "category.placas_madre",
+      "orden": 7
+    },
+    {
+      "id": 8,
+      "padre_id": 1,
+      "slug": "memoria-ram-pc",
+      "clave_i18n": "category.memoria_ram_pc",
+      "orden": 8
+    },
+    {
+      "id": 9,
+      "padre_id": 1,
+      "slug": "almacenamiento",
+      "clave_i18n": "category.almacenamiento",
+      "orden": 9
+    },
+    {
+      "id": 10,
+      "padre_id": 1,
+      "slug": "tarjetas-de-video",
+      "clave_i18n": "category.tarjetas_de_video",
+      "orden": 10
+    },
+    {
+      "id": 11,
+      "padre_id": 1,
+      "slug": "fuentes-de-poder",
+      "clave_i18n": "category.fuentes_de_poder",
+      "orden": 11
+    },
+    {
+      "id": 12,
+      "padre_id": 1,
+      "slug": "cases",
+      "clave_i18n": "category.cases",
+      "orden": 12
+    },
+    {
+      "id": 13,
+      "padre_id": 1,
+      "slug": "refrigeracion",
+      "clave_i18n": "category.refrigeracion",
+      "orden": 13
+    },
+    {
+      "id": 14,
+      "padre_id": 2,
+      "slug": "ram-so-dimm",
+      "clave_i18n": "category.ram_so_dimm",
+      "orden": 14
+    },
+    {
+      "id": 15,
+      "padre_id": 2,
+      "slug": "ssd-laptop",
+      "clave_i18n": "category.ssd_laptop",
+      "orden": 15
+    },
+    {
+      "id": 16,
+      "padre_id": 2,
+      "slug": "tarjetas-wifi",
+      "clave_i18n": "category.tarjetas_wifi",
+      "orden": 16
+    },
+    {
+      "id": 17,
+      "padre_id": 3,
+      "slug": "monitores",
+      "clave_i18n": "category.monitores",
+      "orden": 17
+    },
+    {
+      "id": 18,
+      "padre_id": 3,
+      "slug": "paneles-laptop",
+      "clave_i18n": "category.paneles_laptop",
+      "orden": 18
+    },
+    {
+      "id": 19,
+      "padre_id": 4,
+      "slug": "baterias",
+      "clave_i18n": "category.baterias",
+      "orden": 19
+    },
+    {
+      "id": 20,
+      "padre_id": 4,
+      "slug": "cargadores",
+      "clave_i18n": "category.cargadores",
+      "orden": 20
+    },
+    {
+      "id": 21,
+      "padre_id": 4,
+      "slug": "teclados-laptop",
+      "clave_i18n": "category.teclados_laptop",
+      "orden": 21
+    },
+    {
+      "id": 22,
+      "padre_id": 4,
+      "slug": "otros-repuestos",
+      "clave_i18n": "category.otros_repuestos",
+      "orden": 22
+    },
+    {
+      "id": 23,
+      "padre_id": 5,
+      "slug": "mouse",
+      "clave_i18n": "category.mouse",
+      "orden": 23
+    },
+    {
+      "id": 24,
+      "padre_id": 5,
+      "slug": "teclados-perifericos",
+      "clave_i18n": "category.teclados_perifericos",
+      "orden": 24
+    },
+    {
+      "id": 25,
+      "padre_id": 5,
+      "slug": "otros-perifericos",
+      "clave_i18n": "category.otros_perifericos",
+      "orden": 25
+    }
+  ],
+  "marcas": [
+    {
+      "id": 1,
+      "nombre": "Lenovo"
+    },
+    {
+      "id": 2,
+      "nombre": "HP"
+    },
+    {
+      "id": 3,
+      "nombre": "Dell"
+    },
+    {
+      "id": 4,
+      "nombre": "Logitech"
+    },
+    {
+      "id": 5,
+      "nombre": "Genius"
+    },
+    {
+      "id": 6,
+      "nombre": "AMD"
+    },
+    {
+      "id": 7,
+      "nombre": "ASUS"
+    },
+    {
+      "id": 8,
+      "nombre": "Kingston"
+    },
+    {
+      "id": 9,
+      "nombre": "Crucial"
+    },
+    {
+      "id": 10,
+      "nombre": "XFX"
+    },
+    {
+      "id": 11,
+      "nombre": "MSI"
+    },
+    {
+      "id": 12,
+      "nombre": "Corsair"
+    },
+    {
+      "id": 13,
+      "nombre": "Cooler Master"
+    },
+    {
+      "id": 14,
+      "nombre": "Genérico"
+    }
+  ],
+  "atributos": [
+    {
+      "id": 1,
+      "categoria_id": 6,
+      "clave": "socket",
+      "clave_i18n": "attr.socket.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "AM4",
+        "AM5",
+        "LGA1700"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 1
+    },
+    {
+      "id": 2,
+      "categoria_id": 6,
+      "clave": "nucleos",
+      "clave_i18n": "attr.nucleos.label",
+      "tipo": "numero",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 3,
+      "categoria_id": 6,
+      "clave": "hilos",
+      "clave_i18n": "attr.hilos.label",
+      "tipo": "numero",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 4,
+      "categoria_id": 6,
+      "clave": "frecuencia_base_ghz",
+      "clave_i18n": "attr.frecuencia_base_ghz.label",
+      "tipo": "numero",
+      "unidad": "GHz",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 5,
+      "categoria_id": 6,
+      "clave": "frecuencia_turbo_ghz",
+      "clave_i18n": "attr.frecuencia_turbo_ghz.label",
+      "tipo": "numero",
+      "unidad": "GHz",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 5
+    },
+    {
+      "id": 6,
+      "categoria_id": 6,
+      "clave": "consumo_w",
+      "clave_i18n": "attr.consumo_w.label",
+      "tipo": "numero",
+      "unidad": "W",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": true,
+      "orden": 6
+    },
+    {
+      "id": 7,
+      "categoria_id": 6,
+      "clave": "graficos_integrados",
+      "clave_i18n": "attr.graficos_integrados.label",
+      "tipo": "booleano",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 7
+    },
+    {
+      "id": 8,
+      "categoria_id": 6,
+      "clave": "incluye_disipador",
+      "clave_i18n": "attr.incluye_disipador.label",
+      "tipo": "booleano",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 8
+    },
+    {
+      "id": 9,
+      "categoria_id": 7,
+      "clave": "socket",
+      "clave_i18n": "attr.socket.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "AM4",
+        "AM5",
+        "LGA1700"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 1
+    },
+    {
+      "id": 10,
+      "categoria_id": 7,
+      "clave": "chipset",
+      "clave_i18n": "attr.chipset.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "B550",
+        "B650",
+        "Z790"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 11,
+      "categoria_id": 7,
+      "clave": "tipo_ram",
+      "clave_i18n": "attr.tipo_ram.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "DDR4",
+        "DDR5"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 3
+    },
+    {
+      "id": 12,
+      "categoria_id": 7,
+      "clave": "formato_ram",
+      "clave_i18n": "attr.formato_ram.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "DIMM"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": true,
+      "orden": 4
+    },
+    {
+      "id": 13,
+      "categoria_id": 7,
+      "clave": "ranuras_ram",
+      "clave_i18n": "attr.ranuras_ram.label",
+      "tipo": "numero",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 5
+    },
+    {
+      "id": 14,
+      "categoria_id": 7,
+      "clave": "ram_max_gb",
+      "clave_i18n": "attr.ram_max_gb.label",
+      "tipo": "numero",
+      "unidad": "GB",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 6
+    },
+    {
+      "id": 15,
+      "categoria_id": 7,
+      "clave": "factor_forma",
+      "clave_i18n": "attr.factor_forma.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "ATX",
+        "mATX",
+        "ITX"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 7
+    },
+    {
+      "id": 16,
+      "categoria_id": 7,
+      "clave": "ranuras_m2",
+      "clave_i18n": "attr.ranuras_m2.label",
+      "tipo": "numero",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 8
+    },
+    {
+      "id": 17,
+      "categoria_id": 7,
+      "clave": "puertos_sata",
+      "clave_i18n": "attr.puertos_sata.label",
+      "tipo": "numero",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 9
+    },
+    {
+      "id": 18,
+      "categoria_id": 8,
+      "clave": "tipo_ram",
+      "clave_i18n": "attr.tipo_ram.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "DDR4",
+        "DDR5"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 1
+    },
+    {
+      "id": 19,
+      "categoria_id": 8,
+      "clave": "formato_ram",
+      "clave_i18n": "attr.formato_ram.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "DIMM"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": true,
+      "orden": 2
+    },
+    {
+      "id": 20,
+      "categoria_id": 8,
+      "clave": "capacidad_gb",
+      "clave_i18n": "attr.capacidad_gb.label",
+      "tipo": "numero",
+      "unidad": "GB",
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 21,
+      "categoria_id": 8,
+      "clave": "velocidad_mhz",
+      "clave_i18n": "attr.velocidad_mhz.label",
+      "tipo": "numero",
+      "unidad": "MHz",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 22,
+      "categoria_id": 8,
+      "clave": "latencia_cl",
+      "clave_i18n": "attr.latencia_cl.label",
+      "tipo": "numero",
+      "unidad": "CL",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 5
+    },
+    {
+      "id": 23,
+      "categoria_id": 8,
+      "clave": "modulos",
+      "clave_i18n": "attr.modulos.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 6
+    },
+    {
+      "id": 24,
+      "categoria_id": 9,
+      "clave": "tipo_almacenamiento",
+      "clave_i18n": "attr.tipo_almacenamiento.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "SSD",
+        "HDD"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 25,
+      "categoria_id": 9,
+      "clave": "interfaz",
+      "clave_i18n": "attr.interfaz.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "NVMe",
+        "SATA"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 2
+    },
+    {
+      "id": 26,
+      "categoria_id": 9,
+      "clave": "formato",
+      "clave_i18n": "attr.formato.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "M.2 2280",
+        "2.5\"",
+        "3.5\""
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": true,
+      "orden": 3
+    },
+    {
+      "id": 27,
+      "categoria_id": 9,
+      "clave": "capacidad_gb",
+      "clave_i18n": "attr.capacidad_gb.label",
+      "tipo": "numero",
+      "unidad": "GB",
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 28,
+      "categoria_id": 9,
+      "clave": "lectura_mbs",
+      "clave_i18n": "attr.lectura_mbs.label",
+      "tipo": "numero",
+      "unidad": "MB/s",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 5
+    },
+    {
+      "id": 29,
+      "categoria_id": 9,
+      "clave": "escritura_mbs",
+      "clave_i18n": "attr.escritura_mbs.label",
+      "tipo": "numero",
+      "unidad": "MB/s",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 6
+    },
+    {
+      "id": 30,
+      "categoria_id": 10,
+      "clave": "chip",
+      "clave_i18n": "attr.chip.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 31,
+      "categoria_id": 10,
+      "clave": "memoria_gb",
+      "clave_i18n": "attr.memoria_gb.label",
+      "tipo": "numero",
+      "unidad": "GB",
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 32,
+      "categoria_id": 10,
+      "clave": "tipo_memoria",
+      "clave_i18n": "attr.tipo_memoria.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 33,
+      "categoria_id": 10,
+      "clave": "consumo_w",
+      "clave_i18n": "attr.consumo_w.label",
+      "tipo": "numero",
+      "unidad": "W",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": true,
+      "orden": 4
+    },
+    {
+      "id": 34,
+      "categoria_id": 10,
+      "clave": "fuente_recomendada_w",
+      "clave_i18n": "attr.fuente_recomendada_w.label",
+      "tipo": "numero",
+      "unidad": "W",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 5
+    },
+    {
+      "id": 35,
+      "categoria_id": 10,
+      "clave": "largo_mm",
+      "clave_i18n": "attr.largo_mm.label",
+      "tipo": "numero",
+      "unidad": "mm",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 6
+    },
+    {
+      "id": 36,
+      "categoria_id": 10,
+      "clave": "salidas_video",
+      "clave_i18n": "attr.salidas_video.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 7
+    },
+    {
+      "id": 37,
+      "categoria_id": 11,
+      "clave": "potencia_w",
+      "clave_i18n": "attr.potencia_w.label",
+      "tipo": "numero",
+      "unidad": "W",
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 1
+    },
+    {
+      "id": 38,
+      "categoria_id": 11,
+      "clave": "certificacion_80plus",
+      "clave_i18n": "attr.certificacion_80plus.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "Bronze",
+        "Gold"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 39,
+      "categoria_id": 11,
+      "clave": "modular",
+      "clave_i18n": "attr.modular.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "No",
+        "Semi",
+        "Sí"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 40,
+      "categoria_id": 11,
+      "clave": "formato_fuente",
+      "clave_i18n": "attr.formato_fuente.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "ATX",
+        "SFX"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 41,
+      "categoria_id": 12,
+      "clave": "factores_soportados",
+      "clave_i18n": "attr.factores_soportados.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "ATX",
+        "mATX",
+        "ITX"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 1
+    },
+    {
+      "id": 42,
+      "categoria_id": 12,
+      "clave": "largo_max_gpu_mm",
+      "clave_i18n": "attr.largo_max_gpu_mm.label",
+      "tipo": "numero",
+      "unidad": "mm",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 43,
+      "categoria_id": 12,
+      "clave": "ventiladores_incluidos",
+      "clave_i18n": "attr.ventiladores_incluidos.label",
+      "tipo": "numero",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 44,
+      "categoria_id": 12,
+      "clave": "panel_lateral",
+      "clave_i18n": "attr.panel_lateral.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "Vidrio templado",
+        "Acrílico",
+        "Metal"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 45,
+      "categoria_id": 13,
+      "clave": "tipo_refrigeracion",
+      "clave_i18n": "attr.tipo_refrigeracion.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "Aire",
+        "Líquida"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 46,
+      "categoria_id": 13,
+      "clave": "sockets_soportados",
+      "clave_i18n": "attr.sockets_soportados.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "AM4",
+        "AM5",
+        "LGA1700"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": true,
+      "orden": 2
+    },
+    {
+      "id": 47,
+      "categoria_id": 13,
+      "clave": "tamano_mm",
+      "clave_i18n": "attr.tamano_mm.label",
+      "tipo": "numero",
+      "unidad": "mm",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 48,
+      "categoria_id": 13,
+      "clave": "tdp_soportado_w",
+      "clave_i18n": "attr.tdp_soportado_w.label",
+      "tipo": "numero",
+      "unidad": "W",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 49,
+      "categoria_id": 14,
+      "clave": "tipo_ram",
+      "clave_i18n": "attr.tipo_ram.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "DDR4",
+        "DDR5"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 1
+    },
+    {
+      "id": 50,
+      "categoria_id": 14,
+      "clave": "formato_ram",
+      "clave_i18n": "attr.formato_ram.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "SO-DIMM"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": true,
+      "orden": 2
+    },
+    {
+      "id": 51,
+      "categoria_id": 14,
+      "clave": "capacidad_gb",
+      "clave_i18n": "attr.capacidad_gb.label",
+      "tipo": "numero",
+      "unidad": "GB",
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 52,
+      "categoria_id": 14,
+      "clave": "velocidad_mhz",
+      "clave_i18n": "attr.velocidad_mhz.label",
+      "tipo": "numero",
+      "unidad": "MHz",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 53,
+      "categoria_id": 14,
+      "clave": "voltaje_v",
+      "clave_i18n": "attr.voltaje_v.label",
+      "tipo": "numero",
+      "unidad": "V",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 5
+    },
+    {
+      "id": 54,
+      "categoria_id": 15,
+      "clave": "interfaz",
+      "clave_i18n": "attr.interfaz.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "NVMe",
+        "SATA"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 1
+    },
+    {
+      "id": 55,
+      "categoria_id": 15,
+      "clave": "formato",
+      "clave_i18n": "attr.formato.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "M.2 2242",
+        "M.2 2280",
+        "2.5\""
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": true,
+      "orden": 2
+    },
+    {
+      "id": 56,
+      "categoria_id": 15,
+      "clave": "capacidad_gb",
+      "clave_i18n": "attr.capacidad_gb.label",
+      "tipo": "numero",
+      "unidad": "GB",
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 57,
+      "categoria_id": 15,
+      "clave": "lectura_mbs",
+      "clave_i18n": "attr.lectura_mbs.label",
+      "tipo": "numero",
+      "unidad": "MB/s",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 58,
+      "categoria_id": 15,
+      "clave": "escritura_mbs",
+      "clave_i18n": "attr.escritura_mbs.label",
+      "tipo": "numero",
+      "unidad": "MB/s",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 5
+    },
+    {
+      "id": 59,
+      "categoria_id": 16,
+      "clave": "estandar_wifi",
+      "clave_i18n": "attr.estandar_wifi.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "WiFi 5",
+        "WiFi 6",
+        "WiFi 6E"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 60,
+      "categoria_id": 16,
+      "clave": "formato",
+      "clave_i18n": "attr.formato.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "M.2 2230"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": true,
+      "orden": 2
+    },
+    {
+      "id": 61,
+      "categoria_id": 16,
+      "clave": "bluetooth_version",
+      "clave_i18n": "attr.bluetooth_version.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 62,
+      "categoria_id": 17,
+      "clave": "tamano_pulgadas",
+      "clave_i18n": "attr.tamano_pulgadas.label",
+      "tipo": "numero",
+      "unidad": "pulgadas",
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 63,
+      "categoria_id": 17,
+      "clave": "resolucion",
+      "clave_i18n": "attr.resolucion.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 64,
+      "categoria_id": 17,
+      "clave": "frecuencia_hz",
+      "clave_i18n": "attr.frecuencia_hz.label",
+      "tipo": "numero",
+      "unidad": "Hz",
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 65,
+      "categoria_id": 17,
+      "clave": "tipo_panel",
+      "clave_i18n": "attr.tipo_panel.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "IPS",
+        "VA",
+        "TN"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 66,
+      "categoria_id": 17,
+      "clave": "tiempo_respuesta_ms",
+      "clave_i18n": "attr.tiempo_respuesta_ms.label",
+      "tipo": "numero",
+      "unidad": "ms",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 5
+    },
+    {
+      "id": 67,
+      "categoria_id": 17,
+      "clave": "entradas",
+      "clave_i18n": "attr.entradas.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 6
+    },
+    {
+      "id": 68,
+      "categoria_id": 18,
+      "clave": "tamano_pulgadas",
+      "clave_i18n": "attr.tamano_pulgadas.label",
+      "tipo": "numero",
+      "unidad": "pulgadas",
+      "valores_permitidos": null,
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 69,
+      "categoria_id": 18,
+      "clave": "resolucion",
+      "clave_i18n": "attr.resolucion.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 70,
+      "categoria_id": 18,
+      "clave": "conector",
+      "clave_i18n": "attr.conector.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "30 pines eDP",
+        "40 pines eDP"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": true,
+      "orden": 3
+    },
+    {
+      "id": 71,
+      "categoria_id": 18,
+      "clave": "frecuencia_hz",
+      "clave_i18n": "attr.frecuencia_hz.label",
+      "tipo": "numero",
+      "unidad": "Hz",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 72,
+      "categoria_id": 18,
+      "clave": "tipo_panel",
+      "clave_i18n": "attr.tipo_panel.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "IPS",
+        "VA",
+        "TN"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 5
+    },
+    {
+      "id": 73,
+      "categoria_id": 18,
+      "clave": "acabado",
+      "clave_i18n": "attr.acabado.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "Mate",
+        "Brillante"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 6
+    },
+    {
+      "id": 74,
+      "categoria_id": 18,
+      "clave": "tactil",
+      "clave_i18n": "attr.tactil.label",
+      "tipo": "booleano",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 7
+    },
+    {
+      "id": 75,
+      "categoria_id": 19,
+      "clave": "voltaje_v",
+      "clave_i18n": "attr.voltaje_v.label",
+      "tipo": "numero",
+      "unidad": "V",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 76,
+      "categoria_id": 19,
+      "clave": "capacidad_wh",
+      "clave_i18n": "attr.capacidad_wh.label",
+      "tipo": "numero",
+      "unidad": "Wh",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 77,
+      "categoria_id": 19,
+      "clave": "celdas",
+      "clave_i18n": "attr.celdas.label",
+      "tipo": "numero",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 78,
+      "categoria_id": 19,
+      "clave": "pn_compatibles",
+      "clave_i18n": "attr.pn_compatibles.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 79,
+      "categoria_id": 20,
+      "clave": "potencia_w",
+      "clave_i18n": "attr.potencia_w.label",
+      "tipo": "numero",
+      "unidad": "W",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 80,
+      "categoria_id": 20,
+      "clave": "voltaje_salida_v",
+      "clave_i18n": "attr.voltaje_salida_v.label",
+      "tipo": "numero",
+      "unidad": "V",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 81,
+      "categoria_id": 20,
+      "clave": "amperaje_a",
+      "clave_i18n": "attr.amperaje_a.label",
+      "tipo": "numero",
+      "unidad": "A",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 82,
+      "categoria_id": 20,
+      "clave": "tipo_conector",
+      "clave_i18n": "attr.tipo_conector.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 83,
+      "categoria_id": 21,
+      "clave": "idioma_teclado",
+      "clave_i18n": "attr.idioma_teclado.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "Español LA",
+        "US"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 84,
+      "categoria_id": 21,
+      "clave": "retroiluminado",
+      "clave_i18n": "attr.retroiluminado.label",
+      "tipo": "booleano",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 85,
+      "categoria_id": 21,
+      "clave": "con_marco",
+      "clave_i18n": "attr.con_marco.label",
+      "tipo": "booleano",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 86,
+      "categoria_id": 22,
+      "clave": "posicion",
+      "clave_i18n": "attr.posicion.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 87,
+      "categoria_id": 22,
+      "clave": "pn_compatibles",
+      "clave_i18n": "attr.pn_compatibles.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 88,
+      "categoria_id": 23,
+      "clave": "conexion",
+      "clave_i18n": "attr.conexion.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "inalambrico",
+        "cable",
+        "bluetooth"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 89,
+      "categoria_id": 23,
+      "clave": "dpi_max",
+      "clave_i18n": "attr.dpi_max.label",
+      "tipo": "numero",
+      "unidad": "DPI",
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 90,
+      "categoria_id": 23,
+      "clave": "botones",
+      "clave_i18n": "attr.botones.label",
+      "tipo": "numero",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 91,
+      "categoria_id": 23,
+      "clave": "ergonomia",
+      "clave_i18n": "attr.ergonomia.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "Diestro",
+        "Ambidiestro"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 92,
+      "categoria_id": 24,
+      "clave": "conexion",
+      "clave_i18n": "attr.conexion.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "inalambrico",
+        "cable",
+        "bluetooth"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 93,
+      "categoria_id": 24,
+      "clave": "tipo_teclado",
+      "clave_i18n": "attr.tipo_teclado.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "Mecánico",
+        "Membrana"
+      ],
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 2
+    },
+    {
+      "id": 94,
+      "categoria_id": 24,
+      "clave": "switch",
+      "clave_i18n": "attr.switch.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 3
+    },
+    {
+      "id": 95,
+      "categoria_id": 24,
+      "clave": "distribucion",
+      "clave_i18n": "attr.distribucion.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 4
+    },
+    {
+      "id": 96,
+      "categoria_id": 24,
+      "clave": "retroiluminacion",
+      "clave_i18n": "attr.retroiluminacion.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 5
+    },
+    {
+      "id": 97,
+      "categoria_id": 25,
+      "clave": "conexion",
+      "clave_i18n": "attr.conexion.label",
+      "tipo": "lista",
+      "unidad": null,
+      "valores_permitidos": [
+        "inalambrico",
+        "cable",
+        "bluetooth"
+      ],
+      "filtrable": true,
+      "usa_compatibilidad": false,
+      "orden": 1
+    },
+    {
+      "id": 98,
+      "categoria_id": 25,
+      "clave": "atributo_clave",
+      "clave_i18n": "attr.atributo_clave.label",
+      "tipo": "texto",
+      "unidad": null,
+      "valores_permitidos": null,
+      "filtrable": false,
+      "usa_compatibilidad": false,
+      "orden": 2
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "sku": "BAT-L19M3PF4",
+      "categoria_id": 19,
+      "marca_id": 1,
+      "nombre": "Batería Lenovo L19M3PF4 original para IdeaPad 3 15ITL6",
+      "modelo": "L19M3PF4",
+      "descripcion": "Batería de ion de litio original de Lenovo, número de parte L19M3PF4, de 3 celdas y 45 Wh. Reemplazo directo para la IdeaPad 3 15ITL6. Incluye la batería y el manual de instalación.",
+      "numero_parte": "L19M3PF4",
+      "precio_usd": 59.9,
+      "stock": 8,
+      "garantia_meses": 12,
+      "condicion": "original",
+      "especificaciones": {
+        "voltaje_v": 11.25,
+        "capacidad_wh": 45,
+        "celdas": 3,
+        "pn_compatibles": "L19M3PF4, L19C3PF1"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/bat-l19m3pf4-1.webp",
+          "alt": "Batería Lenovo L19M3PF4 original para IdeaPad 3 15ITL6 (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": true,
+      "activo": true,
+      "created_at": "2026-08-02T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "sku": "BAT-GEN-IDEAPAD3",
+      "categoria_id": 19,
+      "marca_id": 14,
+      "nombre": "Batería compatible genérica para Lenovo IdeaPad 3 15ITL6",
+      "modelo": "BG-L19M3",
+      "descripcion": "Batería de ion de litio genérica de 3 celdas y 42 Wh. Reemplaza a L19M3PF4. Diseñada para la Lenovo IdeaPad 3 15ITL6; no es de la marca del fabricante del equipo.",
+      "numero_parte": "BG-L19M3",
+      "precio_usd": 34.9,
+      "stock": 10,
+      "garantia_meses": 6,
+      "condicion": "compatible",
+      "especificaciones": {
+        "voltaje_v": 11.25,
+        "capacidad_wh": 42,
+        "celdas": 3,
+        "pn_compatibles": "L19M3PF4"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/bat-gen-ideapad3-1.webp",
+          "alt": "Batería compatible genérica para Lenovo IdeaPad 3 15ITL6 (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-08-10T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "sku": "BAT-L17C3PF1",
+      "categoria_id": 19,
+      "marca_id": 1,
+      "nombre": "Batería Lenovo L17C3PF1 para IdeaPad 330-15IKB",
+      "modelo": "L17C3PF1",
+      "descripcion": "Batería de ion de litio original de Lenovo, número de parte L17C3PF1, de 3 celdas y 45 Wh. Para la IdeaPad 330-15IKB. No es compatible con la IdeaPad 3 15ITL6.",
+      "numero_parte": "L17C3PF1",
+      "precio_usd": 49.9,
+      "stock": 6,
+      "garantia_meses": 12,
+      "condicion": "original",
+      "especificaciones": {
+        "voltaje_v": 11.1,
+        "capacidad_wh": 45,
+        "celdas": 3,
+        "pn_compatibles": "L17C3PF1, L17L3PF1"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/bat-l17c3pf1-1.webp",
+          "alt": "Batería Lenovo L17C3PF1 para IdeaPad 330-15IKB (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-07-15T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "sku": "MOU-M170",
+      "categoria_id": 23,
+      "marca_id": 4,
+      "nombre": "Mouse Logitech M170 inalámbrico",
+      "modelo": "M170",
+      "descripcion": "Mouse inalámbrico de 2.4 GHz con receptor USB nano, 1000 DPI y 3 botones. Funciona con una pila AA incluida.",
+      "numero_parte": "910-004940",
+      "precio_usd": 12.9,
+      "stock": 15,
+      "garantia_meses": 12,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "conexion": "inalambrico",
+        "dpi_max": 1000,
+        "botones": 3,
+        "ergonomia": "Ambidiestro"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/mou-m170-1.webp",
+          "alt": "Mouse Logitech M170 inalámbrico (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": true,
+      "activo": true,
+      "created_at": "2026-06-20T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "sku": "MOU-M185",
+      "categoria_id": 23,
+      "marca_id": 4,
+      "nombre": "Mouse Logitech M185 inalámbrico",
+      "modelo": "M185",
+      "descripcion": "Mouse inalámbrico de 2.4 GHz con receptor USB nano y 1000 DPI. Hasta 12 meses de duración de la pila.",
+      "numero_parte": "910-002238",
+      "precio_usd": 15.9,
+      "stock": 12,
+      "garantia_meses": 12,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "conexion": "inalambrico",
+        "dpi_max": 1000,
+        "botones": 3,
+        "ergonomia": "Ambidiestro"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/mou-m185-1.webp",
+          "alt": "Mouse Logitech M185 inalámbrico (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-06-25T10:00:00Z"
+    },
+    {
+      "id": 6,
+      "sku": "MOU-DX110",
+      "categoria_id": 23,
+      "marca_id": 5,
+      "nombre": "Mouse Genius DX-110 con cable USB",
+      "modelo": "DX-110",
+      "descripcion": "Mouse óptico con cable USB, 1000 DPI y 3 botones. No es inalámbrico.",
+      "numero_parte": null,
+      "precio_usd": 8.9,
+      "stock": 3,
+      "garantia_meses": 6,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "conexion": "cable",
+        "dpi_max": 1000,
+        "botones": 3,
+        "ergonomia": "Ambidiestro"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/mou-dx110-1.webp",
+          "alt": "Mouse Genius DX-110 con cable USB (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-05-30T10:00:00Z"
+    },
+    {
+      "id": 7,
+      "sku": "MOU-PEBBLE",
+      "categoria_id": 23,
+      "marca_id": 4,
+      "nombre": "Mouse Logitech Pebble Bluetooth",
+      "modelo": "Pebble",
+      "descripcion": "Mouse delgado y silencioso con conexión Bluetooth. Funciona con 2 pilas AAA incluidas.",
+      "numero_parte": "910-005599",
+      "precio_usd": 24.9,
+      "stock": 9,
+      "garantia_meses": 12,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "conexion": "bluetooth",
+        "dpi_max": 1000,
+        "botones": 3,
+        "ergonomia": "Ambidiestro"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/mou-pebble-1.webp",
+          "alt": "Mouse Logitech Pebble Bluetooth (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-07-05T10:00:00Z"
+    },
+    {
+      "id": 8,
+      "sku": "CPU-R5-5600",
+      "categoria_id": 6,
+      "marca_id": 6,
+      "nombre": "Procesador AMD Ryzen 5 5600 AM4 6 núcleos",
+      "modelo": "Ryzen 5 5600",
+      "descripcion": "Procesador de 6 núcleos y 12 hilos para socket AM4. No tiene gráficos integrados: requiere tarjeta de video. Incluye disipador Wraith Stealth.",
+      "numero_parte": "100-100000927BOX",
+      "precio_usd": 129,
+      "stock": 12,
+      "garantia_meses": 36,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "socket": "AM4",
+        "nucleos": 6,
+        "hilos": 12,
+        "frecuencia_base_ghz": 3.5,
+        "frecuencia_turbo_ghz": 4.4,
+        "consumo_w": 65,
+        "graficos_integrados": false,
+        "incluye_disipador": true
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/cpu-r5-5600-1.webp",
+          "alt": "Procesador AMD Ryzen 5 5600 AM4 6 núcleos (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": true,
+      "activo": true,
+      "created_at": "2026-07-01T10:00:00Z"
+    },
+    {
+      "id": 9,
+      "sku": "CPU-R5-7600",
+      "categoria_id": 6,
+      "marca_id": 6,
+      "nombre": "Procesador AMD Ryzen 5 7600 AM5 6 núcleos",
+      "modelo": "Ryzen 5 7600",
+      "descripcion": "Procesador de 6 núcleos y 12 hilos para socket AM5, con gráficos integrados. Incluye disipador Wraith Stealth, por lo que no hace falta comprar uno aparte. Solo funciona con memoria DDR5.",
+      "numero_parte": "100-100001015BOX",
+      "precio_usd": 199,
+      "stock": 4,
+      "garantia_meses": 36,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "socket": "AM5",
+        "nucleos": 6,
+        "hilos": 12,
+        "frecuencia_base_ghz": 3.8,
+        "frecuencia_turbo_ghz": 5.1,
+        "consumo_w": 65,
+        "graficos_integrados": true,
+        "incluye_disipador": true
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/cpu-r5-7600-1.webp",
+          "alt": "Procesador AMD Ryzen 5 7600 AM5 6 núcleos (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-08-20T10:00:00Z"
+    },
+    {
+      "id": 10,
+      "sku": "MB-B550M",
+      "categoria_id": 7,
+      "marca_id": 7,
+      "nombre": "Placa madre ASUS Prime B550M-A AM4 DDR4 mATX",
+      "modelo": "Prime B550M-A",
+      "descripcion": "Placa madre mATX para procesadores Ryzen AM4. Soporta memoria DDR4 DIMM hasta 4400 MHz, 4 ranuras y hasta 128 GB. 2 ranuras M.2 y 4 puertos SATA.",
+      "numero_parte": "90MB14V0-M0EAY0",
+      "precio_usd": 109,
+      "stock": 7,
+      "garantia_meses": 36,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "socket": "AM4",
+        "chipset": "B550",
+        "tipo_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "ranuras_ram": 4,
+        "ram_max_gb": 128,
+        "factor_forma": "mATX",
+        "ranuras_m2": 2,
+        "puertos_sata": 4
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/mb-b550m-1.webp",
+          "alt": "Placa madre ASUS Prime B550M-A AM4 DDR4 mATX (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-06-10T10:00:00Z"
+    },
+    {
+      "id": 11,
+      "sku": "MB-B650M",
+      "categoria_id": 7,
+      "marca_id": 7,
+      "nombre": "Placa madre ASUS Prime B650M-A AM5 DDR5 mATX",
+      "modelo": "Prime B650M-A",
+      "descripcion": "Placa madre mATX para procesadores Ryzen AM5. Soporta memoria DDR5 DIMM, 4 ranuras y hasta 192 GB. 2 ranuras M.2 y 4 puertos SATA.",
+      "numero_parte": "90MB1G10-M0EAY0",
+      "precio_usd": 159,
+      "stock": 6,
+      "garantia_meses": 36,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "socket": "AM5",
+        "chipset": "B650",
+        "tipo_ram": "DDR5",
+        "formato_ram": "DIMM",
+        "ranuras_ram": 4,
+        "ram_max_gb": 192,
+        "factor_forma": "mATX",
+        "ranuras_m2": 2,
+        "puertos_sata": 4
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/mb-b650m-1.webp",
+          "alt": "Placa madre ASUS Prime B650M-A AM5 DDR5 mATX (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": true,
+      "activo": true,
+      "created_at": "2026-08-25T10:00:00Z"
+    },
+    {
+      "id": 12,
+      "sku": "RAM-KF432-16",
+      "categoria_id": 8,
+      "marca_id": 8,
+      "nombre": "Memoria RAM Kingston Fury Beast 16GB DDR4 3200MHz DIMM",
+      "modelo": "Fury Beast KF432C16BB1/16",
+      "descripcion": "Módulo de memoria DDR4 DIMM de 16 GB a 3200 MHz con latencia CL16, para computadoras de escritorio.",
+      "numero_parte": "KF432C16BB1/16",
+      "precio_usd": 39,
+      "stock": 20,
+      "garantia_meses": 36,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "tipo_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 3200,
+        "latencia_cl": 16,
+        "modulos": "1x16"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/ram-kf432-16-1.webp",
+          "alt": "Memoria RAM Kingston Fury Beast 16GB DDR4 3200MHz DIMM (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-06-01T10:00:00Z"
+    },
+    {
+      "id": 13,
+      "sku": "RAM-KF556-16",
+      "categoria_id": 8,
+      "marca_id": 8,
+      "nombre": "Memoria RAM Kingston Fury Beast 16GB DDR5 5600MHz DIMM",
+      "modelo": "Fury Beast KF556C40BB-16",
+      "descripcion": "Módulo de memoria DDR5 DIMM de 16 GB a 5600 MHz con latencia CL40, para computadoras de escritorio con placa DDR5.",
+      "numero_parte": "KF556C40BB-16",
+      "precio_usd": 59,
+      "stock": 14,
+      "garantia_meses": 36,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "tipo_ram": "DDR5",
+        "formato_ram": "DIMM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 5600,
+        "latencia_cl": 40,
+        "modulos": "1x16"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/ram-kf556-16-1.webp",
+          "alt": "Memoria RAM Kingston Fury Beast 16GB DDR5 5600MHz DIMM (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-08-15T10:00:00Z"
+    },
+    {
+      "id": 14,
+      "sku": "GPU-RX7600",
+      "categoria_id": 10,
+      "marca_id": 10,
+      "nombre": "Tarjeta de video XFX Radeon RX 7600 Speedster SWFT 210 8GB",
+      "modelo": "Speedster SWFT 210",
+      "descripcion": "Tarjeta de video con 8 GB GDDR6 y consumo de 165 W. Fuente recomendada de 550 W. Largo de 240 mm.",
+      "numero_parte": "RX-76PSWFTFY",
+      "precio_usd": 269,
+      "stock": 0,
+      "garantia_meses": 24,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "chip": "Radeon RX 7600",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "consumo_w": 165,
+        "fuente_recomendada_w": 550,
+        "largo_mm": 240,
+        "salidas_video": "1x HDMI, 3x DisplayPort"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/gpu-rx7600-1.webp",
+          "alt": "Tarjeta de video XFX Radeon RX 7600 Speedster SWFT 210 8GB (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-07-10T10:00:00Z"
+    },
+    {
+      "id": 15,
+      "sku": "GPU-RTX4060",
+      "categoria_id": 10,
+      "marca_id": 11,
+      "nombre": "Tarjeta de video MSI GeForce RTX 4060 Ventus 2X 8GB",
+      "modelo": "Ventus 2X Black",
+      "descripcion": "Tarjeta de video con 8 GB GDDR6 y consumo de 115 W. Fuente recomendada de 550 W. Largo de 199 mm.",
+      "numero_parte": "RTX4060-V2XB-8G",
+      "precio_usd": 299,
+      "stock": 9,
+      "garantia_meses": 36,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "chip": "GeForce RTX 4060",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "consumo_w": 115,
+        "fuente_recomendada_w": 550,
+        "largo_mm": 199,
+        "salidas_video": "1x HDMI, 3x DisplayPort"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/gpu-rtx4060-1.webp",
+          "alt": "Tarjeta de video MSI GeForce RTX 4060 Ventus 2X 8GB (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": true,
+      "activo": true,
+      "created_at": "2026-08-05T10:00:00Z"
+    },
+    {
+      "id": 16,
+      "sku": "PSU-CV550",
+      "categoria_id": 11,
+      "marca_id": 12,
+      "nombre": "Fuente de poder Corsair CV550 550W 80+ Bronze ATX",
+      "modelo": "CV550",
+      "descripcion": "Fuente de poder ATX de 550 W con certificación 80 Plus Bronze y cables fijos.",
+      "numero_parte": "CP-9020210-NA",
+      "precio_usd": 55,
+      "stock": 10,
+      "garantia_meses": 24,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "potencia_w": 550,
+        "certificacion_80plus": "Bronze",
+        "modular": "No",
+        "formato_fuente": "ATX"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/psu-cv550-1.webp",
+          "alt": "Fuente de poder Corsair CV550 550W 80+ Bronze ATX (vista principal)",
+          "orden": 1
+        },
+        {
+          "url": "images/productos/psu-cv550-2.webp",
+          "alt": "Fuente de poder Corsair CV550 550W 80+ Bronze ATX (vista alternativa)",
+          "orden": 2
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-06-05T10:00:00Z"
+    },
+    {
+      "id": 17,
+      "sku": "PSU-RM650E",
+      "categoria_id": 11,
+      "marca_id": 12,
+      "nombre": "Fuente de poder Corsair RM650e 650W 80+ Gold ATX modular",
+      "modelo": "RM650e",
+      "descripcion": "Fuente de poder ATX de 650 W con certificación 80 Plus Gold y cables totalmente modulares.",
+      "numero_parte": "CP-9020262-NA",
+      "precio_usd": 79,
+      "stock": 8,
+      "garantia_meses": 60,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "potencia_w": 650,
+        "certificacion_80plus": "Gold",
+        "modular": "Sí",
+        "formato_fuente": "ATX"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/psu-rm650e-1.webp",
+          "alt": "Fuente de poder Corsair RM650e 650W 80+ Gold ATX modular (vista principal)",
+          "orden": 1
+        },
+        {
+          "url": "images/productos/psu-rm650e-2.webp",
+          "alt": "Fuente de poder Corsair RM650e 650W 80+ Gold ATX modular (vista alternativa)",
+          "orden": 2
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-06-18T10:00:00Z"
+    },
+    {
+      "id": 18,
+      "sku": "CASE-Q300L",
+      "categoria_id": 12,
+      "marca_id": 13,
+      "nombre": "Case Cooler Master MasterBox Q300L mATX",
+      "modelo": "MasterBox Q300L",
+      "descripcion": "Case compacto para placas mATX e ITX. No admite placas ATX. Incluye 1 ventilador trasero.",
+      "numero_parte": "MCB-Q300L-KANN-S00",
+      "precio_usd": 49,
+      "stock": 11,
+      "garantia_meses": 12,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "factores_soportados": [
+          "mATX",
+          "ITX"
+        ],
+        "largo_max_gpu_mm": 360,
+        "ventiladores_incluidos": 1,
+        "panel_lateral": "Acrílico"
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/case-q300l-1.webp",
+          "alt": "Case Cooler Master MasterBox Q300L mATX (vista principal)",
+          "orden": 1
+        },
+        {
+          "url": "images/productos/case-q300l-2.webp",
+          "alt": "Case Cooler Master MasterBox Q300L mATX (vista alternativa)",
+          "orden": 2
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-05-20T10:00:00Z"
+    },
+    {
+      "id": 19,
+      "sku": "SSD-NV2-1TB",
+      "categoria_id": 9,
+      "marca_id": 8,
+      "nombre": "Unidad SSD Kingston NV2 1TB NVMe M.2 2280",
+      "modelo": "NV2",
+      "descripcion": "Unidad de estado sólido NVMe PCIe 4.0 de 1 TB en formato M.2 2280.",
+      "numero_parte": "SNV2S/1000G",
+      "precio_usd": 65,
+      "stock": 16,
+      "garantia_meses": 36,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "tipo_almacenamiento": "SSD",
+        "interfaz": "NVMe",
+        "formato": "M.2 2280",
+        "capacidad_gb": 1000,
+        "lectura_mbs": 3500,
+        "escritura_mbs": 2100
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/ssd-nv2-1tb-1.webp",
+          "alt": "Unidad SSD Kingston NV2 1TB NVMe M.2 2280 (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": true,
+      "activo": true,
+      "created_at": "2026-07-22T10:00:00Z"
+    },
+    {
+      "id": 20,
+      "sku": "COOL-H212",
+      "categoria_id": 13,
+      "marca_id": 13,
+      "nombre": "Disipador de torre Cooler Master Hyper 212 para AM4/AM5",
+      "modelo": "Hyper 212",
+      "descripcion": "Disipador de aire de torre con ventilador de 120 mm. Compatible con sockets AM4, AM5 y LGA1700.",
+      "numero_parte": "RR-S4NA-17PK-R1",
+      "precio_usd": 35,
+      "stock": 7,
+      "garantia_meses": 24,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "tipo_refrigeracion": "Aire",
+        "sockets_soportados": [
+          "AM4",
+          "AM5",
+          "LGA1700"
+        ],
+        "tamano_mm": 120,
+        "tdp_soportado_w": 150
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/cool-h212-1.webp",
+          "alt": "Disipador de torre Cooler Master Hyper 212 para AM4/AM5 (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-06-28T10:00:00Z"
+    },
+    {
+      "id": 21,
+      "sku": "RAM-SO-KVR32-8",
+      "categoria_id": 14,
+      "marca_id": 8,
+      "nombre": "Memoria RAM Kingston 8GB DDR4 3200MHz SO-DIMM",
+      "modelo": "ValueRAM KVR32S22S6/8",
+      "descripcion": "Módulo de memoria DDR4 SO-DIMM de 8 GB a 3200 MHz para laptops.",
+      "numero_parte": "KVR32S22S6/8",
+      "precio_usd": 24.9,
+      "stock": 10,
+      "garantia_meses": 36,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "tipo_ram": "DDR4",
+        "formato_ram": "SO-DIMM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 3200,
+        "voltaje_v": 1.2
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/ram-so-kvr32-8-1.webp",
+          "alt": "Memoria RAM Kingston 8GB DDR4 3200MHz SO-DIMM (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-07-30T10:00:00Z"
+    },
+    {
+      "id": 22,
+      "sku": "RAM-SO-CT48-16",
+      "categoria_id": 14,
+      "marca_id": 9,
+      "nombre": "Memoria RAM Crucial 16GB DDR5 4800MHz SO-DIMM",
+      "modelo": "CT16G48C40S5",
+      "descripcion": "Módulo de memoria DDR5 SO-DIMM de 16 GB a 4800 MHz para laptops con memoria DDR5.",
+      "numero_parte": "CT16G48C40S5",
+      "precio_usd": 49.9,
+      "stock": 8,
+      "garantia_meses": 36,
+      "condicion": "nuevo",
+      "especificaciones": {
+        "tipo_ram": "DDR5",
+        "formato_ram": "SO-DIMM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 4800,
+        "voltaje_v": 1.1
+      },
+      "imagenes": [
+        {
+          "url": "images/productos/ram-so-ct48-16-1.webp",
+          "alt": "Memoria RAM Crucial 16GB DDR5 4800MHz SO-DIMM (vista principal)",
+          "orden": 1
+        }
+      ],
+      "destacado": false,
+      "activo": true,
+      "created_at": "2026-08-28T10:00:00Z"
+    }
+  ]
+}

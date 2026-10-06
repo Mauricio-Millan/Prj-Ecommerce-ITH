@@ -1,0 +1,67 @@
+{
+  "version": 2,
+  "equipos": [
+    {
+      "id": 1,
+      "marca_id": 1,
+      "modelo": "IdeaPad 3 15ITL6",
+      "codigo_modelo": "82H8",
+      "especificaciones": {
+        "tipo_ram": "DDR4",
+        "formato_ram": "SO-DIMM"
+      }
+    },
+    {
+      "id": 2,
+      "marca_id": 1,
+      "modelo": "IdeaPad 330-15IKB",
+      "codigo_modelo": "81DE",
+      "especificaciones": {
+        "tipo_ram": "DDR4",
+        "formato_ram": "SO-DIMM"
+      }
+    },
+    {
+      "id": 3,
+      "marca_id": 2,
+      "modelo": "15-dy2xxx",
+      "codigo_modelo": null,
+      "especificaciones": {
+        "tipo_ram": "DDR4",
+        "formato_ram": "SO-DIMM"
+      }
+    },
+    {
+      "id": 4,
+      "marca_id": 3,
+      "modelo": "Inspiron 15 3511",
+      "codigo_modelo": null,
+      "especificaciones": {}
+    }
+  ],
+  "producto_compatibilidad": [
+    {
+      "producto_id": 1,
+      "equipo_id": 1,
+      "nota": null
+    },
+    {
+      "producto_id": 2,
+      "equipo_id": 1,
+      "nota": null
+    },
+    {
+      "producto_id": 3,
+      "equipo_id": 2,
+      "nota": null
+    }
+  ],
+  "reglas_compatibilidad": [
+    {"id":1,"origen":["procesadores"],"atributo_origen":"socket","operador":"igual","destino":"placas-madre","atributo_destino":"socket","mensaje":"builder.conflict.socket"},
+    {"id":2,"origen":["placas-madre"],"atributo_origen":"tipo_ram","operador":"igual","destino":"memoria-ram-pc","atributo_destino":"tipo_ram","mensaje":"builder.conflict.ram_type"},
+    {"id":3,"origen":["placas-madre"],"atributo_origen":"formato_ram","operador":"igual","destino":"memoria-ram-pc","atributo_destino":"formato_ram","mensaje":"builder.conflict.ram_format"},
+    {"id":4,"origen":["placas-madre"],"atributo_origen":"factor_forma","operador":"incluido_en","destino":"cases","atributo_destino":"factores_soportados","mensaje":"builder.conflict.form_factor"},
+    {"id":5,"origen":["procesadores"],"atributo_origen":"socket","operador":"incluido_en","destino":"refrigeracion","atributo_destino":"sockets_soportados","mensaje":"builder.conflict.cooler_socket"},
+    {"id":6,"origen":["procesadores","tarjetas-de-video"],"atributo_origen":"consumo_w","operador":"suma_menor_igual","destino":"fuentes-de-poder","atributo_destino":"potencia_w","margen":100,"mensaje":"builder.conflict.power"}
+  ]
+}

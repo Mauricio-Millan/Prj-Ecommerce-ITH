@@ -1,0 +1,47 @@
+name: Deploy frontend to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths: ['FrontEcommerceITH/**', '.github/workflows/deploy-pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: FrontEcommerceITH
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: FrontEcommerceITH/package-lock.json
+      - run: npm ci
+      - run: npx ng build --configuration ghpages --base-href /${{ github.event.repository.name }}/
+      # Las rutas profundas dan 404 en Pages: se sirve la SPA desde 404.html.
+      - run: cp dist/FrontEcommerceITH/browser/index.html dist/FrontEcommerceITH/browser/404.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: FrontEcommerceITH/dist/FrontEcommerceITH/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

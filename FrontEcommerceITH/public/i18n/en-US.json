@@ -1,0 +1,924 @@
+{
+  "app": {
+    "skipToContent": "Skip to content"
+  },
+  "header": {
+    "search": {
+      "label": "Search products",
+      "placeholder": "Search by product, brand, model or part number",
+      "submit": "Search"
+    },
+    "menu": "Open categories menu",
+    "categories": "Categories",
+    "cart": "Cart",
+    "account": "Account",
+    "login": "Sign in",
+    "logout": "Sign out",
+    "admin": "Admin panel",
+    "cartCount": "Cart, {{n}} items",
+    "cartCountOne": "Cart, 1 item",
+    "orders": "My orders"
+  },
+  "category": {
+    "componentes_pc": "PC components",
+    "componentes_laptop": "Laptop components",
+    "pantallas": "Displays",
+    "repuestos_laptop": "Laptop spare parts",
+    "perifericos": "Peripherals",
+    "procesadores": "Processors",
+    "placas_madre": "Motherboards",
+    "memoria_ram_pc": "RAM memory",
+    "almacenamiento": "Storage",
+    "tarjetas_de_video": "Graphics cards",
+    "fuentes_de_poder": "Power supplies",
+    "cases": "Cases",
+    "refrigeracion": "Cooling",
+    "ram_so_dimm": "SO-DIMM RAM",
+    "ssd_laptop": "SSD",
+    "tarjetas_wifi": "WiFi cards",
+    "monitores": "Monitors",
+    "paneles_laptop": "Laptop panels",
+    "baterias": "Batteries",
+    "cargadores": "Chargers",
+    "teclados_laptop": "Laptop keyboards",
+    "otros_repuestos": "Fans, hinges and covers",
+    "mouse": "Mice",
+    "teclados_perifericos": "Keyboards",
+    "otros_perifericos": "Headphones, webcams and speakers"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "currency": {
+    "label": "Currency",
+    "PEN": "Peruvian soles (S/)",
+    "USD": "US dollars ($)",
+    "penUnavailable": "Unavailable: no exchange rate has been registered yet. Prices are shown in dollars.",
+    "reference": "Reference only · You pay in soles · Rate {{tc}}",
+    "paidInPen": "You pay in Peruvian soles. Prices in dollars are for reference only.",
+    "igvIncluded": "Prices include IGV (sales tax)",
+    "storeRate": "Store exchange rate: {{tc}} · {{fecha}}"
+  },
+  "shipping": {
+    "included": "Shipping included anywhere in Peru"
+  },
+  "footer": {
+    "nav": "Site links",
+    "home": "Home",
+    "rights": "© 2026 TechSuply · Academic prototype"
+  },
+  "home": {
+    "title": "Find the right part, compatible with your device",
+    "subtitle": "PC components, laptop spare parts and peripherals. We warn you if something is not compatible before you buy.",
+    "cta": "See featured products",
+    "featured": "Featured products"
+  },
+  "notFound": {
+    "title": "We couldn't find this page",
+    "body": "The link may be misspelled or the page may no longer exist. Go back home or search for the product you need.",
+    "home": "Go to home",
+    "search": "Search for a product"
+  },
+  "access": {
+    "denied": "You don't have access to this section. Sign in with an administrator account to enter."
+  },
+  "auth": {
+    "backToStore": "Back to the store",
+    "login": {
+      "title": "Sign in",
+      "submit": "Sign in",
+      "submitting": "Signing in…"
+    },
+    "register": {
+      "title": "Create account",
+      "submit": "Create account",
+      "submitting": "Creating your account…"
+    },
+    "recover": {
+      "title": "Recover password",
+      "help": "Enter your account email and we'll send you the instructions.",
+      "submit": "Send instructions",
+      "sent": "If an account exists with that email, we sent you the instructions to create a new password.",
+      "backToLogin": "Back to sign in"
+    },
+    "checkoutContext": "Sign in to complete your purchase. Your cart will be kept.",
+    "email": "Email",
+    "password": "Password",
+    "show": "Show",
+    "hide": "Hide",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "badCredentials": "The email or password is not correct. Check both or create an account",
+    "createAccount": "Create account",
+    "noAccount": "Don't have an account?",
+    "createLink": "Create one",
+    "forgot": "Forgot your password?",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Sign in",
+    "prototypeNote": "Prototype: do not use a real password.",
+    "accept": {
+      "label": "Accept the Terms and conditions and the Privacy policy",
+      "prefix": "I accept the",
+      "terms": "Terms and conditions",
+      "and": "and the",
+      "privacy": "Privacy policy"
+    },
+    "req": {
+      "length": "At least 8 characters",
+      "letter": "At least one letter",
+      "number": "At least one number",
+      "met": "met",
+      "pending": "pending"
+    },
+    "hello": "Hello, {{nombres}}",
+    "welcome": "Welcome, {{nombres}}! Your account is ready",
+    "loggedOut": "You signed out",
+    "terms": {
+      "close": "Close",
+      "sample": "Sample text for the prototype: it has no legal value.",
+      "terminos": {
+        "title": "Terms and conditions",
+        "body": "By creating an account you agree to use TechSuply to buy technology parts and components legitimately, to provide true data and to respect the shipping, warranty and return conditions published in the store."
+      },
+      "privacidad": {
+        "title": "Privacy policy",
+        "body": "We use your data only to manage your account, your orders and the delivery of your purchases, in accordance with Peruvian personal data protection law. You can ask us to update or delete it at any time."
+      }
+    }
+  },
+  "admin": {
+    "title": "Admin panel",
+    "nav": "Management sections",
+    "dashboard": "Overview",
+    "dashboardBody": "Product, stock, exchange rate and order management will appear here.",
+    "backToStore": "Back to the store"
+  },
+  "toast": {
+    "close": "Close notice"
+  },
+  "common": {
+    "close": "Close",
+    "cancel": "Cancel",
+    "raw": "{{texto}}"
+  },
+  "research": {
+    "sus": {
+      "title": "System Usability Scale (SUS)",
+      "intro": "Indicate how much you agree with each statement about the store you just used. Answer with your first impression.",
+      "disagree": "Strongly disagree",
+      "agree": "Strongly agree",
+      "submit": "Submit answers",
+      "cancel": "Back to the panel",
+      "missing": "Statement {{n}} has not been answered.",
+      "q1": "I think that I would like to use this system frequently.",
+      "q2": "I found the system unnecessarily complex.",
+      "q3": "I thought the system was easy to use.",
+      "q4": "I think that I would need the support of a technical person to be able to use this system.",
+      "q5": "I found the various functions in this system were well integrated.",
+      "q6": "I thought there was too much inconsistency in this system.",
+      "q7": "I would imagine that most people would learn to use this system very quickly.",
+      "q8": "I found the system very cumbersome to use.",
+      "q9": "I felt very confident using the system.",
+      "q10": "I needed to learn a lot of things before I could get going with this system."
+    }
+  },
+  "attr": {
+    "socket": {
+      "label": "Socket",
+      "help": "The connection type between the processor and the motherboard. Both must have the same one."
+    },
+    "nucleos": {
+      "label": "Cores",
+      "help": "How many tasks the processor can do at once. More cores perform better in heavy programs."
+    },
+    "hilos": {
+      "label": "Threads"
+    },
+    "frecuencia_base_ghz": {
+      "label": "Base clock"
+    },
+    "frecuencia_turbo_ghz": {
+      "label": "Boost clock"
+    },
+    "consumo_w": {
+      "label": "Power draw (TDP)"
+    },
+    "graficos_integrados": {
+      "label": "Integrated graphics",
+      "help": "The processor has its own video: you can connect a monitor without buying a separate graphics card."
+    },
+    "incluye_disipador": {
+      "label": "Includes cooler",
+      "help": "If it already comes with the fan that cools the processor, you do not need to buy one separately."
+    },
+    "chipset": {
+      "label": "Chipset",
+      "help": "The motherboard's chip set. It defines which features and connections it offers."
+    },
+    "tipo_ram": {
+      "label": "RAM type",
+      "help": "The memory generation (DDR4 or DDR5). Your motherboard or laptop accepts only one of them."
+    },
+    "formato_ram": {
+      "label": "RAM format"
+    },
+    "ranuras_ram": {
+      "label": "RAM slots"
+    },
+    "ram_max_gb": {
+      "label": "Maximum RAM"
+    },
+    "factor_forma": {
+      "label": "Form factor",
+      "help": "The size of the motherboard. It has to fit in the case."
+    },
+    "ranuras_m2": {
+      "label": "M.2 slots"
+    },
+    "puertos_sata": {
+      "label": "SATA ports"
+    },
+    "capacidad_gb": {
+      "label": "Capacity",
+      "help": "How much space or memory it has, in gigabytes (GB)."
+    },
+    "velocidad_mhz": {
+      "label": "Speed"
+    },
+    "latencia_cl": {
+      "label": "Latency"
+    },
+    "modulos": {
+      "label": "Modules"
+    },
+    "tipo_almacenamiento": {
+      "label": "Type",
+      "help": "SSD is faster and quieter; HDD stores more for less money."
+    },
+    "interfaz": {
+      "label": "Interface",
+      "help": "How it connects to the device (NVMe is faster than SATA). Your device must have that port."
+    },
+    "formato": {
+      "label": "Format"
+    },
+    "lectura_mbs": {
+      "label": "Read speed"
+    },
+    "escritura_mbs": {
+      "label": "Write speed"
+    },
+    "chip": {
+      "label": "Chip"
+    },
+    "memoria_gb": {
+      "label": "Memory",
+      "help": "The graphics card's own memory, in gigabytes."
+    },
+    "tipo_memoria": {
+      "label": "Memory type"
+    },
+    "fuente_recomendada_w": {
+      "label": "Recommended PSU"
+    },
+    "largo_mm": {
+      "label": "Length"
+    },
+    "salidas_video": {
+      "label": "Video outputs"
+    },
+    "potencia_w": {
+      "label": "Wattage",
+      "help": "The watts the power supply delivers. It must cover the consumption of all the parts."
+    },
+    "certificacion_80plus": {
+      "label": "80+ certification",
+      "help": "How efficient the power supply is: Gold uses energy better than Bronze."
+    },
+    "modular": {
+      "label": "Modular"
+    },
+    "formato_fuente": {
+      "label": "Form factor"
+    },
+    "factores_soportados": {
+      "label": "Supported form factors",
+      "help": "The motherboard sizes that fit in this case."
+    },
+    "largo_max_gpu_mm": {
+      "label": "Max GPU length"
+    },
+    "ventiladores_incluidos": {
+      "label": "Included fans"
+    },
+    "panel_lateral": {
+      "label": "Side panel"
+    },
+    "tipo_refrigeracion": {
+      "label": "Type",
+      "help": "Air cools with fans; liquid, with a water loop."
+    },
+    "sockets_soportados": {
+      "label": "Supported sockets"
+    },
+    "tamano_mm": {
+      "label": "Size"
+    },
+    "tdp_soportado_w": {
+      "label": "Supported TDP"
+    },
+    "voltaje_v": {
+      "label": "Voltage"
+    },
+    "estandar_wifi": {
+      "label": "Standard",
+      "help": "The WiFi generation. Higher numbers are faster."
+    },
+    "bluetooth_version": {
+      "label": "Bluetooth"
+    },
+    "tamano_pulgadas": {
+      "label": "Size",
+      "help": "The screen size, measured diagonally in inches."
+    },
+    "resolucion": {
+      "label": "Resolution"
+    },
+    "frecuencia_hz": {
+      "label": "Refresh rate",
+      "help": "How many times per second the image refreshes. More Hz looks smoother."
+    },
+    "tipo_panel": {
+      "label": "Panel type",
+      "help": "The screen technology: IPS has better colors and viewing angles."
+    },
+    "tiempo_respuesta_ms": {
+      "label": "Response time"
+    },
+    "entradas": {
+      "label": "Inputs"
+    },
+    "conector": {
+      "label": "Connector",
+      "help": "The cable that joins the panel to the laptop. It must match your device."
+    },
+    "acabado": {
+      "label": "Finish"
+    },
+    "tactil": {
+      "label": "Touch"
+    },
+    "capacidad_wh": {
+      "label": "Capacity"
+    },
+    "celdas": {
+      "label": "Cells"
+    },
+    "pn_compatibles": {
+      "label": "Compatible P/N"
+    },
+    "voltaje_salida_v": {
+      "label": "Output voltage"
+    },
+    "amperaje_a": {
+      "label": "Amperage"
+    },
+    "tipo_conector": {
+      "label": "Connector type"
+    },
+    "idioma_teclado": {
+      "label": "Layout",
+      "help": "The key layout (Latin American Spanish or US English)."
+    },
+    "retroiluminado": {
+      "label": "Backlit"
+    },
+    "con_marco": {
+      "label": "With frame"
+    },
+    "posicion": {
+      "label": "Position"
+    },
+    "conexion": {
+      "label": "Connection",
+      "help": "How it connects: by USB cable, wirelessly with a receiver, or via Bluetooth."
+    },
+    "dpi_max": {
+      "label": "Maximum DPI"
+    },
+    "botones": {
+      "label": "Buttons"
+    },
+    "ergonomia": {
+      "label": "Ergonomics"
+    },
+    "tipo_teclado": {
+      "label": "Type"
+    },
+    "switch": {
+      "label": "Switch"
+    },
+    "distribucion": {
+      "label": "Layout"
+    },
+    "retroiluminacion": {
+      "label": "Backlight"
+    },
+    "atributo_clave": {
+      "label": "Key feature"
+    }
+  },
+  "cart": {
+    "added": "Added to cart",
+    "undo": "Undo",
+    "view": "View cart",
+    "maxReached": "You already have all the available units in your cart",
+    "addedLimited": "We added {{n}}; only {{max}} in stock",
+    "pageTitle": "Cart",
+    "title": "Your cart ({{n}} products)",
+    "titleOne": "Your cart (1 product)",
+    "empty": {
+      "title": "Your cart is empty",
+      "body": "Browse the categories, search for what you need or pick from the featured products.",
+      "search": "Go to search"
+    },
+    "remove": "Remove",
+    "removeNamed": "Remove {{nombre}}",
+    "removed": "You removed «{{nombre}}»",
+    "gone": "«{{nombre}}» is no longer available and we removed it from your cart",
+    "clear": "Empty cart",
+    "clearTitle": "Empty the cart?",
+    "clearBody": "{{n}} products will be removed from your cart.",
+    "clearBodyOne": "1 product will be removed from your cart.",
+    "clearConfirm": "Yes, empty it",
+    "summary": "Summary",
+    "units": "{{n}} units",
+    "unitsOne": "1 unit",
+    "total": "Total to pay",
+    "youPay": "You will pay {{monto}}",
+    "exchangeRate": "Store exchange rate: {{tc}}",
+    "continue": "Continue to payment",
+    "reasonSoldOut": "Remove the sold-out products to continue ({{n}})",
+    "reasonNoRate": "We can't calculate the price in soles right now. Try again later",
+    "soldOut": "Sold out",
+    "adjusted": "We adjusted the quantity: only {{n}} left",
+    "merged": "We added the products you chose before signing in",
+    "keepShopping": "Keep shopping",
+    "totalAnnounce": "Total to pay: {{monto}}",
+    "batch": "We added {{n}} parts from your build"
+  },
+  "stock": {
+    "disponible": "In stock",
+    "pocas": "Only {{n}} left!",
+    "agotado": "Sold out"
+  },
+  "condition": {
+    "nuevo": {
+      "label": "New",
+      "help": "Brand new, factory sealed"
+    },
+    "original": {
+      "label": "Original",
+      "help": "Original spare part from the manufacturer of the device"
+    },
+    "compatible": {
+      "label": "Compatible",
+      "help": "Generic spare part from another brand, designed to work on the listed devices"
+    }
+  },
+  "catalog": {
+    "breadcrumbs": "Breadcrumb",
+    "home": "Home",
+    "loading": "Loading products",
+    "showing": "Showing {{desde}}–{{hasta}} of {{total}} products",
+    "subcategories": "Subcategories",
+    "sort": {
+      "label": "Sort by",
+      "destacados": "Featured",
+      "precio_asc": "Price: low to high",
+      "precio_desc": "Price: high to low",
+      "nuevos": "Newest",
+      "relevancia": "Most relevant"
+    },
+    "pagination": {
+      "label": "Pagination",
+      "prev": "Previous",
+      "next": "Next",
+      "page": "Page {{n}}"
+    },
+    "emptyCategory": {
+      "title": "We have no products in this category right now",
+      "body": "Check other categories or try the search box."
+    },
+    "otherCategories": "Other categories",
+    "useSearch": "Use the search box",
+    "notFound": {
+      "title": "We couldn't find this product",
+      "body": "It may no longer be on sale or the link may be misspelled."
+    },
+    "toCategory": "See {{nombre}}",
+    "toHome": "Go to home",
+    "addToCart": "Add to cart",
+    "soldOut": "Sold out",
+    "quantity": "Quantity",
+    "quantityDec": "Decrease quantity",
+    "quantityInc": "Increase quantity",
+    "onlyN": "Only {{n}} units left",
+    "partNumber": "P/N",
+    "sku": "SKU",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyPn": "Copy the part number",
+    "warranty": "{{n}}-month warranty",
+    "noWarranty": "No warranty",
+    "specs": "Technical specifications",
+    "description": "Description",
+    "compatibleWith": "Compatible with",
+    "seeAllModels": "See all {{n}} models",
+    "hideModels": "See fewer",
+    "related": "Related products",
+    "gallery": {
+      "label": "Image gallery",
+      "prev": "Previous image",
+      "next": "Next image",
+      "thumb": "Show image {{n}}"
+    },
+    "yes": "Yes",
+    "no": "No"
+  },
+  "search": {
+    "title": "Results for «{{q}}»",
+    "count": "{{n}} products",
+    "countOne": "1 product",
+    "interpreted": "Showing results for «{{q}}»",
+    "exactSearch": "Search exactly «{{q}}»",
+    "exactNow": "Searching exactly «{{q}}»",
+    "smartAgain": "Search with suggestions",
+    "exactMatch": "Exact match",
+    "others": "Other results",
+    "categories": "Narrow by category",
+    "suggestionsCount": "{{n}} suggestions",
+    "suggestionsLabel": "Product suggestions",
+    "empty": {
+      "title": "We couldn't find products for «{{q}}»",
+      "noQuery": "Type what product you are looking for",
+      "similar": "Maybe you meant",
+      "tips": "Try fewer words or your device model. You can also browse the categories."
+    }
+  },
+  "filters": {
+    "title": "Filters",
+    "filter": "Filter",
+    "withCount": "Filter ({{n}})",
+    "close": "Close filters",
+    "applied": "Applied filters",
+    "more": "More filters ({{n}})",
+    "clearAll": "Clear all",
+    "removeNamed": "Remove filter {{nombre}}",
+    "showResults": "See {{n}} results",
+    "showResultsOne": "See 1 result",
+    "sub": "Subcategory",
+    "brand": "Brand",
+    "price": "Price",
+    "availability": "In stock only",
+    "min": "Minimum",
+    "max": "Maximum",
+    "rangeInvalid": "The minimum cannot be greater than the maximum.",
+    "help": "What does this filter mean",
+    "count": "{{n}} products",
+    "noMatch": {
+      "title": "No product matches all the filters",
+      "body": "Remove a filter to see more products.",
+      "removeLast": "Remove the last filter"
+    }
+  },
+  "compat": {
+    "set": "Done: we now show compatibility with your {{equipo}}",
+    "productInvite": "Does it fit your laptop?",
+    "tag": {
+      "mine": "My device: {{equipo}}",
+      "change": "Change",
+      "remove": "Remove",
+      "ask": "Which laptop is it for?",
+      "indicate": "Enter your model"
+    },
+    "filter": "Compatible with my device",
+    "filterInvite": "Enter your laptop to see only what is compatible",
+    "chip": "Compatible with {{equipo}}",
+    "badge": {
+      "ok": "Compatible with your device",
+      "no": "Not compatible with your device",
+      "unknown": "Not confirmed for your device"
+    },
+    "detail": {
+      "ok": "Compatible with your {{equipo}}",
+      "no": "Not compatible with your {{equipo}}.",
+      "unknown": "We have no confirmation of compatibility with your device.",
+      "unknownHelp": "Check the «Compatible with» list or the part number.",
+      "attr": "{{atributo}}: your laptop uses {{equipo}} and this product is {{producto}}",
+      "forModels": "This product is for: {{modelos}}"
+    },
+    "seeCompatible": "See the ones that are compatible with your device",
+    "seeCompatibleShort": "See compatible",
+    "warning": "You added a product that is not compatible with your {{equipo}}",
+    "addedCheck": "Added to cart. Check that it is compatible with your device",
+    "selector": {
+      "title": "Enter your laptop",
+      "close": "Close",
+      "type": "Type your model or code",
+      "placeholder": "E.g.: IdeaPad 3, 15ITL6, 82H8",
+      "results": "Models found",
+      "notFound": "We couldn't find that model",
+      "notFoundHelp": "Search by the part number of the piece you want to replace (it is on the piece label) or check the «Compatible with» list on each product.",
+      "goSearch": "Go to search",
+      "steps": "or pick it step by step",
+      "brand": "Brand",
+      "brandPlaceholder": "Choose the brand",
+      "model": "Model"
+    },
+    "help": {
+      "title": "Where do I find the model?",
+      "alt": "Bottom of a laptop with the model label highlighted",
+      "place1": "On the label on the bottom of the laptop.",
+      "place2": "In Windows: Settings › System › About."
+    }
+  },
+  "validation": {
+    "required": "Fill in this field",
+    "correo": "Enter an email like name@domain.com",
+    "contrasena": "The password must have at least 8 characters, a letter and a number",
+    "existe": "An account with this email already exists.",
+    "aceptar": "Accept the terms and the policy to create your account",
+    "summary": "Check {{n}} fields",
+    "summaryOne": "Check 1 field",
+    "celular": "Enter a 9-digit mobile number starting with 9",
+    "dni": "Enter the 8 digits of your DNI",
+    "tarjeta": "Check your card number",
+    "vencimiento": "Write the date as MM/YY (for example, 08/28)",
+    "vencida": "Your card has expired. Use another one",
+    "cvv": "Enter the 3 digits on the back of the card",
+    "codigoYape": "Enter the 6 digits of the Yape code"
+  },
+  "checkout": {
+    "pageTitle": "Checkout",
+    "secure": "Secure purchase",
+    "backToCart": "Back to cart",
+    "steps": "Checkout steps",
+    "stepShipping": "Shipping",
+    "stepPayment": "Review and payment",
+    "stepDone": "(done)",
+    "stepCurrent": "(current step)",
+    "savedAddresses": "Your addresses",
+    "mainAddress": "Main",
+    "useOther": "Use another address",
+    "address": "Address (street and number)",
+    "reference": "Reference",
+    "optional": "optional",
+    "recipient": "Name of the person receiving",
+    "phone": "Contact mobile number",
+    "saveAddress": "Save this address to my account",
+    "receiptData": "Details for your receipt",
+    "holder": "Account holder",
+    "dni": "DNI",
+    "dniNote": "We will save it to your account for your next purchases",
+    "receiptNote": "The receipt will be issued in the name of the account holder",
+    "edit": "Edit",
+    "continue": "Continue",
+    "viewSummary": "View summary · {{monto}}",
+    "orderSummary": "Order summary",
+    "shipTo": "Ship to",
+    "change": "Change",
+    "opGravada": "Taxable amount",
+    "igv": "IGV (18 %)",
+    "shipping": "Shipping",
+    "included": "Included",
+    "paidInSoles": "Payment is made in soles",
+    "usdReference": "Reference: {{monto}}"
+  },
+  "payment": {
+    "method": "Payment method",
+    "card": "Credit or debit card",
+    "yape": {
+      "name": "Yape",
+      "step1": "Open Yape and generate your approval code.",
+      "step2": "Enter your mobile number and the code here.",
+      "phone": "Mobile number registered in Yape",
+      "code": "Approval code (6 digits)",
+      "expires": "The code expires in a few minutes."
+    },
+    "cardNumber": "Card number",
+    "cardHolder": "Cardholder name",
+    "expiry": "Expiry date",
+    "cvv": "Security code (CVV)",
+    "cvvHelpLabel": "What is the security code",
+    "cvvHelp": "It is the 3 digits on the back of the card.",
+    "brand": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express"
+    },
+    "pay": "Pay {{monto}}",
+    "payWithYape": "Pay {{monto}} with Yape",
+    "processing": "Processing payment…",
+    "noCharge": "You have not been charged.",
+    "rejected": {
+      "tarjeta": "Your bank rejected the payment (insufficient funds). Try another card or pay with Yape.",
+      "yape": "The approval code is not valid or has expired. Generate a new one in Yape or pay by card."
+    },
+    "noResponse": "We did not receive a response. You can try again.",
+    "retry": "Try again",
+    "soldOutTitle": "While you were shopping, part of your order sold out:",
+    "soldOutLine": "«{{nombre}}»: you asked for {{pedido}}, {{disponible}} left",
+    "adjustOrder": "Adjust my order",
+    "totalChanged": "The total changed from {{antes}} to {{despues}}. Review and confirm again."
+  },
+  "order": {
+    "pageTitle": "Order confirmed",
+    "thanks": "Thank you! Your payment was approved",
+    "code": "Order code",
+    "copyCode": "Copy order code",
+    "delivery": "Estimated delivery: 2 to 5 business days",
+    "viewOrders": "View my orders",
+    "receipt": "Receipt in the name of {{nombre}} · DNI {{dni}}",
+    "card": "Card",
+    "cardEnding": "Card ending in {{n}}",
+    "notFound": {
+      "title": "We could not find this order",
+      "body": "Check the code or look at your orders."
+    }
+  },
+  "ubigeo": {
+    "department": "Department",
+    "province": "Province",
+    "district": "District",
+    "choose": "Choose…",
+    "chooseDepartmentFirst": "Choose the department first",
+    "chooseProvinceFirst": "Choose the province first"
+  },
+  "orders": {
+    "title": "My orders",
+    "items": "{{n}} products",
+    "itemsOne": "1 product",
+    "viewDetail": "View details",
+    "empty": {
+      "title": "You don't have any orders yet",
+      "body": "When you buy, your orders will appear here."
+    },
+    "buildPc": "Build your PC",
+    "status": {
+      "pagado": "Paid",
+      "enviado": "Shipped",
+      "entregado": "Delivered",
+      "cancelado": "Cancelled"
+    },
+    "statusHelp": {
+      "pagado": "We received your payment and are preparing your order",
+      "enviado": "Your order is on its way",
+      "entregado": "Your order was delivered",
+      "cancelado": "This order was cancelled"
+    },
+    "tracking": "Order tracking",
+    "pending": "Pending",
+    "orderTitle": "Order",
+    "backToList": "Back to my orders",
+    "payment": "Payment method",
+    "reorder": "Buy again",
+    "reorderAdded": "We added {{n}} products to your cart",
+    "reorderAddedOne": "We added 1 product to your cart",
+    "reorderSoldOut": "«{{nombre}}» is sold out",
+    "reorderGone": "«{{nombre}}» is no longer available",
+    "reorderPrices": "Prices were updated to today",
+    "reorderNothing": "We could not add anything: these products are no longer available",
+    "print": "Print receipt",
+    "receipt": {
+      "title": "SALES RECEIPT (simulated)",
+      "fictional": "Fictional test data",
+      "number": "No.",
+      "date": "Date",
+      "holder": "Holder",
+      "payment": "Payment method",
+      "product": "Product",
+      "qty": "Qty",
+      "unit": "Unit price",
+      "subtotal": "Subtotal",
+      "total": "Total paid"
+    }
+  },
+  "builder": {
+    "nav": "Build your PC",
+    "title": "Build your PC",
+    "pageTitle": "Build your PC",
+    "homeTitle": "Build your PC step by step",
+    "homeBody": "We only show the parts that fit together and how much you have spent so far.",
+    "steps": "Builder steps",
+    "optional": "Optional",
+    "required": "Required",
+    "reason": {
+      "sin_igpu": "Your processor has no integrated graphics: you need a graphics card",
+      "con_igpu": "Your processor has integrated graphics: you can skip this step",
+      "sin_disipador": "Your processor does not include a cooler: you need cooling",
+      "con_disipador": "Your processor already includes a cooler"
+    },
+    "helpLabel": "What is this part",
+    "step": {
+      "cpu": "Processor",
+      "placa": "Motherboard",
+      "ram": "RAM memory",
+      "gpu": "Graphics card",
+      "almacenamiento": "Storage",
+      "fuente": "Power supply",
+      "case": "Case",
+      "cooler": "Cooling"
+    },
+    "help": {
+      "cpu": "The «brain» of the PC: it does the calculations. Its socket must match the motherboard.",
+      "placa": "The part where all the others connect. It defines which processor and memory you can use.",
+      "ram": "Working memory: it holds what you are using right now. It must be the type your motherboard accepts.",
+      "gpu": "It draws the images you see on screen. It is key for gaming and design; if your processor has integrated graphics, you can skip it.",
+      "almacenamiento": "Where your files and programs are stored. An SSD is faster than a hard drive.",
+      "fuente": "It delivers electricity to every part. It must have enough power for your build.",
+      "case": "The box that holds and protects the parts. It must support your motherboard size.",
+      "cooler": "It cools the processor. Many processors already come with a basic cooler."
+    },
+    "plural": {
+      "cpu": "processors",
+      "placa": "motherboards",
+      "ram": "RAM modules",
+      "gpu": "graphics cards",
+      "almacenamiento": "storage drives",
+      "fuente": "power supplies",
+      "case": "cases",
+      "cooler": "cooling systems"
+    },
+    "piece": {
+      "cpu": "processor",
+      "placa": "motherboard",
+      "ram": "RAM",
+      "gpu": "graphics card",
+      "almacenamiento": "storage",
+      "fuente": "power supply",
+      "case": "case",
+      "cooler": "cooling"
+    },
+    "showing": "Showing {{piezas}} compatible with your {{nombres}}",
+    "showIncompatible": "Also show the incompatible ones ({{n}})",
+    "hideIncompatible": "Hide the incompatible ones ({{n}})",
+    "noData": "? No data to verify compatibility",
+    "noOptions": "There are no {{piezas}} in stock compatible with what you chose",
+    "changeLimiting": "Change your {{pieza}}",
+    "pieces": "Available parts",
+    "yourPiece": "Your {{nombre}} no longer fits",
+    "unavailable": "No longer available: choose another",
+    "budgetPiece": "+{{mas}} · {{quedan}} left",
+    "fits": "(fits)",
+    "exceeds": "(over budget)",
+    "skip": "Skip this step",
+    "state": {
+      "pendiente": "Pending",
+      "completo": "Chosen",
+      "omitido": "Skipped",
+      "conflicto": "Has a conflict",
+      "no_disponible": "No longer available"
+    },
+    "review": {
+      "title": "Your build summary",
+      "step": "Summary"
+    },
+    "reviewAction": "Review",
+    "summary": "Summary",
+    "budget": "Your budget",
+    "budgetPlaceholder": "E.g.: 3375",
+    "noPieces": "You have not chosen any parts yet",
+    "consumption": "Estimated consumption: {{consumo}} W",
+    "psu": "Power supply: {{potencia}} W",
+    "psuOk": "The power supply is enough",
+    "psuLow": "The power supply is not enough",
+    "over": "You are over by {{monto}}",
+    "left": "{{monto}} left",
+    "statusOk": "Everything is compatible",
+    "statusConflicts": "{{n}} conflicts",
+    "statusMissing": "{{n}} required parts missing",
+    "openSummary": "View summary",
+    "conflictBanner": "{{n}} parts no longer fit: {{piezas}}",
+    "conflictBannerOne": "Your {{piezas}} no longer fits the rest of the build",
+    "addAll": "Add everything to cart",
+    "resolve": "Resolve {{n}} conflicts",
+    "resolveOne": "Resolve 1 conflict",
+    "missing": "Still to choose: {{piezas}}",
+    "startOver": "Start over",
+    "startOverTitle": "Start over?",
+    "startOverBody": "All the parts you chose will be lost.",
+    "startOverConfirm": "Yes, start over",
+    "sent": "We added your build to the cart",
+    "buildAnother": "Build another PC",
+    "conflict": {
+      "socket": "Socket {{esta}}: does not fit your {{pieza}} ({{otra}})",
+      "ram_type": "Memory {{esta}}: does not fit your {{pieza}} ({{otra}})",
+      "ram_format": "Format {{esta}}: does not fit your {{pieza}} ({{otra}})",
+      "form_factor": "Size {{esta}}: does not fit your {{pieza}} ({{otra}})",
+      "cooler_socket": "Socket {{esta}}: does not fit your {{pieza}} ({{otra}})",
+      "power": "The build needs about {{consumo}} W and this power supply delivers {{potencia}} W"
+    },
+    "statusConflictsOne": "1 conflict"
+  }
+}
