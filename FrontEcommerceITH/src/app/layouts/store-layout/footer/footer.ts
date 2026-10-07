@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
+import { Analytics } from '../../../core/analytics/analytics';
 import { CurrencyService } from '../../../core/currency/currency.service';
 import { LanguageService } from '../../../core/i18n/language.service';
 import { Icon } from '../../../shared/ui/icon/icon';
@@ -26,12 +27,16 @@ import { formatearTc } from '../../../shared/ui/price/price';
       </div>
       <nav [attr.aria-label]="'footer.nav' | transloco">
         <a routerLink="/" class="underline-offset-4 hover:underline">{{ 'footer.home' | transloco }}</a>
+        @if (analytics.disponible) {
+          <button type="button" class="ml-4 underline-offset-4 hover:underline" (click)="analytics.reabrir()">{{ 'cookies.preferences' | transloco }}</button>
+        }
       </nav>
       <p>{{ 'footer.rights' | transloco }}</p>
     </div>
   `,
 })
 export class Footer {
+  protected readonly analytics = inject(Analytics);
   private readonly currency = inject(CurrencyService);
   private readonly lang = inject(LanguageService).lang;
 

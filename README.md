@@ -1,59 +1,51 @@
-# FrontEcommerceITH
+# E-commerce ITH — Monorepo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+Proyecto del curso **Interacción Hombre-Máquina** desarrollado con **Spec Driven Development**.
 
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
+```
+├── specs/                 # Fuente de verdad (SDD)
+│   ├── constitution.md    # Reglas no negociables — leer primero
+│   ├── producto.md        # Visión, dominio, taxonomía, usuarios, mapa de features
+│   ├── modelo-datos.md    # Diagrama entidad-relación (Mermaid) y decisiones de datos
+│   ├── entregables/       # Requerimientos del curso (APF1–PROY) y cómo se responden
+│   ├── _templates/        # spec.md · plan.md · tasks.md
+│   └── NNN-feature/       # Una carpeta por feature
+├── FrontEcommerceITH/     # Angular 20 (SSR) — arquitectura por layouts
+│   └── src/app/{core, shared/ui, layouts, pages}
+├── BackEcommerceITH/      # FastAPI — arquitectura en capas
+│   └── app/{core, api/v1/routes, schemas, services, repositories}
+├── supabase/migrations/   # Esquema de BD + RLS
+└── Docs/                  # Material del curso y reglas UX (Nielsen)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Flujo para un feature nuevo
 
-## Code scaffolding
+1. Copiar `specs/_templates/*` a `specs/NNN-feature/`.
+2. Escribir `spec.md` → aprobar → `plan.md` → `tasks.md`.
+3. Implementar: migración en `supabase/` → backend por capas (repository → service → route) → página en `FrontEcommerceITH/src/app/pages/<feature>/` dentro de su layout.
+4. Verificar contra la spec y la Definición de Hecho de la [constitución](specs/constitution.md).
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Ejecutar
 
+**Frontend**
 ```bash
-ng generate component component-name
+cd FrontEcommerceITH
+npm install
+npm start            # http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+**Backend**
 ```bash
-ng generate --help
+cd BackEcommerceITH
+python -m venv .venv && .venv/Scripts/activate   # Windows
+pip install -e ".[dev]"
+cp .env.example .env                              # completar credenciales
+fastapi dev app/main.py                           # http://localhost:8000/docs
 ```
 
-## Building
-
-To build the project run:
-
+**Supabase** (requiere [Supabase CLI](https://supabase.com/docs/guides/local-development))
 ```bash
-ng build
+supabase init        # una sola vez: crea supabase/config.toml
+supabase link --project-ref <ref>
+supabase db push     # aplica supabase/migrations/
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

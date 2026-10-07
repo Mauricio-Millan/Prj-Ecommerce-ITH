@@ -1,42 +1,33 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Reglas globales del monorepo.
+# Cada app puede tener su propio .gitignore (ver FrontEcommerceITH/.gitignore).
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Secretos
+.env
+.env.*
+!.env.example
 
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# Python (BackEcommerceITH)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
 
-# IDEs and editors
+# Supabase CLI
+supabase/.branches
+supabase/.temp
+
+# Editores / SO
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-
-# System files
 .DS_Store
 Thumbs.db
+
+#Docs
+Docs/
+specs/
+.playwright-mcp/
+.claude/
+evidencias interaccion hombre maquina/

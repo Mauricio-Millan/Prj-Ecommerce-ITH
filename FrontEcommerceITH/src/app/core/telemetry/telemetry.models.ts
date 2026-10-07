@@ -65,6 +65,6 @@ export interface RespuestaSus {
 }
 
 /** Clics del camino ideal por tarea. PROVISIONAL hasta las specs 001–008 (0 = sin definir → razón `null`). */
-export const CAMINOS_IDEALES: Record<TareaId, number> = { T1: 0, T2: 0, T3: 0 };
+export const CAMINOS_IDEALES: Record<TareaId, number> = { T1: 3, T2: 10, T3: 11 };
 
 export const TAREAS: readonly TareaId[] = ['T1', 'T2', 'T3'];

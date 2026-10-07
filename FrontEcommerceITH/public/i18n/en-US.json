@@ -62,6 +62,13 @@
   "shipping": {
     "included": "Shipping included anywhere in Peru"
   },
+  "cookies": {
+    "title": "Analytics cookies",
+    "body": "We use Google Analytics to learn which pages are visited and where buying gets difficult, so we can improve the store. We do not store names, emails or payment data. You can change your choice at any time.",
+    "accept": "Accept",
+    "reject": "Reject",
+    "preferences": "Cookie preferences"
+  },
   "footer": {
     "nav": "Site links",
     "home": "Home",

@@ -1,6 +1,7 @@
 import { DOCUMENT, Injectable, OnDestroy, inject, isDevMode, signal } from '@angular/core';
 import { ActivatedRouteSnapshot, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Analytics } from '../analytics/analytics';
 import { localStore } from '../storage/local-store';
 import { Evento, TareaId, TipoEvento } from './telemetry.models';
 import { esModalCatalogado, esZonaCatalogada } from './zone-catalog';
@@ -35,6 +36,7 @@ type Contexto = Pick<Evento, 'x' | 'y' | 'f' | 'z' | 'zi' | 'zx' | 'zy' | 'm'>;
 export class InteractionLogger implements OnDestroy {
   private readonly router = inject(Router);
   private readonly document = inject(DOCUMENT);
+  private readonly analytics = inject(Analytics);
 
   private sesion: { id: string; version: string } | null = null;
   /** Tarea en curso: la fija `SessionRecorder`. */
@@ -105,6 +107,7 @@ export class InteractionLogger implements OnDestroy {
 
   /** API pública para las páginas (búsqueda, carrito, errores de formulario…). Sin sesión no hace nada (CA-2.8). */
   track(e: TipoEvento, d?: Record<string, unknown>, extra?: Partial<Evento>): void {
+    this.analytics.evento(e, d); // los eventos de negocio también alimentan Google Analytics, si hay consentimiento
     if (!this.sesion) return;
     const evento: Evento = {
       s: this.sesion.id,

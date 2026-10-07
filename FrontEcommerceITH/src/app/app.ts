@@ -1,17 +1,21 @@
 import { ChangeDetectionStrategy, Component, ViewContainerRef, afterNextRender, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Analytics } from './core/analytics/analytics';
 import { localStore } from './core/storage/local-store';
+import { CookieBanner } from './shared/ui/cookie-banner/cookie-banner';
 import { Toast } from './shared/ui/toast/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Toast],
+  imports: [RouterOutlet, Toast, CookieBanner],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<router-outlet /><app-toast />`,
+  template: `<router-outlet /><app-toast /><app-cookie-banner />`,
 })
 export class App {
   constructor() {
     const vcr = inject(ViewContainerRef);
+    const analytics = inject(Analytics);
+    afterNextRender(() => analytics.init());
     // Panel de investigador (spec 012, CA-1.1): sin `?research=1` su código ni siquiera se descarga.
     // También carga si hay una sesión de prueba activa: el router quita el parámetro al navegar y un F5
     // a mitad de la prueba no debe cortar el registro.

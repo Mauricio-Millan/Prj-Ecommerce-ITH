@@ -62,6 +62,13 @@
   "shipping": {
     "included": "Envío incluido a todo el Perú"
   },
+  "cookies": {
+    "title": "Cookies de analítica",
+    "body": "Usamos Google Analytics para saber qué páginas se visitan y dónde se complica la compra, y así mejorar la tienda. No guardamos nombres, correos ni datos de pago. Puedes cambiar tu decisión cuando quieras.",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "preferences": "Preferencias de cookies"
+  },
   "footer": {
     "nav": "Enlaces del sitio",
     "home": "Inicio",
