@@ -10,6 +10,8 @@ import { SessionApi } from '../../../core/auth/session.api';
 import { NavigationHistory } from '../../../core/auth/volver';
 import { CartApi } from '../../../core/cart/cart.api';
 import { CatalogApi } from '../../../core/catalog/catalog.api';
+import { VoiceService } from '../../../core/voice/voice.service';
+import { A11yPanel } from '../../../shared/ui/a11y-panel/a11y-panel';
 import { CurrencySelector } from '../../../shared/ui/currency-selector/currency-selector';
 import { Icon } from '../../../shared/ui/icon/icon';
 import { LanguageSelector } from '../../../shared/ui/language-selector/language-selector';
@@ -48,6 +50,28 @@ import { SearchBox } from '../search-box/search-box';
 
 
       <div class="ml-auto flex items-center sm:gap-1">
+        @if (voz.disponible) {
+          <button
+            type="button"
+            data-zone="voz"
+            data-track="voz.hablar"
+            class="inline-flex min-h-11 min-w-11 items-center justify-center rounded-control hover:bg-surface-muted"
+            [class.bg-primary]="voz.estado() === 'escuchando'"
+            [class.text-primary-foreground]="voz.estado() === 'escuchando'"
+            [attr.aria-pressed]="voz.estado() === 'escuchando'"
+            [attr.aria-label]="(voz.estado() === 'escuchando' ? 'voice.stop' : 'voice.button') | transloco"
+            (click)="voz.alternar()"
+          ><app-icon name="microfono" /></button>
+        }
+        <!-- Botón visible de accesibilidad: tema, contraste, colores para daltonismo y texto (spec 018, CA-5.12). -->
+        <button
+          type="button"
+          data-zone="accesibilidad"
+          data-track="accesibilidad.abrir"
+          class="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-control px-2 text-sm hover:bg-surface-muted"
+          [attr.aria-label]="'header.accessibility' | transloco"
+          (click)="abrirAccesibilidad()"
+        ><app-icon name="accesibilidad" /><span class="hidden lg:inline">{{ 'header.accessibility' | transloco }}</span></button>
         <app-language-selector />
         <app-currency-selector />
 
@@ -151,7 +175,12 @@ export class Header {
   protected readonly categorias = toSignal(inject(CatalogApi).categoriasConHijas(), { initialValue: [] });
   protected readonly cantidad = inject(CartApi).cantidadTotal;
   private readonly dialog = inject(Dialog);
+  protected readonly voz = inject(VoiceService);
   private readonly overlay = inject(Overlay);
+
+  protected abrirAccesibilidad(): void {
+    this.dialog.open(A11yPanel, { ariaLabelledBy: 'a11y-titulo' });
+  }
 
   protected abrirMenu(): void {
     this.dialog.open(MobileMenu, {

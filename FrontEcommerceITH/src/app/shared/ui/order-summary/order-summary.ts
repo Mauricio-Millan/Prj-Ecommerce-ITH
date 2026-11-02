@@ -1,3 +1,4 @@
+import { ImgFallback } from '../img-fallback/img-fallback';
 import { ChangeDetectionStrategy, Component, computed, inject, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
@@ -13,7 +14,7 @@ import { formatear, formatearTc } from '../price/price';
  */
 @Component({
   selector: 'app-order-summary',
-  imports: [TranslocoPipe, RouterLink],
+  imports: [TranslocoPipe, RouterLink, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block' },
   template: `
@@ -23,7 +24,7 @@ import { formatear, formatearTc } from '../price/price';
       <ul class="grid gap-3">
         @for (i of pedido().items; track i.sku) {
           <li class="flex gap-3">
-            <img [src]="i.imagen" alt="" width="56" height="56" class="size-14 shrink-0 rounded-control bg-surface-muted object-cover" />
+            <img [src]="i.imagen" alt="" [appImgFallback]="i.nombre_producto" width="56" height="56" class="size-14 shrink-0 rounded-control bg-surface-muted object-cover" />
             <div class="min-w-0 flex-1 text-sm">
               @if (conFicha()?.has(i.sku)) {
                 <a [routerLink]="['/producto', i.sku]" class="font-medium text-primary hover:underline">{{ i.nombre_producto }}</a>

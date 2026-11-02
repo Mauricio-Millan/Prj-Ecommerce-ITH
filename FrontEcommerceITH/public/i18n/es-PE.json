@@ -8,6 +8,7 @@
       "placeholder": "Busca por producto, marca, modelo o número de parte",
       "submit": "Buscar"
     },
+    "accessibility": "Accesibilidad",
     "menu": "Abrir menú de categorías",
     "categories": "Categorías",
     "cart": "Carrito",
@@ -409,6 +410,70 @@
       }
     }
   },
+  "voice": {
+    "title": "Comandos de voz",
+    "button": "Hablar para dar un comando",
+    "stop": "Dejar de escuchar",
+    "listening": "Escuchando… di un comando",
+    "heard": "Entendí",
+    "notice": "Para reconocer tu voz, tu navegador puede enviar el audio a un servicio externo (en Chrome, de Google). No guardamos el audio ni lo que dices.",
+    "accept": "Entendido, hablar",
+    "decline": "Ahora no",
+    "again": "Hablar otra vez",
+    "unknown": "No entendí «{{dicho}}». Di «ayuda de voz» para ver los comandos.",
+    "blocked": "Por seguridad, pagar y confirmar un pedido no se hace por voz. Usa el teclado o el tacto.",
+    "noAddHere": "Aquí no hay un producto para agregar. Abre la ficha de un producto y vuélvelo a decir.",
+    "error": {
+      "denied": "No pudimos usar el micrófono. Revisa el permiso del navegador.",
+      "noSpeech": "No te escuchamos. Toca el micrófono y habla de nuevo.",
+      "generic": "No pudimos reconocer la voz. Intenta de nuevo o usa el teclado."
+    },
+    "done": {
+      "search": "Buscando «{{q}}»",
+      "go": {
+        "inicio": "Yendo al inicio",
+        "carrito": "Abriendo el carrito",
+        "ayuda": "Abriendo la ayuda",
+        "armador": "Abriendo Arma tu PC",
+        "pedidos": "Abriendo tus pedidos",
+        "declaracion": "Abriendo la declaración de accesibilidad"
+      },
+      "pref": {
+        "tema-oscuro": "Modo oscuro activado",
+        "tema-claro": "Modo claro activado",
+        "contraste-alto": "Alto contraste activado",
+        "contraste-normal": "Contraste normal",
+        "colores-seguros": "Colores para daltonismo activados",
+        "colores-normales": "Colores normales",
+        "texto-grande": "Texto grande",
+        "texto-muy-grande": "Texto muy grande",
+        "texto-normal": "Texto normal",
+        "espaciado-ampliado": "Espaciado ampliado",
+        "movimiento-reducido": "Movimiento reducido"
+      },
+      "action": {
+        "volver": "Volviendo",
+        "cerrar": "Cerrado",
+        "subir": "Subiendo",
+        "bajar": "Bajando",
+        "accesibilidad": "Abriendo accesibilidad",
+        "mi-equipo": "Abriendo Mi equipo",
+        "ayuda-voz": "Estos son los comandos",
+        "agregar": "Agregado al carrito"
+      }
+    },
+    "help": {
+      "title": "Puedes decir:",
+      "open": "Ver los comandos",
+      "search": "«Buscar batería Lenovo» o «buscar memoria RAM»",
+      "go": "«Ir al inicio», «ir al carrito», «armar PC», «mis pedidos», «ayuda»",
+      "cart": "«Agregar al carrito» (en la ficha de un producto)",
+      "prefs": "«Modo oscuro», «alto contraste», «modo daltónico», «texto grande»",
+      "actions": "«Volver», «cerrar», «subir», «bajar», «mi equipo», «accesibilidad»",
+      "help": "«Ayuda de voz» muestra esta lista",
+      "blocked": "Pagar y confirmar un pedido no se hacen por voz."
+    }
+  },
   "scan": {
     "button": "Escanear código",
     "title": "Escanear código",
@@ -450,6 +515,7 @@
     "contraste": { "label": "Contraste", "sistema": "Según el sistema", "normal": "Normal", "alto": "Alto" },
     "texto": { "label": "Tamaño del texto", "normal": "Normal", "grande": "Grande", "muy-grande": "Muy grande" },
     "espaciado": { "label": "Espaciado del texto", "normal": "Normal", "ampliado": "Ampliado" },
+    "colores": {"label":"Colores","normal":"Normales","seguros":"Seguros para daltonismo","help":"Usa azul y naranja en lugar de verde y rojo. Los estados siguen llevando ícono y texto."},
     "movimiento": { "label": "Movimiento", "sistema": "Según el sistema", "reducido": "Reducido" }
   },
   "a11yStatement": {

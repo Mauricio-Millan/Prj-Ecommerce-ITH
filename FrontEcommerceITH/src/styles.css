@@ -60,3 +60,16 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Imagen que no cargó: se ve su texto alternativo dentro del mismo espacio (spec 018, CA-1.7). Solo tokens, sin colores sueltos. */
+img.img-rota {
+  overflow: hidden;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-foreground);
+  background: var(--color-surface-muted);
+  border: 1px dashed var(--color-border-control);
+  word-break: break-word;
+}

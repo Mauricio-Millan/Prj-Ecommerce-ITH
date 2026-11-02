@@ -1,4 +1,5 @@
-﻿import { ConnectedPosition, OverlayModule } from '@angular/cdk/overlay';
+﻿import { ImgFallback } from '../../../shared/ui/img-fallback/img-fallback';
+import { ConnectedPosition, OverlayModule } from '@angular/cdk/overlay';
 import { ChangeDetectionStrategy, Component, computed, effect, inject, input, signal, untracked } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
@@ -19,7 +20,7 @@ import { Price } from '../../../shared/ui/price/price';
  */
 @Component({
   selector: 'app-search-box',
-  imports: [OverlayModule, TranslocoPipe, Icon, Price],
+  imports: [OverlayModule, TranslocoPipe, Icon, Price, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block' },
   template: `
@@ -95,7 +96,7 @@ import { Price } from '../../../shared/ui/price/price';
             (mousedown)="$event.preventDefault()"
             (click)="irAlProducto(p)"
           >
-            <img [src]="p.imagenes[0]?.url" alt="" width="40" height="40" class="size-10 shrink-0 rounded-control bg-surface-muted object-cover" />
+            <img [src]="p.imagenes[0]?.url" alt="" [appImgFallback]="p.nombre" width="40" height="40" class="size-10 shrink-0 rounded-control bg-surface-muted object-cover" />
             <span class="line-clamp-2 flex-1">{{ p.nombre }}</span>
             <app-price [usd]="p.precio_usd" [mostrarNota]="false" class="shrink-0 text-sm" />
           </li>

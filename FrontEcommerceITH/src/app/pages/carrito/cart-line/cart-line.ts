@@ -1,3 +1,4 @@
+import { ImgFallback } from '../../../shared/ui/img-fallback/img-fallback';
 import { ChangeDetectionStrategy, Component, computed, inject, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
@@ -14,13 +15,13 @@ import { QuantityInput } from '../../../shared/ui/quantity-input/quantity-input'
  */
 @Component({
   selector: 'app-cart-line',
-  imports: [RouterLink, TranslocoPipe, Icon, QuantityInput],
+  imports: [RouterLink, TranslocoPipe, Icon, QuantityInput, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block' },
   template: `
     <div data-zone="linea-carrito" class="flex gap-3 rounded-card border border-border bg-surface p-3 shadow-card" [class.opacity-70]="agotada()">
       <a [routerLink]="['/producto', producto().sku]" data-track="linea-carrito.abrir" tabindex="-1" aria-hidden="true" class="shrink-0">
-        <img [src]="producto().imagenes[0]?.url ?? ''" alt="" width="96" height="96" class="size-20 rounded-control bg-surface-muted object-cover sm:size-24" />
+        <img [src]="producto().imagenes[0]?.url ?? ''" alt="" [appImgFallback]="producto().nombre" width="96" height="96" class="size-20 rounded-control bg-surface-muted object-cover sm:size-24" />
       </a>
 
       <div class="grid min-w-0 flex-1 gap-2">

@@ -8,6 +8,7 @@
       "placeholder": "Search by product, brand, model or part number",
       "submit": "Search"
     },
+    "accessibility": "Accessibility",
     "menu": "Open categories menu",
     "categories": "Categories",
     "cart": "Cart",
@@ -409,6 +410,70 @@
       }
     }
   },
+  "voice": {
+    "title": "Voice commands",
+    "button": "Speak a command",
+    "stop": "Stop listening",
+    "listening": "Listening… say a command",
+    "heard": "Heard",
+    "notice": "To recognize your voice, your browser may send the audio to an external service (in Chrome, Google). We do not store the audio or what you say.",
+    "accept": "Understood, speak",
+    "decline": "Not now",
+    "again": "Speak again",
+    "unknown": "I did not understand \"{{dicho}}\". Say \"voice help\" to see the commands.",
+    "blocked": "For your safety, paying and confirming an order cannot be done by voice. Use the keyboard or touch.",
+    "noAddHere": "There is no product to add here. Open a product page and say it again.",
+    "error": {
+      "denied": "We could not use the microphone. Check the browser permission.",
+      "noSpeech": "We did not hear you. Tap the microphone and speak again.",
+      "generic": "We could not recognize your voice. Try again or use the keyboard."
+    },
+    "done": {
+      "search": "Searching for \"{{q}}\"",
+      "go": {
+        "inicio": "Going to the home page",
+        "carrito": "Opening the cart",
+        "ayuda": "Opening help",
+        "armador": "Opening PC builder",
+        "pedidos": "Opening your orders",
+        "declaracion": "Opening the accessibility statement"
+      },
+      "pref": {
+        "tema-oscuro": "Dark mode on",
+        "tema-claro": "Light mode on",
+        "contraste-alto": "High contrast on",
+        "contraste-normal": "Normal contrast",
+        "colores-seguros": "Color-blind colors on",
+        "colores-normales": "Standard colors",
+        "texto-grande": "Large text",
+        "texto-muy-grande": "Extra large text",
+        "texto-normal": "Normal text",
+        "espaciado-ampliado": "Increased spacing",
+        "movimiento-reducido": "Reduced motion"
+      },
+      "action": {
+        "volver": "Going back",
+        "cerrar": "Closed",
+        "subir": "Scrolling up",
+        "bajar": "Scrolling down",
+        "accesibilidad": "Opening accessibility",
+        "mi-equipo": "Opening My device",
+        "ayuda-voz": "These are the commands",
+        "agregar": "Added to the cart"
+      }
+    },
+    "help": {
+      "title": "You can say:",
+      "open": "See the commands",
+      "search": "\"Search for Lenovo battery\" or \"search for RAM\"",
+      "go": "\"Go home\", \"open the cart\", \"PC builder\", \"my orders\", \"help\"",
+      "cart": "\"Add to cart\" (on a product page)",
+      "prefs": "\"Dark mode\", \"high contrast\", \"color blind mode\", \"large text\"",
+      "actions": "\"Back\", \"close\", \"up\", \"down\", \"my device\", \"accessibility\"",
+      "help": "\"Voice help\" shows this list",
+      "blocked": "Paying and confirming an order are not done by voice."
+    }
+  },
   "scan": {
     "button": "Scan code",
     "title": "Scan a code",
@@ -450,6 +515,7 @@
     "contraste": { "label": "Contrast", "sistema": "Follow system", "normal": "Normal", "alto": "High" },
     "texto": { "label": "Text size", "normal": "Normal", "grande": "Large", "muy-grande": "Extra large" },
     "espaciado": { "label": "Text spacing", "normal": "Normal", "ampliado": "Increased" },
+    "colores": {"label":"Colors","normal":"Standard","seguros":"Color-blind safe","help":"Uses blue and orange instead of green and red. Statuses still carry an icon and text."},
     "movimiento": { "label": "Motion", "sistema": "Follow system", "reducido": "Reduced" }
   },
   "a11yStatement": {

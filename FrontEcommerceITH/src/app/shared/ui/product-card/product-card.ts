@@ -1,3 +1,4 @@
+import { ImgFallback } from '../img-fallback/img-fallback';
 import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
@@ -13,7 +14,7 @@ import { StockBadge } from '../stock-badge/stock-badge';
  */
 @Component({
   selector: 'app-product-card',
-  imports: [RouterLink, TranslocoPipe, CompatBadge, Price, StockBadge],
+  imports: [RouterLink, TranslocoPipe, CompatBadge, Price, StockBadge, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <article data-zone="tarjeta-producto" class="flex h-full flex-col rounded-card border border-border bg-surface shadow-card">
@@ -21,7 +22,7 @@ import { StockBadge } from '../stock-badge/stock-badge';
         <!-- alt vacío: el nombre del producto está en el mismo enlace; repetirlo haría que el lector lo lea dos veces. -->
         <img
           [src]="imagen()"
-          alt=""
+          alt="" [appImgFallback]="producto().nombre"
           width="600"
           height="600"
           [attr.loading]="prioritaria() ? 'eager' : 'lazy'"

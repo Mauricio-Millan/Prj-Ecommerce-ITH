@@ -1,3 +1,4 @@
+import { ImgFallback } from '../../../shared/ui/img-fallback/img-fallback';
 import { DecimalPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -15,7 +16,7 @@ import { ToastService } from '../../../shared/ui/toast/toast';
 /** Detalle de un pedido y avance de su estado (spec 010, HU-2 y HU-3). Cada cambio pide confirmar; cancelar exige motivo. */
 @Component({
   selector: 'app-pedido-admin',
-  imports: [RouterLink, TranslocoPipe, DecimalPipe, AdminField, Icon],
+  imports: [RouterLink, TranslocoPipe, DecimalPipe, AdminField, Icon, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div data-zone="admin-pedido" class="mx-auto grid max-w-3xl gap-4">
@@ -40,7 +41,7 @@ import { ToastService } from '../../../shared/ui/toast/toast';
           <ul class="grid gap-2">
             @for (i of p.items; track i.sku) {
               <li class="flex items-center gap-3">
-                <img [src]="i.imagen" alt="" width="40" height="40" class="size-10 shrink-0 rounded-control bg-surface-muted object-cover" />
+                <img [src]="i.imagen" alt="" [appImgFallback]="i.nombre_producto" width="40" height="40" class="size-10 shrink-0 rounded-control bg-surface-muted object-cover" />
                 <div class="min-w-0 flex-1">
                   <p class="line-clamp-2 text-sm font-semibold">{{ i.nombre_producto }}</p>
                   <p class="text-xs text-muted">{{ i.sku }} · {{ i.cantidad }} × S/ {{ i.precio_unitario_pen_centimos / 100 | number: '1.2-2' }}</p>

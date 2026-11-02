@@ -1,3 +1,4 @@
+import { ImgFallback } from '../../../shared/ui/img-fallback/img-fallback';
 import { ChangeDetectionStrategy, Component, Injector, afterNextRender, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
@@ -23,7 +24,7 @@ const CONDICIONES: Condicion[] = ['nuevo', 'original', 'compatible'];
  */
 @Component({
   selector: 'app-producto-form',
-  imports: [RouterLink, TranslocoPipe, AdminField, Icon],
+  imports: [RouterLink, TranslocoPipe, AdminField, Icon, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div data-zone="admin-producto" class="mx-auto grid max-w-3xl gap-4">
@@ -128,7 +129,7 @@ const CONDICIONES: Condicion[] = ['nuevo', 'original', 'compatible'];
             <ol class="grid gap-3">
               @for (img of b().imagenes; track $index; let i = $index) {
                 <li class="grid gap-3 rounded-control border border-border p-3 sm:grid-cols-[5rem_1fr]">
-                  <img [src]="img.url" [alt]="img.alt" width="80" height="80" class="size-20 rounded-control bg-surface-muted object-cover" (error)="$any($event.target).style.visibility = 'hidden'" (load)="$any($event.target).style.visibility = 'visible'" />
+                  <img [src]="img.url" [alt]="img.alt" width="80" height="80" class="size-20 rounded-control bg-surface-muted object-cover" [appImgFallback]="img.alt || img.url" />
                   <div class="grid gap-3">
                     <p class="text-sm font-semibold">{{ (i === 0 ? 'adminProduct.form.imageMain' : 'adminProduct.form.imageN') | transloco: { n: i + 1 } }}</p>
                     <app-admin-field [campoId]="id('img.' + i + '.url')" etiqueta="adminProduct.field.imagenUrl" [error]="e('img.' + i + '.url')" [requerido]="true">

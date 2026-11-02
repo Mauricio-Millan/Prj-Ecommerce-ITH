@@ -2,11 +2,11 @@
 export const ZONAS = [
   'buscador', 'categorias', 'carrito', 'selector-idioma', 'selector-moneda', 'filtros', 'resultados', 'tarjeta-producto',
   'precio', 'compatibilidad', 'ficha-tecnica', 'cta-principal', 'formulario-cuenta', 'lista-pedidos', 'linea-carrito',
-  'resumen-pedido', 'formulario-checkout', 'armador-paso', 'armador-conflicto', 'accesibilidad', 'escaner', 'inventario',
+  'resumen-pedido', 'formulario-checkout', 'armador-paso', 'armador-conflicto', 'accesibilidad', 'escaner', 'inventario', 'voz',
 ] as const;
 
 /** Catálogo de modales (spec 012 § 4.1). Las advertencias (incompatible, conflictos del armador) no usan modal. */
-export const MODALES = ['menu-movil', 'confirmar-eliminar', 'filtros-movil', 'terminos', 'mi-equipo', 'accesibilidad', 'escaner'] as const;
+export const MODALES = ['menu-movil', 'confirmar-eliminar', 'filtros-movil', 'terminos', 'mi-equipo', 'accesibilidad', 'escaner', 'voz'] as const;
 
 export type ZonaId = (typeof ZONAS)[number];
 export type ModalId = (typeof MODALES)[number];

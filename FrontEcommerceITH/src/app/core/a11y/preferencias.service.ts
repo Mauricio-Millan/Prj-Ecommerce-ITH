@@ -6,6 +6,8 @@ export type Contraste = 'sistema' | 'normal' | 'alto';
 export type Texto = 'normal' | 'grande' | 'muy-grande';
 export type Espaciado = 'normal' | 'ampliado';
 export type Movimiento = 'sistema' | 'reducido';
+/** `seguros`: paleta precargada para daltonismo (azul = éxito, naranja = error), medida en specs/018-accesibilidad/herramientas/daltonismo.mjs. */
+export type Colores = 'normal' | 'seguros';
 
 export interface PreferenciasA11y {
   tema: Tema;
@@ -13,10 +15,11 @@ export interface PreferenciasA11y {
   texto: Texto;
   espaciado: Espaciado;
   movimiento: Movimiento;
+  colores: Colores;
 }
 
 export const CLAVE_PREFERENCIAS = 'pref_accesibilidad';
-export const PREDETERMINADAS: PreferenciasA11y = { tema: 'sistema', contraste: 'sistema', texto: 'normal', espaciado: 'normal', movimiento: 'sistema' };
+export const PREDETERMINADAS: PreferenciasA11y = { tema: 'sistema', contraste: 'sistema', texto: 'normal', espaciado: 'normal', movimiento: 'sistema', colores: 'normal' };
 
 const VALORES: { [K in keyof PreferenciasA11y]: readonly PreferenciasA11y[K][] } = {
   tema: ['sistema', 'claro', 'oscuro'],
@@ -24,6 +27,7 @@ const VALORES: { [K in keyof PreferenciasA11y]: readonly PreferenciasA11y[K][] }
   texto: ['normal', 'grande', 'muy-grande'],
   espaciado: ['normal', 'ampliado'],
   movimiento: ['sistema', 'reducido'],
+  colores: ['normal', 'seguros'],
 };
 
 /** Lo guardado puede venir de otra versión o estar dañado: solo se aceptan valores conocidos. */
@@ -82,5 +86,6 @@ export class PreferenciasA11yService {
     d['texto'] = p.texto;
     d['espaciado'] = p.espaciado;
     d['movimiento'] = p.movimiento === 'reducido' ? 'reducido' : 'sistema';
+    d['colores'] = p.colores;
   }
 }

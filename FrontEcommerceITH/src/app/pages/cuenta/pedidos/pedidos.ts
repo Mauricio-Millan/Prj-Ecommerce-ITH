@@ -1,3 +1,4 @@
+import { ImgFallback } from '../../../shared/ui/img-fallback/img-fallback';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -21,7 +22,7 @@ const MINIATURAS = 3;
  */
 @Component({
   selector: 'app-pedidos',
-  imports: [RouterLink, TranslocoPipe, EmptyState, OrderStatus, Pagination],
+  imports: [RouterLink, TranslocoPipe, EmptyState, OrderStatus, Pagination, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="mx-auto max-w-4xl px-4 py-6">
@@ -44,7 +45,7 @@ const MINIATURAS = 3;
                 </span>
                 <span class="flex items-center gap-1" aria-hidden="true">
                   @for (i of miniaturas(p); track i.sku) {
-                    <img [src]="i.imagen" alt="" width="48" height="48" class="size-12 rounded-control bg-surface-muted object-cover" />
+                    <img [src]="i.imagen" alt="" [appImgFallback]="i.nombre_producto" width="48" height="48" class="size-12 rounded-control bg-surface-muted object-cover" />
                   }
                   @if (p.items.length > miniaturasMax) { <span class="text-sm font-semibold text-muted">+{{ p.items.length - miniaturasMax }}</span> }
                 </span>
@@ -83,7 +84,7 @@ export class Pedidos {
 
   protected readonly estado = estadoActual;
   protected readonly soles = (c: number) => formatear(c, 'PEN', this.lang());
-  protected readonly miniaturas = (p: { items: { sku: string; imagen: string }[] }) => p.items.slice(0, MINIATURAS);
+  protected readonly miniaturas = (p: { items: { sku: string; imagen: string; nombre_producto: string }[] }) => p.items.slice(0, MINIATURAS);
 
   constructor() {
     tituloDePagina('orders.title');

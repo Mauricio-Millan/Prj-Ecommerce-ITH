@@ -101,3 +101,28 @@
   --color-focus: #ffff00;
   --color-backdrop: rgb(0 0 0 / 0.85);
 }
+
+/* ───────── Colores seguros para daltonismo (spec 018, HU-11) ─────────
+ * Cambia SOLO éxito, error y advertencia: azul para lo correcto, naranja para lo incorrecto (el rojo y el verde se confunden en protanopía y deuteranopía).
+ * Medido con specs/018-accesibilidad/herramientas/daltonismo.mjs: contraste ≥ 4.5:1 (≥ 7:1 en alto contraste) y distancia éxito/error de 82 a 97 en
+ * protanopía y deuteranopía (antes 9 a 22). Los estados siguen llevando ícono y texto. Una regla por combinación de tema y contraste; gana la más específica. */
+:root[data-colores='seguros'] {
+  --color-success: #00609c;
+  --color-danger: #b34700;
+  --color-warning: #6b5900;
+}
+:root[data-colores='seguros'][data-tema='oscuro'] {
+  --color-success: #56b4e9;
+  --color-danger: #ff9f43;
+  --color-warning: #f0e442;
+}
+:root[data-colores='seguros'][data-contraste='alto'] {
+  --color-success: #003f73;
+  --color-danger: #8a3200;
+  --color-warning: #4d4100;
+}
+:root[data-colores='seguros'][data-tema='oscuro'][data-contraste='alto'] {
+  --color-success: #7fc8ff;
+  --color-danger: #ffb066;
+  --color-warning: #fff27a;
+}

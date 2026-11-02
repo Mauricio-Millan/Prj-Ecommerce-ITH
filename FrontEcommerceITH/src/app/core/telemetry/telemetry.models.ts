@@ -15,7 +15,8 @@ export type TipoEvento =
   | 'builder_select' | 'builder_conflict' | 'builder_complete' // 008
   | 'a11y_pref_set' // 018
   | 'scan_start' | 'scan_result' // 014
-  | 'inventory_scan' | 'inventory_confirm'; // 015
+  | 'inventory_scan' | 'inventory_confirm' // 015
+  | 'voice_command'; // 020
 
 /** Claves cortas para ahorrar espacio en localStorage (plan § 3.5). El CSV usa cabeceras legibles. */
 export interface Evento {

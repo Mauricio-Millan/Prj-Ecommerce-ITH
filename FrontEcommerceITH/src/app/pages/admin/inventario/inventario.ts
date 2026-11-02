@@ -1,3 +1,4 @@
+import { ImgFallback } from '../../../shared/ui/img-fallback/img-fallback';
 import { ChangeDetectionStrategy, Component, HostListener, afterNextRender, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
@@ -24,7 +25,7 @@ const RESALTE_MS = 1200;
  */
 @Component({
   selector: 'app-inventario',
-  imports: [TranslocoPipe, Icon, RouterLink],
+  imports: [TranslocoPipe, Icon, RouterLink, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block' },
   template: `
@@ -99,7 +100,7 @@ const RESALTE_MS = 1200;
             @for (l of vista(); track l.sku) {
               <li class="grid gap-2 rounded-card border p-3" [class]="l.sku === resaltado() ? 'border-primary bg-surface-muted' : 'border-border'">
                 <div class="flex items-center gap-3">
-                  <img [src]="l.producto.imagenes[0]?.url" alt="" width="48" height="48" class="size-12 shrink-0 rounded-control bg-surface-muted object-cover" />
+                  <img [src]="l.producto.imagenes[0]?.url" alt="" [appImgFallback]="l.producto.nombre" width="48" height="48" class="size-12 shrink-0 rounded-control bg-surface-muted object-cover" />
                   <div class="min-w-0 flex-1">
                     <p class="line-clamp-2 text-sm font-semibold">{{ l.producto.nombre }}</p>
                     <p class="text-xs text-muted">{{ l.producto.sku }} · {{ 'inventory.line.stock' | transloco: { n: l.producto.stock } }}</p>

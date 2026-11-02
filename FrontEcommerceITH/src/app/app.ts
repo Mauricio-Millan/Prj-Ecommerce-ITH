@@ -5,12 +5,13 @@ import { Analytics } from './core/analytics/analytics';
 import { localStore } from './core/storage/local-store';
 import { CookieBanner } from './shared/ui/cookie-banner/cookie-banner';
 import { Toast } from './shared/ui/toast/toast';
+import { VoiceBar } from './shared/ui/voice-bar/voice-bar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Toast, CookieBanner],
+  imports: [RouterOutlet, Toast, CookieBanner, VoiceBar],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<router-outlet /><app-toast /><app-cookie-banner />`,
+  template: `<router-outlet /><app-toast /><app-cookie-banner /><app-voice-bar />`,
 })
 export class App {
   constructor() {

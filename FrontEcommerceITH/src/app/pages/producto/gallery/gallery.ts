@@ -1,3 +1,4 @@
+import { ImgFallback } from '../../../shared/ui/img-fallback/img-fallback';
 import { ChangeDetectionStrategy, Component, computed, effect, input, signal, untracked } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { Imagen } from '../../../core/catalog/catalog.models';
@@ -11,7 +12,7 @@ const UMBRAL_DESLIZAR_PX = 40;
  */
 @Component({
   selector: 'app-gallery',
-  imports: [TranslocoPipe, Icon],
+  imports: [TranslocoPipe, Icon, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="grid gap-3">
@@ -24,7 +25,7 @@ const UMBRAL_DESLIZAR_PX = 40;
         (pointerdown)="inicioX = $event.clientX"
         (pointerup)="alSoltar($event.clientX)"
       >
-        <img [src]="actual().url" [alt]="actual().alt" width="600" height="600" class="aspect-square w-full touch-pan-y object-contain select-none" />
+        <img [src]="actual().url" [alt]="actual().alt" [appImgFallback]="actual().alt" width="600" height="600" class="aspect-square w-full touch-pan-y object-contain select-none" />
         @if (imagenes().length > 1) {
           <button type="button" class="absolute top-1/2 left-2 inline-flex min-h-11 min-w-11 -translate-y-1/2 items-center justify-center rounded-full bg-surface/90 shadow-card hover:bg-surface" [attr.aria-label]="'catalog.gallery.prev' | transloco" (click)="mover(-1)">
             <app-icon name="anterior" />
@@ -47,7 +48,7 @@ const UMBRAL_DESLIZAR_PX = 40;
                 [attr.aria-label]="'catalog.gallery.thumb' | transloco: { n: i + 1 }"
                 (click)="indice.set(i)"
               >
-                <img [src]="img.url" alt="" width="64" height="64" class="size-16 object-cover" />
+                <img [src]="img.url" alt="" [appImgFallback]="img.alt" width="64" height="64" class="size-16 object-cover" />
               </button>
             </li>
           }

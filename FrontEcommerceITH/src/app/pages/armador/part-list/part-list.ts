@@ -1,4 +1,5 @@
-﻿import { ChangeDetectionStrategy, Component, computed, inject, input, output, signal } from '@angular/core';
+﻿import { ImgFallback } from '../../../shared/ui/img-fallback/img-fallback';
+import { ChangeDetectionStrategy, Component, computed, inject, input, output, signal } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { Candidata, Motivo } from '../../../core/builder/builder.models';
 import { specsClave } from '../../../core/builder/builder.logic';
@@ -23,7 +24,7 @@ export interface PiezaVista {
  */
 @Component({
   selector: 'app-part-list',
-  imports: [TranslocoPipe, Icon, Price, StockBadge],
+  imports: [TranslocoPipe, Icon, Price, StockBadge, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div data-zone="armador-paso" class="grid min-w-0 gap-3">
@@ -56,7 +57,7 @@ export interface PiezaVista {
                 [disabled]="deshabilitada(v)"
                 (click)="elegir.emit(v.producto.sku)"
               >
-                <img [src]="v.producto.imagenes[0]?.url ?? ''" alt="" width="64" height="64" class="size-16 shrink-0 rounded-control bg-surface-muted object-cover" />
+                <img [src]="v.producto.imagenes[0]?.url ?? ''" alt="" [appImgFallback]="v.producto.nombre" width="64" height="64" class="size-16 shrink-0 rounded-control bg-surface-muted object-cover" />
                 <span class="grid min-w-0 flex-1 gap-1">
                   <span class="font-medium">{{ v.producto.nombre }}</span>
                   <span class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">

@@ -1,3 +1,4 @@
+import { ImgFallback } from '../../../shared/ui/img-fallback/img-fallback';
 import { DecimalPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -15,7 +16,7 @@ const ESTADOS: EstadoFiltro[] = ['todos', 'activo', 'oculto', 'agotado', 'pocas'
 /** Lista de productos del panel (spec 009, HU-1): todos, también los ocultos, con el estado escrito. */
 @Component({
   selector: 'app-productos-admin',
-  imports: [RouterLink, TranslocoPipe, DecimalPipe],
+  imports: [RouterLink, TranslocoPipe, DecimalPipe, ImgFallback],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div data-zone="admin-productos" class="mx-auto grid max-w-5xl gap-4">
@@ -57,7 +58,7 @@ const ESTADOS: EstadoFiltro[] = ['todos', 'activo', 'oculto', 'agotado', 'pocas'
         <ul class="grid gap-2" [attr.aria-label]="'adminProduct.list.title' | transloco">
           @for (p of pag().items; track p.id) {
             <li class="flex flex-wrap items-center gap-3 rounded-card border border-border p-3">
-              <img [src]="p.imagenes[0]?.url" alt="" width="56" height="56" class="size-14 shrink-0 rounded-control bg-surface-muted object-cover" />
+              <img [src]="p.imagenes[0]?.url" alt="" [appImgFallback]="p.nombre" width="56" height="56" class="size-14 shrink-0 rounded-control bg-surface-muted object-cover" />
               <div class="min-w-0 flex-1 basis-48">
                 <p class="line-clamp-2 text-sm font-semibold">{{ p.nombre }}</p>
                 <p class="text-xs text-muted">{{ p.sku }} · {{ nombreCategoria(p.categoria_id) | transloco }}</p>

@@ -34,6 +34,9 @@ interface Grupo {
         @for (g of grupos; track g.clave) {
           <fieldset class="grid gap-2">
             <legend class="mb-1 text-sm font-semibold">{{ 'a11y.' + g.clave + '.label' | transloco }}</legend>
+            @if (g.clave === 'colores') {
+              <p class="text-xs text-muted">{{ 'a11y.colores.help' | transloco }}</p>
+            }
             <div class="flex flex-wrap gap-2">
               @for (o of g.opciones; track o) {
                 <label class="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-control border border-border-control px-3 text-sm has-[:checked]:bg-primary has-[:checked]:text-primary-foreground">
@@ -72,6 +75,7 @@ export class A11yPanel {
     { clave: 'texto', opciones: ['normal', 'grande', 'muy-grande'] },
     { clave: 'espaciado', opciones: ['normal', 'ampliado'] },
     { clave: 'movimiento', opciones: ['sistema', 'reducido'] },
+    { clave: 'colores', opciones: ['normal', 'seguros'] },
   ];
 
   protected elegir(clave: keyof PreferenciasA11y, valor: string): void {
