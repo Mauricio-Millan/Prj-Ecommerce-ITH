@@ -56,7 +56,7 @@ export interface Pedido {
   items: ItemPedido[];
   pagos: Pago[];
   /** La spec 007 lo muestra como seguimiento. */
-  historial_estados: { estado: EstadoPedido; fecha: string }[];
+  historial_estados: { estado: EstadoPedido; fecha: string; motivo?: string }[];
   created_at: string;
 }
 

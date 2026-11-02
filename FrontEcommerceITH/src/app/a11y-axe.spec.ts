@@ -11,6 +11,11 @@ import Accesibilidad from './pages/accesibilidad/accesibilidad';
 import Ayuda from './pages/ayuda/ayuda';
 import { A11yPanel } from './shared/ui/a11y-panel/a11y-panel';
 import { FieldError } from './shared/ui/field-error/field-error';
+import Dashboard from './pages/admin/dashboard/dashboard';
+import EquiposAdmin from './pages/admin/equipos/equipos';
+import ProductoForm from './pages/admin/producto-form/producto-form';
+import ProductosAdmin from './pages/admin/productos/productos';
+import TipoCambioAdmin from './pages/admin/tipo-cambio/tipo-cambio';
 import { ScannerDialog } from './shared/ui/scanner-dialog/scanner-dialog';
 import { Stepper } from './shared/ui/stepper/stepper';
 
@@ -48,6 +53,13 @@ describe('Accesibilidad automática (axe-core)', () => {
 
   it('el diálogo de escaneo de códigos (spec 014)', async () => {
     expect(await violacionesGraves(await montar(ScannerDialog))).toEqual([]);
+  });
+
+  it('el backoffice: resumen, productos, formulario, equipos y tipo de cambio (spec 009)', async () => {
+    for (const c of [Dashboard, ProductosAdmin, ProductoForm, EquiposAdmin, TipoCambioAdmin]) {
+      expect(await violacionesGraves(await montar(c))).withContext(c.name).toEqual([]);
+      TestBed.resetTestingModule();
+    }
   });
 
   it('el mensaje de error de un campo y el stepper', async () => {

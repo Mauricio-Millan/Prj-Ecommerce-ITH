@@ -1,6 +1,7 @@
 ﻿import { Routes } from '@angular/router';
 import { adminGuard } from './core/auth/admin.guard';
 import { inventarioSinConfirmarGuard } from './pages/admin/inventario/inventario.guard';
+import { productoSinGuardarGuard } from './pages/admin/producto-form/producto-form.guard';
 import { authGuard } from './core/auth/auth.guard';
 import { invitadoGuard } from './core/auth/invitado.guard';
 import { carritoPagableGuard, sinProcesarGuard } from './core/cart/carrito-pagable.guard';
@@ -58,6 +59,13 @@ export const routes: Routes = [
     data: { privada: true }, // al cerrar sesión aquí se vuelve al inicio (spec 004, CA-4.2)
     children: [
       { path: '', loadComponent: () => import('./pages/admin/dashboard/dashboard') },
+      { path: 'productos', loadComponent: () => import('./pages/admin/productos/productos') },
+      { path: 'productos/nuevo', canDeactivate: [productoSinGuardarGuard], loadComponent: () => import('./pages/admin/producto-form/producto-form') },
+      { path: 'productos/:sku', canDeactivate: [productoSinGuardarGuard], loadComponent: () => import('./pages/admin/producto-form/producto-form') },
+      { path: 'equipos', loadComponent: () => import('./pages/admin/equipos/equipos') },
+      { path: 'tipo-cambio', loadComponent: () => import('./pages/admin/tipo-cambio/tipo-cambio') },
+      { path: 'pedidos', loadComponent: () => import('./pages/admin/pedidos/pedidos') },
+      { path: 'pedidos/:codigo', loadComponent: () => import('./pages/admin/pedido-admin/pedido-admin') },
       { path: 'inventario', canDeactivate: [inventarioSinConfirmarGuard], loadComponent: () => import('./pages/admin/inventario/inventario') },
     ],
   },

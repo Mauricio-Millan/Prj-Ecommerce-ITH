@@ -5,7 +5,7 @@ import { ContextoCompat } from '../compat/compat.logic';
 import { localStore } from '../storage/local-store';
 import { ordenar, paginar } from './catalog.logic';
 import {
-  Atributo, Catalogo, Categoria, Compatibilidad, DatosIndice, DetalleCategoria, EquipoConMarca, Marca, Orden, Pagina, Producto, ReglaCompatibilidad,
+  Atributo, Catalogo, Categoria, Compatibilidad, DatosIndice, DetalleCategoria, Equipo, EquipoConMarca, Marca, Orden, Pagina, Producto, ProductoCompatibilidad, ReglaCompatibilidad,
 } from './catalog.models';
 
 const KEY_CATALOGO = 'catalogo';
@@ -208,5 +208,62 @@ export class CatalogApi {
         .flatMap((pc) => compat.equipos.filter((e) => e.id === pc.equipo_id))
         .map((e) => ({ ...e, marca: marcas.find((m) => m.id === e.marca_id)?.nombre ?? '' })),
     );
+  }
+
+  // — Administración (spec 009). En la Fase 2 cada método pasa a un endpoint `/api/v1/admin/...`. —
+
+  /** Todo lo que el panel necesita, también lo oculto. Siempre relee `ts_catalogo` (el stock cambia con cada venta). */
+  adminDatos(): { productos: readonly Producto[]; categorias: Categoria[]; marcas: Marca[]; atributos: Atributo[]; equipos: Equipo[]; vinculos: ProductoCompatibilidad[] } {
+    const guardado = localStore.get<Catalogo>(KEY_CATALOGO);
+    if (guardado && guardado.version === this.datos().version) this.catalogo = guardado;
+    const c = this.datos();
+    const compat = this.compat ?? VACIO_COMPAT;
+    return { productos: c.productos, categorias: c.categorias, marcas: c.marcas, atributos: c.atributos, equipos: compat.equipos, vinculos: compat.producto_compatibilidad };
+  }
+
+  /** Crea o reemplaza un producto por `id`, con UNA escritura de `ts_catalogo`. */
+  guardarProducto(producto: Producto): void {
+    const c = this.datos();
+    const existe = c.productos.some((p) => p.id === producto.id);
+    const productos = existe ? c.productos.map((p) => (p.id === producto.id ? producto : p)) : [...c.productos, producto];
+    this.catalogo = { ...c, productos };
+    localStore.set(KEY_CATALOGO, this.catalogo);
+  }
+
+  guardarMarca(nombre: string): Marca {
+    const c = this.datos();
+    const marca: Marca = { id: Math.max(0, ...c.marcas.map((m) => m.id)) + 1, nombre: nombre.trim() };
+    this.catalogo = { ...c, marcas: [...c.marcas, marca] };
+    localStore.set(KEY_CATALOGO, this.catalogo);
+    return marca;
+  }
+
+  /** Crea o actualiza un equipo. `codigos` (lo que reconocen el escaneo y "Mi equipo") se arma con el modelo y el código. */
+  guardarEquipo(datos: { id?: number; marca_id: number; modelo: string; codigo_modelo: string | null; especificaciones?: Equipo['especificaciones'] }): Equipo {
+    const compat = this.compat ?? VACIO_COMPAT;
+    const modelo = datos.modelo.trim();
+    const codigo = datos.codigo_modelo?.trim() || null;
+    const base = compat.equipos.find((e) => e.id === datos.id);
+    const equipo: Equipo = {
+      id: base?.id ?? Math.max(0, ...compat.equipos.map((e) => e.id)) + 1,
+      marca_id: datos.marca_id,
+      modelo,
+      codigo_modelo: codigo,
+      codigos: [modelo, ...(codigo ? [codigo] : [])],
+      especificaciones: datos.especificaciones ?? base?.especificaciones ?? {},
+    };
+    const equipos = base ? compat.equipos.map((e) => (e.id === base.id ? equipo : e)) : [...compat.equipos, equipo];
+    this.compat = { ...compat, equipos };
+    localStore.set(KEY_COMPAT, this.compat);
+    return equipo;
+  }
+
+  /** Reemplaza los equipos compatibles de un producto (nivel 3 de compatibilidad). */
+  vincularEquipos(productoId: number, equipoIds: readonly number[]): void {
+    const compat = this.compat ?? VACIO_COMPAT;
+    const previos = new Map(compat.producto_compatibilidad.filter((v) => v.producto_id === productoId).map((v) => [v.equipo_id, v.nota]));
+    const resto = compat.producto_compatibilidad.filter((v) => v.producto_id !== productoId);
+    this.compat = { ...compat, producto_compatibilidad: [...resto, ...equipoIds.map((equipo_id) => ({ producto_id: productoId, equipo_id, nota: previos.get(equipo_id) ?? null }))] };
+    localStore.set(KEY_COMPAT, this.compat);
   }
 }

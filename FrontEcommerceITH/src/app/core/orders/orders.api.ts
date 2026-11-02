@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, forkJoin, map, of, switchMap, take } from 'rxjs';
+import { Observable, firstValueFrom, forkJoin, map, of, switchMap, take } from 'rxjs';
 import { PerfilApi } from '../account/perfil.api';
 import { Usuario } from '../auth/session.api';
 import { CartApi } from '../cart/cart.api';
@@ -10,8 +10,9 @@ import { ExchangeRateApi } from '../currency/exchange-rate.api';
 import { localStore } from '../storage/local-store';
 import { paginar } from '../catalog/catalog.logic';
 import { Pagina } from '../catalog/catalog.models';
+import { aplicarTransicion, stockTrasCancelar } from './orders-admin.logic';
 import { construirPedido, descontar, faltantes, firma, visibles } from './orders.logic';
-import { Envio, MetodoPago, Pago, Pedido, ResultadoPago } from './orders.models';
+import { EstadoPedido, Envio, MetodoPago, Pago, Pedido, ResultadoPago } from './orders.models';
 import { DatoPago, simular } from './payment-simulator';
 
 const KEY_PEDIDOS = 'pedidos';
@@ -123,5 +124,37 @@ export class OrdersApi {
   obtener(codigo: string, usuarioId: string): Pedido | null {
     const p = this.todos().find((x) => x.codigo === codigo);
     return p && p.usuarioId === usuarioId ? p : null;
+  }
+
+  // — Administración (spec 010). En la Fase 2: `/api/v1/admin/pedidos`, con la reposición de stock en una transacción. —
+
+  /** Todos los pedidos que ya pasaron por el pago (los `pendiente_pago` no son trabajo de despacho, pero se listan como "Sin pagar"). */
+  listarTodos(): Pedido[] {
+    return this.todos();
+  }
+
+  obtenerAdmin(codigo: string): Pedido | null {
+    return this.todos().find((p) => p.codigo === codigo) ?? null;
+  }
+
+  /** Avanza el estado con las reglas de `aplicarTransicion`. Al cancelar un pedido pagado, las unidades vuelven al stock. */
+  async cambiarEstado(
+    codigo: string,
+    nuevo: EstadoPedido,
+    motivo?: string,
+  ): Promise<{ ok: true; pedido: Pedido; sinProducto: string[] } | { ok: false; error: 'NO_ENCONTRADO' | 'TRANSICION_INVALIDA' }> {
+    const pedido = this.obtenerAdmin(codigo);
+    if (!pedido) return { ok: false, error: 'NO_ENCONTRADO' };
+    const actualizado = aplicarTransicion(pedido, nuevo, new Date(), motivo);
+    if (!actualizado) return { ok: false, error: 'TRANSICION_INVALIDA' };
+    let sinProducto: string[] = [];
+    if (nuevo === 'cancelado') {
+      const productos = await firstValueFrom(this.catalog.todos());
+      const r = stockTrasCancelar(pedido, productos);
+      sinProducto = r.sinProducto;
+      this.catalog.reemplazarStock(r.stockPorSku);
+    }
+    this.guardar(actualizado);
+    return { ok: true, pedido: actualizado, sinProducto };
   }
 }

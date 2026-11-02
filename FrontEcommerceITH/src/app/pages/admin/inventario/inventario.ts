@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, HostListener, afterNextRender, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { RouterLink } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { CatalogApi } from '../../../core/catalog/catalog.api';
 import { Producto } from '../../../core/catalog/catalog.models';
@@ -23,7 +24,7 @@ const RESALTE_MS = 1200;
  */
 @Component({
   selector: 'app-inventario',
-  imports: [TranslocoPipe, Icon],
+  imports: [TranslocoPipe, Icon, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block' },
   template: `
@@ -86,6 +87,7 @@ const RESALTE_MS = 1200;
             } @else {
               <button type="button" data-track="inventario.buscar-nombre" class="min-h-11 justify-self-start rounded-control border border-border-control px-3 font-semibold hover:bg-surface" (click)="buscarPorNombre(s.codigo)">{{ 'inventory.searchByName' | transloco }}</button>
             }
+            <a routerLink="/admin/productos/nuevo" data-track="inventario.producto-nuevo" class="inline-flex min-h-11 items-center justify-self-start rounded-control border border-border-control px-3 font-semibold hover:bg-surface">{{ 'inventory.registerNew' | transloco }}</a>
             <button type="button" data-track="inventario.escanear-otro" class="min-h-11 justify-self-start rounded-control border border-border-control px-3 font-semibold hover:bg-surface" (click)="sinCoincidencia.set(null); enfocar()">{{ 'inventory.scanAnother' | transloco }}</button>
           </div>
         }

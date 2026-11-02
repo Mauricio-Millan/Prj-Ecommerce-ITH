@@ -13,10 +13,10 @@ import { LanguageSelector } from '../../shared/ui/language-selector/language-sel
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex min-h-dvh flex-col md:flex-row' },
   template: `
-    <aside class="border-b border-border bg-surface-muted md:w-60 md:border-r md:border-b-0">
+    <aside class="print:hidden border-b border-border bg-surface-muted md:w-60 md:border-r md:border-b-0">
       <a routerLink="/admin" class="block px-4 py-4 text-xl font-bold tracking-tight text-primary">TechSuply</a>
       <nav [attr.aria-label]="'admin.nav' | transloco">
-        <ul class="flex gap-1 px-2 pb-2 md:flex-col">
+        <ul class="flex flex-wrap gap-1 px-2 pb-2 md:flex-col">
           <li>
             <a
               routerLink="/admin"
@@ -27,16 +27,37 @@ import { LanguageSelector } from '../../shared/ui/language-selector/language-sel
               <app-icon name="panel" [size]="18" /> {{ 'admin.dashboard' | transloco }}
             </a>
           </li>
+
+          <li>
+            <a routerLink="/admin/productos" routerLinkActive="bg-surface font-semibold text-primary" class="flex min-h-11 items-center gap-2 rounded-control px-3 text-sm hover:bg-surface" data-track="admin.nav-productos">
+              <app-icon name="disponible" [size]="18" /> {{ 'adminNav.products' | transloco }}
+            </a>
+          </li>
+          <li>
+            <a routerLink="/admin/pedidos" routerLinkActive="bg-surface font-semibold text-primary" class="flex min-h-11 items-center gap-2 rounded-control px-3 text-sm hover:bg-surface" data-track="admin.nav-pedidos">
+              <app-icon name="envio" [size]="18" /> {{ 'adminNav.orders' | transloco }}
+            </a>
+          </li>
           <li>
             <a routerLink="/admin/inventario" routerLinkActive="bg-surface font-semibold text-primary" class="flex min-h-11 items-center gap-2 rounded-control px-3 text-sm hover:bg-surface" data-track="admin.inventario">
               <app-icon name="escanear" [size]="18" /> {{ 'inventory.nav' | transloco }}
+            </a>
+          </li>
+          <li>
+            <a routerLink="/admin/equipos" routerLinkActive="bg-surface font-semibold text-primary" class="flex min-h-11 items-center gap-2 rounded-control px-3 text-sm hover:bg-surface" data-track="admin.nav-equipos">
+              <app-icon name="laptop" [size]="18" /> {{ 'adminNav.devices' | transloco }}
+            </a>
+          </li>
+          <li>
+            <a routerLink="/admin/tipo-cambio" routerLinkActive="bg-surface font-semibold text-primary" class="flex min-h-11 items-center gap-2 rounded-control px-3 text-sm hover:bg-surface" data-track="admin.nav-tipo-cambio">
+              <app-icon name="idioma" [size]="18" /> {{ 'adminNav.rate' | transloco }}
             </a>
           </li>
         </ul>
       </nav>
     </aside>
     <div class="flex flex-1 flex-col">
-      <header class="flex flex-wrap items-center gap-2 border-b border-border px-4 py-2">
+      <header class="print:hidden flex flex-wrap items-center gap-2 border-b border-border px-4 py-2">
         <a routerLink="/" class="inline-flex min-h-11 items-center gap-2 text-sm text-primary hover:underline" data-track="admin.volver-tienda">
           <app-icon name="volver" [size]="18" /> {{ 'admin.backToStore' | transloco }}
         </a>
