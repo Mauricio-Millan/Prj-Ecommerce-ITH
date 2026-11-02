@@ -35,7 +35,7 @@ export interface LineaResumen {
           inputmode="decimal"
           autocomplete="off"
           data-track="armador.presupuesto"
-          class="min-h-11 w-full rounded-control border border-border bg-surface px-3 text-sm"
+          class="min-h-11 w-full rounded-control border border-border-control bg-surface px-3 text-sm"
           [value]="presupuestoTexto()"
           [placeholder]="'builder.budgetPlaceholder' | transloco"
           (change)="alCambiarPresupuesto($any($event.target).value)"
@@ -46,7 +46,7 @@ export interface LineaResumen {
         <ul class="grid min-w-0 gap-1 text-sm">
           @for (l of lineas(); track l.paso) {
             <li class="flex min-w-0 justify-between gap-3">
-              <span class="min-w-0 flex-1 truncate"><span class="text-muted">{{ 'builder.step.' + l.paso | transloco }}:</span> {{ l.nombre }}</span>
+              <span class="min-w-0 flex-1 line-clamp-2"><span class="text-muted">{{ 'builder.step.' + l.paso | transloco }}:</span> {{ l.nombre }}</span>
               <span class="shrink-0 tabular-nums">{{ dinero(l.centimos) }}</span>
             </li>
           }

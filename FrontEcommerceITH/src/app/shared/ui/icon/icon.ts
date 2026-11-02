@@ -1,7 +1,7 @@
 ﻿import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import {
   ArrowLeft, Check, ChevronDown, ChevronLeft, ChevronRight, CircleCheck, CircleQuestionMark, CircleX, Copy, CreditCard, Lock, Smartphone, Cpu, Globe, Info, Laptop, LayoutDashboard, LogOut, LucideAngularModule, Menu,
-  Monitor, Mouse, Package, PackageCheck, PackageX, Search, SearchX, ShoppingCart, SlidersHorizontal, Trash2, TriangleAlert, Truck, User, Wrench, X,
+  Monitor, Mouse, Package, PackageCheck, PackageX, ScanBarcode, Search, SearchX, ShoppingCart, SlidersHorizontal, Trash2, TriangleAlert, Truck, User, Wrench, X,
 } from 'lucide-angular';
 
 /**
@@ -12,6 +12,7 @@ import {
 const ICONOS = {
   carrito: ShoppingCart,
   buscar: Search,
+  escanear: ScanBarcode,
   cuenta: User,
   menu: Menu,
   eliminar: Trash2,

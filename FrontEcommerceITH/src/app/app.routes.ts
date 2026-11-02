@@ -1,5 +1,6 @@
 ﻿import { Routes } from '@angular/router';
 import { adminGuard } from './core/auth/admin.guard';
+import { inventarioSinConfirmarGuard } from './pages/admin/inventario/inventario.guard';
 import { authGuard } from './core/auth/auth.guard';
 import { invitadoGuard } from './core/auth/invitado.guard';
 import { carritoPagableGuard, sinProcesarGuard } from './core/cart/carrito-pagable.guard';
@@ -15,6 +16,8 @@ export const routes: Routes = [
     children: [
       { path: '', pathMatch: 'full', loadComponent: () => import('./pages/home/home') },
       { path: 'buscar', loadComponent: () => import('./pages/buscar/buscar') },
+      { path: 'ayuda', loadComponent: () => import('./pages/ayuda/ayuda') },
+      { path: 'accesibilidad', loadComponent: () => import('./pages/accesibilidad/accesibilidad') },
       { path: 'carrito', loadComponent: () => import('./pages/carrito/carrito') },
       { path: 'armador', loadComponent: () => import('./pages/armador/armador').then((m) => m.Armador) },
       { path: 'catalogo/:slug', loadComponent: () => import('./pages/categoria/categoria') },
@@ -53,7 +56,10 @@ export const routes: Routes = [
     component: AdminLayout,
     canActivate: [adminGuard],
     data: { privada: true }, // al cerrar sesión aquí se vuelve al inicio (spec 004, CA-4.2)
-    children: [{ path: '', loadComponent: () => import('./pages/admin/dashboard/dashboard') }],
+    children: [
+      { path: '', loadComponent: () => import('./pages/admin/dashboard/dashboard') },
+      { path: 'inventario', canDeactivate: [inventarioSinConfirmarGuard], loadComponent: () => import('./pages/admin/inventario/inventario') },
+    ],
   },
   {
     path: '**',

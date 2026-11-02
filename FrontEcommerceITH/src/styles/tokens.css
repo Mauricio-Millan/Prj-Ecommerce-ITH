@@ -5,6 +5,9 @@
  * Paleta PROVISIONAL (pendiente de branding). Contraste verificado contra blanco (surface):
  *   primary 8.7:1 · accent 5.2:1 · foreground 17.9:1 · muted 7.6:1 · danger 6.5:1 · success 5.0:1 · warning 7.1:1
  *   sobre surface-muted todos ≥ 4.5:1 (accent 4.7, success 4.6) · primary-foreground sobre primary 8.7:1
+ *   border-control 4.8:1 sobre surface (los controles necesitan ≥ 3:1, WCAG 1.4.11)
+ * TEMAS (spec 018, anexo B): el tema oscuro y el de alto contraste solo redefinen estas variables, al final del archivo.
+ *   Medidos con specs/018-accesibilidad/herramientas/temas.mjs: todos los pares cumplen 4.5:1 (texto) y 3:1 (controles y foco).
  */
 @theme {
   /* Se apagan los colores por defecto de Tailwind: así `bg-blue-700` ni siquiera existe (prohibidos los literales). */
@@ -19,7 +22,9 @@
   --color-surface-muted: #f1f5f9;
   --color-foreground: #0f172a;
   --color-muted: #475569;
+  /* Bordes decorativos (tarjetas, separadores). Los controles de formulario usan border-control. */
   --color-border: #cbd5e1;
+  --color-border-control: #64748b;
   --color-danger: #b91c1c;
   --color-success: #15803d;
   --color-warning: #92400e;
@@ -35,4 +40,64 @@
 
   --shadow-card: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.1);
   --shadow-overlay: 0 10px 25px rgb(15 23 42 / 0.18);
+}
+
+/* ───────── Tema oscuro ───────── */
+:root[data-tema='oscuro'] {
+  color-scheme: dark;
+  --color-primary: #60a5fa;
+  --color-primary-hover: #93c5fd;
+  --color-primary-foreground: #0f172a;
+  --color-accent: #fb923c;
+  --color-accent-foreground: #0f172a;
+  --color-surface: #0f172a;
+  --color-surface-muted: #1e293b;
+  --color-foreground: #f1f5f9;
+  --color-muted: #cbd5e1;
+  --color-border: #334155;
+  --color-border-control: #94a3b8;
+  --color-danger: #f87171;
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-focus: #93c5fd;
+  --color-backdrop: rgb(0 0 0 / 0.7);
+}
+
+/* ───────── Alto contraste (claro) ───────── */
+:root[data-contraste='alto'] {
+  --color-primary: #0000b3;
+  --color-primary-hover: #000080;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #8a2c00;
+  --color-accent-foreground: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-muted: #ffffff;
+  --color-foreground: #000000;
+  --color-muted: #000000;
+  --color-border: #000000;
+  --color-border-control: #000000;
+  --color-danger: #9b0000;
+  --color-success: #005a00;
+  --color-warning: #6b3700;
+  --color-focus: #0000ff;
+}
+
+/* ───────── Alto contraste (oscuro): gana por especificidad a los dos anteriores ───────── */
+:root[data-tema='oscuro'][data-contraste='alto'] {
+  --color-primary: #8ec5ff;
+  --color-primary-hover: #bfdbfe;
+  --color-primary-foreground: #000000;
+  --color-accent: #ffb870;
+  --color-accent-foreground: #000000;
+  --color-surface: #000000;
+  --color-surface-muted: #000000;
+  --color-foreground: #ffffff;
+  --color-muted: #ffffff;
+  --color-border: #ffffff;
+  --color-border-control: #ffffff;
+  --color-danger: #ff9d9d;
+  --color-success: #7dff9a;
+  --color-warning: #ffe066;
+  --color-focus: #ffff00;
+  --color-backdrop: rgb(0 0 0 / 0.85);
 }

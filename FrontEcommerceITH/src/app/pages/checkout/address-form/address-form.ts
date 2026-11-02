@@ -24,7 +24,7 @@ import { CAMPO, CAMPO_ERROR } from '../../../shared/ui/form-classes';
             <option value="">{{ 'ubigeo.choose' | transloco }}</option>
             @for (d of deps(); track d) { <option [value]="d">{{ d }}</option> }
           </select>
-          <app-field-error errorId="envio-departamento-error" [codigo]="err('departamento')" />
+          <app-field-error errorId="envio-departamento-error" [codigo]="err('departamento')" campo="departamento" />
         </div>
         <div>
           <label for="envio-provincia" class="mb-1 block text-sm font-semibold">{{ 'ubigeo.province' | transloco }}</label>
@@ -32,7 +32,7 @@ import { CAMPO, CAMPO_ERROR } from '../../../shared/ui/form-classes';
             <option value="">{{ (provs().length ? 'ubigeo.choose' : 'ubigeo.chooseDepartmentFirst') | transloco }}</option>
             @for (p of provs(); track p) { <option [value]="p">{{ p }}</option> }
           </select>
-          <app-field-error errorId="envio-provincia-error" [codigo]="err('provincia')" />
+          <app-field-error errorId="envio-provincia-error" [codigo]="err('provincia')" campo="provincia" />
         </div>
         <div>
           <label for="envio-distrito" class="mb-1 block text-sm font-semibold">{{ 'ubigeo.district' | transloco }}</label>
@@ -40,14 +40,14 @@ import { CAMPO, CAMPO_ERROR } from '../../../shared/ui/form-classes';
             <option value="">{{ (dists().length ? 'ubigeo.choose' : 'ubigeo.chooseProvinceFirst') | transloco }}</option>
             @for (d of dists(); track d.id) { <option [value]="d.id">{{ d.distrito }}</option> }
           </select>
-          <app-field-error errorId="envio-distrito-error" [codigo]="err('ubigeo_id')" />
+          <app-field-error errorId="envio-distrito-error" [codigo]="err('ubigeo_id')" campo="distrito" />
         </div>
       </div>
 
       <div>
         <label for="envio-direccion" class="mb-1 block text-sm font-semibold">{{ 'checkout.address' | transloco }}</label>
         <input id="envio-direccion" type="text" formControlName="direccion" autocomplete="street-address" [class]="clase('direccion')" [attr.aria-describedby]="err('direccion') ? 'envio-direccion-error' : null" />
-        <app-field-error errorId="envio-direccion-error" [codigo]="err('direccion')" />
+        <app-field-error errorId="envio-direccion-error" [codigo]="err('direccion')" campo="direccion" />
       </div>
 
       <div>
@@ -59,12 +59,12 @@ import { CAMPO, CAMPO_ERROR } from '../../../shared/ui/form-classes';
         <div>
           <label for="envio-destinatario" class="mb-1 block text-sm font-semibold">{{ 'checkout.recipient' | transloco }}</label>
           <input id="envio-destinatario" type="text" formControlName="destinatario" autocomplete="name" [class]="clase('destinatario')" [attr.aria-describedby]="err('destinatario') ? 'envio-destinatario-error' : null" />
-          <app-field-error errorId="envio-destinatario-error" [codigo]="err('destinatario')" />
+          <app-field-error errorId="envio-destinatario-error" [codigo]="err('destinatario')" campo="destinatario" />
         </div>
         <div>
           <label for="envio-telefono" class="mb-1 block text-sm font-semibold">{{ 'checkout.phone' | transloco }}</label>
           <input id="envio-telefono" type="tel" inputmode="numeric" maxlength="9" formControlName="telefono" autocomplete="tel" [class]="clase('telefono')" [attr.aria-describedby]="err('telefono') ? 'envio-telefono-error' : null" />
-          <app-field-error errorId="envio-telefono-error" [codigo]="err('telefono')" />
+          <app-field-error errorId="envio-telefono-error" [codigo]="err('telefono')" campo="telefono" />
         </div>
       </div>
 

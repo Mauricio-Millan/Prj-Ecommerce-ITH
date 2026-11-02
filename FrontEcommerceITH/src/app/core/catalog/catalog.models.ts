@@ -1,4 +1,4 @@
-import { IconName } from '../../shared/ui/icon/icon';
+﻿import { IconName } from '../../shared/ui/icon/icon';
 
 export type Condicion = 'nuevo' | 'original' | 'compatible';
 export type ValorEspecificacion = string | number | boolean | string[];
@@ -18,6 +18,8 @@ export interface Producto {
   modelo: string;
   descripcion: string;
   numero_parte: string | null;
+  /** EAN-13 impreso en la caja (spec 014). Los de la semilla son de ejemplo. */
+  codigo_barras?: string | null;
   /** 2 decimales. En la Fase 2 llega como string y se convierte en `catalog.api.ts`. */
   precio_usd: number;
   stock: number;
@@ -64,6 +66,8 @@ export interface Equipo {
   marca_id: number;
   modelo: string;
   codigo_modelo: string | null;
+  /** Modelo y códigos de máquina que aparecen en la etiqueta (spec 014). */
+  codigos?: string[];
   especificaciones: Record<string, ValorEspecificacion>;
 }
 
@@ -134,3 +138,4 @@ export interface DetalleCategoria {
 }
 
 export type EquipoConMarca = Equipo & { marca: string };
+

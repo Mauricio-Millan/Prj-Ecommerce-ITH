@@ -1,0 +1,93 @@
+import { Equipo, Producto } from '../catalog/catalog.models';
+import { DetectorLector } from './lector-usb';
+import { eanValido, resolverCodigo } from './scan.logic';
+
+const p = (id: number, sku: string, numero_parte: string | null, codigo_barras: string | null): Producto => ({ id, sku, numero_parte, codigo_barras, activo: true }) as Producto;
+const eq = (id: number, modelo: string, codigo_modelo: string | null, codigos: string[]): Equipo => ({ id, modelo, codigo_modelo, codigos, marca_id: 1, especificaciones: {} });
+
+const datos = {
+  productos: [p(1, 'BAT-L19M3PF4', 'L19M3PF4', '2000000000015'), p(2, 'BAT-A', 'SHARED-1', '2000000000022'), p(3, 'BAT-B', 'SHARED-1', null)],
+  equipos: [eq(1, 'IdeaPad 3 15ITL6', '82H8', ['IdeaPad 3 15ITL6', '82H8'])],
+};
+const TIENDA = 'https://tienda.test';
+
+describe('eanValido', () => {
+  it('acepta EAN-13, UPC-A y EAN-8 con dígito correcto y rechaza el resto', () => {
+    expect(eanValido('2000000000015')).toBeTrue();
+    expect(eanValido('4006381333931')).toBeTrue();
+    expect(eanValido('036000291452')).toBeTrue(); // UPC-A
+    expect(eanValido('96385074')).toBeTrue(); // EAN-8
+    expect(eanValido('2000000000016')).toBeFalse();
+    expect(eanValido('L19M3PF4')).toBeFalse();
+    expect(eanValido('12345')).toBeFalse();
+  });
+});
+
+describe('resolverCodigo (spec 014)', () => {
+  it('CA-1.5/1.7: SKU, número de parte y código de barras, sin importar mayúsculas, espacios ni guiones', () => {
+    for (const t of ['BAT-L19M3PF4', 'bat l19m3pf4', 'L19M3-PF4', '2000000000015', ' 02000000000015 '.trim().slice(1)]) {
+      const r = resolverCodigo(t, datos, 'buscador');
+      expect(r.tipo).withContext(t).toBe('producto');
+    }
+  });
+
+  it('CA-1.5: un número de parte compartido devuelve varios', () => {
+    const r = resolverCodigo('shared-1', datos, 'buscador');
+    expect(r.tipo).toBe('varios');
+    if (r.tipo === 'varios') expect(r.productos.length).toBe(2);
+  });
+
+  it('CA-1.7: un UPC-A y su EAN-13 con un cero delante son el mismo código', () => {
+    const d = { ...datos, productos: [p(9, 'X-1', null, '0036000291452')] };
+    expect(resolverCodigo('036000291452', d, 'buscador').tipo).toBe('producto');
+  });
+
+  it('CA-1.6: un código desconocido o con el dígito del EAN mal leído no coincide', () => {
+    expect(resolverCodigo('ZZZ-999', datos, 'buscador').tipo).toBe('ninguno');
+    expect(resolverCodigo('2000000000016', datos, 'buscador').tipo).toBe('ninguno');
+    expect(resolverCodigo('   ', datos, 'buscador').tipo).toBe('ninguno');
+  });
+
+  it('CA-1.8: un QR de la tienda abre la ficha; uno de otro sitio es externo', () => {
+    expect(resolverCodigo(`${TIENDA}/producto/BAT-L19M3PF4`, datos, 'buscador', TIENDA).tipo).toBe('producto');
+    expect(resolverCodigo('https://otro.example/producto/BAT-L19M3PF4', datos, 'buscador', TIENDA).tipo).toBe('externo');
+    expect(resolverCodigo(`${TIENDA}/otra-cosa`, datos, 'buscador', TIENDA).tipo).toBe('externo');
+  });
+
+  it('CA-3.2 a 3.4: en "mi-equipo" se resuelven equipos por modelo o código de máquina; un número de serie no', () => {
+    expect(resolverCodigo('82h8', datos, 'mi-equipo').tipo).toBe('equipo');
+    expect(resolverCodigo('ideapad 3 15itl6', datos, 'mi-equipo').tipo).toBe('equipo');
+    expect(resolverCodigo('PF2ABCD1', datos, 'mi-equipo').tipo).toBe('ninguno');
+    expect(resolverCodigo('BAT-L19M3PF4', datos, 'mi-equipo').tipo).toBe('ninguno');
+  });
+});
+
+describe('DetectorLector (spec 014, HU-2)', () => {
+  const teclear = (d: DetectorLector, texto: string, intervalo: number, inicio = 1000): string | null => {
+    let t = inicio;
+    for (const ch of texto) {
+      d.tecla(ch, t);
+      t += intervalo;
+    }
+    return d.tecla('Enter', t);
+  };
+
+  it('CA-2.1: una ráfaga rápida terminada en Enter es una lectura', () => {
+    expect(teclear(new DetectorLector(), 'L19M3PF4', 15)).toBe('L19M3PF4');
+  });
+
+  it('CA-2.2: escribir a ritmo humano no es una lectura', () => {
+    expect(teclear(new DetectorLector(), 'L19M3PF4', 180)).toBeNull();
+    expect(teclear(new DetectorLector(), 'L19M3PF4', 90)).toBeNull();
+  });
+
+  it('un texto corto, aunque sea rápido, no es una lectura', () => {
+    expect(teclear(new DetectorLector(), 'abc', 10)).toBeNull();
+  });
+
+  it('una lectura después de escribir a mano se detecta sola (la pausa reinicia)', () => {
+    const d = new DetectorLector();
+    teclear(d, 'hola', 200);
+    expect(teclear(d, '2000000000015', 12, 9000)).toBe('2000000000015');
+  });
+});

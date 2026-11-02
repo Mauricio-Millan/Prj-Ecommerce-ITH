@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input, model, signal } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
 
-const BOTON = 'inline-flex min-h-11 min-w-11 items-center justify-center border border-border bg-surface text-lg hover:bg-surface-muted disabled:cursor-not-allowed disabled:text-muted';
+const BOTON = 'inline-flex min-h-11 min-w-11 items-center justify-center border border-border-control bg-surface text-lg hover:bg-surface-muted disabled:cursor-not-allowed disabled:text-muted';
 
 /** Cantidad entre 1 y `max` (H5). Al escribir más del stock se ajusta al máximo y avisa "Solo quedan N unidades" (H9). La reutiliza el carrito (005). */
 @Component({
@@ -27,7 +27,7 @@ const BOTON = 'inline-flex min-h-11 min-w-11 items-center justify-center border 
         [max]="max()"
         [value]="valor()"
         [attr.aria-label]="'catalog.quantity' | transloco"
-        class="min-h-11 w-14 border-y border-border bg-surface text-center tabular-nums"
+        class="min-h-11 w-14 border-y border-border-control bg-surface text-center tabular-nums"
         (input)="alEscribir(campo)"
         (change)="alConfirmar(campo)"
       />

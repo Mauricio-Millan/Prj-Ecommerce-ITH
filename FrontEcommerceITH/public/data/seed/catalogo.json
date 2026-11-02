@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "categorias": [
     {
       "id": 1,
@@ -1561,7 +1561,8 @@
       ],
       "destacado": true,
       "activo": true,
-      "created_at": "2026-08-02T10:00:00Z"
+      "created_at": "2026-08-02T10:00:00Z",
+      "codigo_barras": "2000000000015"
     },
     {
       "id": 2,
@@ -1591,7 +1592,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-08-10T10:00:00Z"
+      "created_at": "2026-08-10T10:00:00Z",
+      "codigo_barras": "2000000000022"
     },
     {
       "id": 3,
@@ -1621,7 +1623,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-07-15T10:00:00Z"
+      "created_at": "2026-07-15T10:00:00Z",
+      "codigo_barras": "2000000000039"
     },
     {
       "id": 4,
@@ -1651,7 +1654,8 @@
       ],
       "destacado": true,
       "activo": true,
-      "created_at": "2026-06-20T10:00:00Z"
+      "created_at": "2026-06-20T10:00:00Z",
+      "codigo_barras": "2000000000046"
     },
     {
       "id": 5,
@@ -1681,7 +1685,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-06-25T10:00:00Z"
+      "created_at": "2026-06-25T10:00:00Z",
+      "codigo_barras": "2000000000053"
     },
     {
       "id": 6,
@@ -1711,7 +1716,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-05-30T10:00:00Z"
+      "created_at": "2026-05-30T10:00:00Z",
+      "codigo_barras": "2000000000060"
     },
     {
       "id": 7,
@@ -1741,7 +1747,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-07-05T10:00:00Z"
+      "created_at": "2026-07-05T10:00:00Z",
+      "codigo_barras": "2000000000077"
     },
     {
       "id": 8,
@@ -1775,7 +1782,8 @@
       ],
       "destacado": true,
       "activo": true,
-      "created_at": "2026-07-01T10:00:00Z"
+      "created_at": "2026-07-01T10:00:00Z",
+      "codigo_barras": "2000000000084"
     },
     {
       "id": 9,
@@ -1809,7 +1817,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-08-20T10:00:00Z"
+      "created_at": "2026-08-20T10:00:00Z",
+      "codigo_barras": "2000000000091"
     },
     {
       "id": 10,
@@ -1844,7 +1853,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-06-10T10:00:00Z"
+      "created_at": "2026-06-10T10:00:00Z",
+      "codigo_barras": "2000000000107"
     },
     {
       "id": 11,
@@ -1879,7 +1889,8 @@
       ],
       "destacado": true,
       "activo": true,
-      "created_at": "2026-08-25T10:00:00Z"
+      "created_at": "2026-08-25T10:00:00Z",
+      "codigo_barras": "2000000000114"
     },
     {
       "id": 12,
@@ -1911,7 +1922,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-06-01T10:00:00Z"
+      "created_at": "2026-06-01T10:00:00Z",
+      "codigo_barras": "2000000000121"
     },
     {
       "id": 13,
@@ -1943,7 +1955,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-08-15T10:00:00Z"
+      "created_at": "2026-08-15T10:00:00Z",
+      "codigo_barras": "2000000000138"
     },
     {
       "id": 14,
@@ -1976,7 +1989,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-07-10T10:00:00Z"
+      "created_at": "2026-07-10T10:00:00Z",
+      "codigo_barras": "2000000000145"
     },
     {
       "id": 15,
@@ -2009,7 +2023,8 @@
       ],
       "destacado": true,
       "activo": true,
-      "created_at": "2026-08-05T10:00:00Z"
+      "created_at": "2026-08-05T10:00:00Z",
+      "codigo_barras": "2000000000152"
     },
     {
       "id": 16,
@@ -2044,7 +2059,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-06-05T10:00:00Z"
+      "created_at": "2026-06-05T10:00:00Z",
+      "codigo_barras": "2000000000169"
     },
     {
       "id": 17,
@@ -2079,7 +2095,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-06-18T10:00:00Z"
+      "created_at": "2026-06-18T10:00:00Z",
+      "codigo_barras": "2000000000176"
     },
     {
       "id": 18,
@@ -2117,7 +2134,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-05-20T10:00:00Z"
+      "created_at": "2026-05-20T10:00:00Z",
+      "codigo_barras": "2000000000183"
     },
     {
       "id": 19,
@@ -2149,7 +2167,8 @@
       ],
       "destacado": true,
       "activo": true,
-      "created_at": "2026-07-22T10:00:00Z"
+      "created_at": "2026-07-22T10:00:00Z",
+      "codigo_barras": "2000000000190"
     },
     {
       "id": 20,
@@ -2183,7 +2202,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-06-28T10:00:00Z"
+      "created_at": "2026-06-28T10:00:00Z",
+      "codigo_barras": "2000000000206"
     },
     {
       "id": 21,
@@ -2214,7 +2234,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-07-30T10:00:00Z"
+      "created_at": "2026-07-30T10:00:00Z",
+      "codigo_barras": "2000000000213"
     },
     {
       "id": 22,
@@ -2245,7 +2266,8 @@
       ],
       "destacado": false,
       "activo": true,
-      "created_at": "2026-08-28T10:00:00Z"
+      "created_at": "2026-08-28T10:00:00Z",
+      "codigo_barras": "2000000000220"
     }
   ]
 }

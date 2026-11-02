@@ -27,13 +27,13 @@ import { Icon } from '../../../shared/ui/icon/icon';
       <div>
         <label for="pago-yape-celular" class="mb-1 block text-sm font-semibold">{{ 'payment.yape.phone' | transloco }}</label>
         <input id="pago-yape-celular" type="tel" inputmode="numeric" maxlength="9" autocomplete="tel" formControlName="celular" [class]="clase('celular')" [attr.aria-describedby]="err('celular') ? 'pago-yape-celular-error' : null" />
-        <app-field-error errorId="pago-yape-celular-error" [codigo]="err('celular')" />
+        <app-field-error errorId="pago-yape-celular-error" [codigo]="err('celular')" campo="celular" />
       </div>
 
       <div>
         <label for="pago-yape-codigo" class="mb-1 block text-sm font-semibold">{{ 'payment.yape.code' | transloco }}</label>
         <input id="pago-yape-codigo" type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code" formControlName="codigo" [class]="clase('codigo')" [attr.aria-describedby]="(err('codigo') ? 'pago-yape-codigo-error ' : '') + 'pago-yape-vence'" />
-        <app-field-error errorId="pago-yape-codigo-error" [codigo]="err('codigo')" />
+        <app-field-error errorId="pago-yape-codigo-error" [codigo]="err('codigo')" campo="codigo" />
         <p id="pago-yape-vence" class="mt-1 text-xs text-muted">{{ 'payment.yape.expires' | transloco }}</p>
       </div>
     </div>

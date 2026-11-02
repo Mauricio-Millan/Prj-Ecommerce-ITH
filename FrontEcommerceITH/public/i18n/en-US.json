@@ -72,7 +72,193 @@
   "footer": {
     "nav": "Site links",
     "home": "Home",
+    "help": "Help and contact",
+    "warranty": "Warranty and returns",
+    "compat": "How to know if it is compatible",
+    "accessibility": "Accessibility",
     "rights": "© 2026 TechSuply · Academic prototype"
+  },
+  "inventory": {
+    "nav": "Inventory",
+    "title": "Inventory",
+    "modesLabel": "Work mode",
+    "modes": {
+      "ingreso": "Stock in",
+      "conteo": "Count",
+      "historial": "History"
+    },
+    "help": {
+      "ingreso": "Scan each product; scan again to add units. Nothing changes until you confirm.",
+      "conteo": "Scan each product and check what you counted; scan again to add one at a time. Nothing changes until you confirm."
+    },
+    "scanLabel": "Product code (SKU, part number or barcode)",
+    "scanPlaceholder": "Scan or type the code",
+    "scanCamera": "Scan with the camera",
+    "add": "Add",
+    "empty": "No products yet. Scan the first one.",
+    "linesLabel": "Products in this record",
+    "line": {
+      "stock": "Current stock: {{n}}",
+      "qty": "Quantity",
+      "counted": "Counted",
+      "system": "System: {{n}}",
+      "remove": "Remove {{nombre}}",
+      "minus": "Subtract one unit of {{nombre}}",
+      "plus": "Add one unit to {{nombre}}"
+    },
+    "diff": {
+      "over": "{{n}} extra",
+      "under": "{{n}} missing",
+      "none": "no difference"
+    },
+    "undo": "Undo last scan",
+    "confirmEntry": "Confirm stock in",
+    "confirmCount": "Confirm count",
+    "summary": {
+      "title": "Summary",
+      "products": "{{n}} products",
+      "units": "{{n}} units",
+      "confirm": "Confirm",
+      "back": "Back"
+    },
+    "reason": {
+      "label": "Reason for the adjustment",
+      "choose": "Choose a reason",
+      "conteo_fisico": "Physical count",
+      "merma": "Shrinkage",
+      "devolucion": "Return",
+      "otro": "Other"
+    },
+    "confirmed": "Stock in recorded: {{productos}} products, {{unidades}} units",
+    "confirmedCount": "Count recorded: {{productos}} adjustments, {{unidades}} units of difference",
+    "unknown": "We could not find this code",
+    "pick": "Choose the product:",
+    "searchByName": "Search by name",
+    "scanAnother": "Scan another",
+    "announce": {
+      "added": "{{nombre}}: quantity {{n}}",
+      "removed": "{{nombre}} removed from the list",
+      "undone": "Last scan undone"
+    },
+    "error": {
+      "CANTIDAD_INVALIDA": "Check the quantities: they must be whole numbers.",
+      "PRODUCTO_NO_ENCONTRADO": "A product in the list no longer exists.",
+      "MOTIVO_REQUERIDO": "Choose the reason for the adjustment.",
+      "STOCK_NEGATIVO": "The adjustment would leave stock below zero.",
+      "SIN_LINEAS": "Add at least one product."
+    },
+    "leave": "There is an unconfirmed record. If you leave, it will be discarded. Leave?",
+    "history": {
+      "title": "Movement history",
+      "filterProduct": "Product",
+      "filterType": "Type",
+      "all": "All",
+      "count": "{{n}} movements",
+      "empty": "No movements yet.",
+      "cols": {
+        "date": "Date and time",
+        "product": "Product",
+        "type": "Type",
+        "qty": "Quantity",
+        "before": "Stock before",
+        "after": "Stock after",
+        "reason": "Reason",
+        "user": "By"
+      },
+      "type": {
+        "ingreso": "Stock in",
+        "ajuste": "Adjustment"
+      }
+    }
+  },
+  "scan": {
+    "button": "Scan code",
+    "title": "Scan a code",
+    "close": "Close",
+    "intro": "We will use your camera only to read the code. We do not save images.",
+    "continue": "Continue",
+    "instruction": "Point at the barcode or QR code",
+    "videoLabel": "Camera view for reading a code",
+    "read": "Code read",
+    "typeCode": "Type the code",
+    "useCamera": "Use the camera",
+    "unknown": "We do not recognize this code",
+    "searchAsText": "Search it as text",
+    "scanAnother": "Scan another",
+    "external": "This code leads to another site",
+    "externalHelp": "For your safety we do not open it. You can copy the address.",
+    "copy": "Copy address",
+    "copied": "Address copied",
+    "noCamera": "We could not use your camera. Check the browser permission or type the code.",
+    "chooseProduct": "This code matches several products. Choose one:",
+    "chooseEquipo": "This code matches several laptops. Choose yours:",
+    "serialOnly": "This code identifies your laptop, but we do not know its model",
+    "serialHelp": "Choose your laptop step by step; there we also show where to find the model.",
+    "chooseBySteps": "Choose my laptop step by step",
+    "equipoButton": "Scan my laptop's label",
+    "manual": { "label": "Product or label code", "placeholder": "E.g.: L19M3PF4 or 2000000000015", "submit": "Search" },
+    "announce": {
+      "product": "Code read: {{nombre}}",
+      "equipo": "Code read: {{nombre}}",
+      "several": "The code matches several results. Choose one from the list."
+    }
+  },
+  "a11y": {
+    "title": "Accessibility preferences",
+    "intro": "Changes apply instantly and are saved in this browser. If you choose nothing, we use your device settings.",
+    "reset": "Reset",
+    "statement": "Accessibility statement",
+    "tema": { "label": "Theme", "sistema": "Follow system", "claro": "Light", "oscuro": "Dark" },
+    "contraste": { "label": "Contrast", "sistema": "Follow system", "normal": "Normal", "alto": "High" },
+    "texto": { "label": "Text size", "normal": "Normal", "grande": "Large", "muy-grande": "Extra large" },
+    "espaciado": { "label": "Text spacing", "normal": "Normal", "ampliado": "Increased" },
+    "movimiento": { "label": "Motion", "sistema": "Follow system", "reducido": "Reduced" }
+  },
+  "a11yStatement": {
+    "title": "Accessibility statement",
+    "example": "TechSuply is an academic prototype. This statement describes the real state of the accessibility work and is updated with each version.",
+    "level": {
+      "title": "Target level",
+      "body": "Our goal is to meet WCAG 2.1 level AA. We do not claim conformance yet: the audit is in progress."
+    },
+    "done": {
+      "title": "What we have done",
+      "p1": "It can be used with a keyboard, with a visible focus and a link to skip to the content.",
+      "p2": "States (stock, compatibility, errors, steps) use an icon and text, not only color.",
+      "p3": "There are light, dark and high-contrast themes, and text can be enlarged and spaced from the page footer.",
+      "p4": "Notices and important changes are announced to screen readers; reduced motion is respected."
+    },
+    "limits": {
+      "title": "Known limitations",
+      "p1": "We have not yet completed screen reader testing or validation with people with disabilities.",
+      "p2": "The researcher panel (the team's internal tool) is not part of the store and is not audited.",
+      "p3": "Help, policy and contact texts are examples."
+    },
+    "report": {
+      "title": "Report a barrier",
+      "body": "If you find something you cannot use, write to accessibility@techsuply.example (example address) and tell us the page and what you were trying to do."
+    }
+  },
+  "help": {
+    "title": "Help",
+    "example": "TechSuply is an academic prototype: the contact details and policies on this page are examples.",
+    "back": "Back to home",
+    "contact": {
+      "title": "Help and contact",
+      "body": "Write to help@techsuply.example or call 01 000 0000, Monday to Friday from 9:00 to 18:00. We answer within one business day."
+    },
+    "warranty": {
+      "title": "Warranty and returns",
+      "p1": "Each product shows its warranty in months on its page, next to the price.",
+      "p2": "If your order arrives faulty, write to us with the order code and we will review it.",
+      "p3": "You can ask for an exchange within 7 days after delivery if the product is unused and in its box."
+    },
+    "compat": {
+      "title": "How to know if a part is compatible",
+      "p1": "Set your laptop in “My device”: the store marks each product with ✓ compatible, ✗ not compatible or ? no data.",
+      "p2": "The model is on the label on the bottom of the laptop or in Windows, under Settings › System › About.",
+      "p3": "If you build a PC, the builder only offers parts that fit together and warns you about any conflict."
+    }
   },
   "home": {
     "title": "Find the right part, compatible with your device",
@@ -660,11 +846,26 @@
     "summaryOne": "Check 1 field",
     "celular": "Enter a 9-digit mobile number starting with 9",
     "dni": "Enter the 8 digits of your DNI",
-    "tarjeta": "Check your card number",
+    "tarjeta": "Your card number is not valid. Check that it has between 13 and 19 digits and that they are typed correctly",
     "vencimiento": "Write the date as MM/YY (for example, 08/28)",
     "vencida": "Your card has expired. Use another one",
     "cvv": "Enter the 3 digits on the back of the card",
-    "codigoYape": "Enter the 6 digits of the Yape code"
+    "codigoYape": "Enter the 6 digits of the Yape code",
+    "requerido": {
+      "numero": "Enter your card number",
+      "titular": "Enter the name shown on the card",
+      "vencimiento": "Enter the expiry date (MM/YY)",
+      "cvv": "Enter the 3-digit security code",
+      "celular": "Enter your 9-digit mobile number",
+      "codigo": "Enter the 6-digit Yape code",
+      "departamento": "Choose your department",
+      "provincia": "Choose your province",
+      "distrito": "Choose your district",
+      "direccion": "Enter your address (street and number)",
+      "destinatario": "Enter the name of the person receiving",
+      "telefono": "Enter a 9-digit contact mobile number",
+      "dni": "Enter the 8 digits of your DNI"
+    }
   },
   "checkout": {
     "pageTitle": "Checkout",
@@ -711,10 +912,14 @@
       "step2": "Enter your mobile number and the code here.",
       "phone": "Mobile number registered in Yape",
       "code": "Approval code (6 digits)",
-      "expires": "The code expires in a few minutes."
+      "expires": "It has 6 digits and expires in a few minutes."
     },
     "cardNumber": "Card number",
     "cardHolder": "Cardholder name",
+    "hint": {
+      "cardNumber": "Numbers only, no dashes. Between 13 and 19 digits.",
+      "expiry": "Format MM/YY, for example 08/28"
+    },
     "expiry": "Expiry date",
     "cvv": "Security code (CVV)",
     "cvvHelpLabel": "What is the security code",

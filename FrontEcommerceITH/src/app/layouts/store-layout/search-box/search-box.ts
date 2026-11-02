@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { debounceTime, map, of, switchMap } from 'rxjs';
 import { Producto } from '../../../core/catalog/catalog.models';
+import { DetectorLector } from '../../../core/scan/lector-usb';
+import { SalidaEscaner, ScanService } from '../../../core/scan/scan.service';
+import { InteractionLogger } from '../../../core/telemetry/interaction-logger';
 import { MIN_CARACTERES_SUGERENCIA, SearchApi } from '../../../core/search/search.api';
 import { Icon } from '../../../shared/ui/icon/icon';
 import { Price } from '../../../shared/ui/price/price';
@@ -29,7 +32,7 @@ import { Price } from '../../../shared/ui/price/price';
         autocomplete="off"
         enterkeyhint="search"
         aria-autocomplete="list"
-        class="w-full min-w-0 rounded-l-control border border-r-0 border-border bg-surface px-3 text-sm placeholder:text-muted"
+        class="w-full min-w-0 rounded-l-control border border-r-0 border-border-control bg-surface px-3 text-sm placeholder:text-muted"
         [class.min-h-11]="!destacado()"
         [class.min-h-14]="destacado()"
         [class.text-base]="destacado()"
@@ -42,6 +45,18 @@ import { Price } from '../../../shared/ui/price/price';
         (keydown)="alTeclear($event)"
         (blur)="abierta.set(false)"
       />
+      @if (escaner.disponible) {
+        <button
+          type="button"
+          data-zone="escaner"
+          data-track="escaner.abrir"
+          class="inline-flex min-w-11 items-center justify-center border border-r-0 border-border-control bg-surface px-3 hover:bg-surface-muted"
+          [class.min-h-11]="!destacado()"
+          [class.min-h-14]="destacado()"
+          [attr.aria-label]="'scan.button' | transloco"
+          (click)="escanear()"
+        ><app-icon name="escanear" /></button>
+      }
       <button
         type="submit"
         data-track="buscador.buscar"
@@ -97,6 +112,9 @@ export class SearchBox {
 
   private readonly router = inject(Router);
   private readonly search = inject(SearchApi);
+  protected readonly escaner = inject(ScanService);
+  private readonly logger = inject(InteractionLogger);
+  private readonly lector = new DetectorLector();
 
   protected readonly posiciones: ConnectedPosition[] = [{ originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top', offsetY: 4 }];
   protected readonly texto = signal('');
@@ -128,6 +146,15 @@ export class SearchBox {
   }
 
   protected alTeclear(e: KeyboardEvent): void {
+    // Un lector USB "teclea" el código completo y termina con Enter: se resuelve sin pasar por las sugerencias (spec 014, CA-2.1).
+    const leido = this.lector.tecla(e.key, e.timeStamp);
+    if (leido) {
+      e.preventDefault();
+      this.texto.set('');
+      this.abierta.set(false);
+      void this.leerConLector(leido);
+      return;
+    }
     const n = this.sugerencias().length;
     switch (e.key) {
       case 'ArrowDown':
@@ -152,6 +179,27 @@ export class SearchBox {
         this.activa.set(-1);
         break;
     }
+  }
+
+  private async leerConLector(codigo: string): Promise<void> {
+    const t0 = performance.now();
+    this.logger.track('scan_start', { origen: 'buscador', fuente: 'lector_usb' });
+    const r = await this.escaner.resolver(codigo, 'buscador');
+    const resultado = r.tipo === 'producto' ? 'producto' : r.tipo === 'varios' ? 'varios' : 'sin_coincidencia';
+    this.logger.track('scan_result', { origen: 'buscador', fuente: 'lector_usb', resultado, formato: 'lector_usb', ms: Math.round(performance.now() - t0) });
+    if (r.tipo === 'producto') this.router.navigate(['/producto', r.producto.sku]);
+    else this.router.navigate(['/buscar'], { queryParams: { q: codigo } });
+  }
+
+  protected async escanear(): Promise<void> {
+    this.abierta.set(false);
+    this.aplicar(await this.escaner.abrir('buscador'));
+  }
+
+  private aplicar(s: SalidaEscaner | undefined): void {
+    if (s?.accion === 'producto') this.router.navigate(['/producto', s.sku]);
+    else if (s?.accion === 'buscar') this.router.navigate(['/buscar'], { queryParams: { q: s.q } });
+    else if (s?.accion === 'escribir') document.getElementById(this.inputId())?.focus();
   }
 
   /** Una consulta vacía o de solo espacios no hace nada (CA-1.1, H5). */

@@ -14,10 +14,40 @@
     outline-offset: 2px;
   }
 
+  /* Tamaño y espaciado del texto elegidos en el panel de accesibilidad (spec 018): la interfaz usa rem, así que todo escala. */
+  html[data-texto='grande'] {
+    font-size: 112.5%;
+  }
+  html[data-texto='muy-grande'] {
+    font-size: 125%;
+  }
+  html[data-espaciado='ampliado'] body {
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+    word-spacing: 0.08em;
+  }
+
   /* El menú de CDK y los diálogos no traen estilos propios: se usa el backdrop de la paleta. */
   .cdk-overlay-dark-backdrop {
     background: var(--color-backdrop);
   }
+}
+
+/* Alto contraste de Windows (forced-colors): el foco usa el color del sistema; los estados llevan ícono y texto, no solo color. */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}
+
+/* Movimiento reducido elegido en el panel de accesibilidad: igual que la preferencia del sistema (abajo). */
+:root[data-movimiento='reducido'] *,
+:root[data-movimiento='reducido'] *::before,
+:root[data-movimiento='reducido'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

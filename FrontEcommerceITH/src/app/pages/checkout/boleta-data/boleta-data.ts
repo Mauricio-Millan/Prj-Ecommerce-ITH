@@ -34,7 +34,7 @@ import { CAMPO, CAMPO_ERROR } from '../../../shared/ui/form-classes';
             [attr.aria-invalid]="err() ? 'true' : null"
             [attr.aria-describedby]="err() ? 'boleta-dni-error boleta-dni-nota' : 'boleta-dni-nota'"
           />
-          <app-field-error errorId="boleta-dni-error" [codigo]="err()" />
+          <app-field-error errorId="boleta-dni-error" [codigo]="err()" campo="dni" />
           @if (!dniGuardado()) {
             <p id="boleta-dni-nota" class="mt-1 text-xs text-muted">{{ 'checkout.dniNote' | transloco }}</p>
           } @else {

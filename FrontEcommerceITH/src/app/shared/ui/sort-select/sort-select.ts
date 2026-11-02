@@ -14,7 +14,7 @@ export const ORDENES: readonly Orden[] = ['destacados', 'precio-asc', 'precio-de
       <span class="text-muted">{{ 'catalog.sort.label' | transloco }}</span>
       <select
         data-track="resultados.ordenar"
-        class="min-h-11 rounded-control border border-border bg-surface px-2"
+        class="min-h-11 rounded-control border border-border-control bg-surface px-2"
         (change)="cambiar.emit($any($event.target).value)"
       >
         @for (o of opciones(); track o) {

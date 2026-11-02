@@ -72,7 +72,193 @@
   "footer": {
     "nav": "Enlaces del sitio",
     "home": "Inicio",
+    "help": "Ayuda y contacto",
+    "warranty": "Garantía y devoluciones",
+    "compat": "Cómo saber si es compatible",
+    "accessibility": "Accesibilidad",
     "rights": "© 2026 TechSuply · Prototipo académico"
+  },
+  "inventory": {
+    "nav": "Inventario",
+    "title": "Inventario",
+    "modesLabel": "Modo de trabajo",
+    "modes": {
+      "ingreso": "Ingreso",
+      "conteo": "Conteo",
+      "historial": "Historial"
+    },
+    "help": {
+      "ingreso": "Escanea cada producto; repite el escaneo para sumar unidades. Nada cambia hasta que confirmes.",
+      "conteo": "Escanea cada producto y revisa lo que contaste; repite el escaneo para sumar de uno en uno. Nada cambia hasta que confirmes."
+    },
+    "scanLabel": "Código del producto (SKU, número de parte o código de barras)",
+    "scanPlaceholder": "Escanea o escribe el código",
+    "scanCamera": "Escanear con la cámara",
+    "add": "Agregar",
+    "empty": "Todavía no hay productos. Escanea el primero.",
+    "linesLabel": "Productos del registro",
+    "line": {
+      "stock": "Stock actual: {{n}}",
+      "qty": "Cantidad",
+      "counted": "Contado",
+      "system": "Sistema: {{n}}",
+      "remove": "Quitar {{nombre}}",
+      "minus": "Restar una unidad de {{nombre}}",
+      "plus": "Sumar una unidad a {{nombre}}"
+    },
+    "diff": {
+      "over": "sobran {{n}}",
+      "under": "faltan {{n}}",
+      "none": "sin diferencia"
+    },
+    "undo": "Deshacer último escaneo",
+    "confirmEntry": "Confirmar ingreso",
+    "confirmCount": "Confirmar conteo",
+    "summary": {
+      "title": "Resumen",
+      "products": "{{n}} productos",
+      "units": "{{n}} unidades",
+      "confirm": "Confirmar",
+      "back": "Volver"
+    },
+    "reason": {
+      "label": "Motivo del ajuste",
+      "choose": "Elige un motivo",
+      "conteo_fisico": "Conteo físico",
+      "merma": "Merma",
+      "devolucion": "Devolución",
+      "otro": "Otro"
+    },
+    "confirmed": "Ingreso registrado: {{productos}} productos, {{unidades}} unidades",
+    "confirmedCount": "Conteo registrado: {{productos}} ajustes, {{unidades}} unidades de diferencia",
+    "unknown": "No encontramos este código",
+    "pick": "Elige el producto:",
+    "searchByName": "Buscar por nombre",
+    "scanAnother": "Escanear otro",
+    "announce": {
+      "added": "{{nombre}}: cantidad {{n}}",
+      "removed": "{{nombre}} quitado de la lista",
+      "undone": "Último escaneo deshecho"
+    },
+    "error": {
+      "CANTIDAD_INVALIDA": "Revisa las cantidades: deben ser números enteros.",
+      "PRODUCTO_NO_ENCONTRADO": "Un producto de la lista ya no existe.",
+      "MOTIVO_REQUERIDO": "Elige el motivo del ajuste.",
+      "STOCK_NEGATIVO": "El ajuste dejaría el stock en negativo.",
+      "SIN_LINEAS": "Agrega al menos un producto."
+    },
+    "leave": "Hay un registro sin confirmar. Si sales, se descartará. ¿Salir?",
+    "history": {
+      "title": "Historial de movimientos",
+      "filterProduct": "Producto",
+      "filterType": "Tipo",
+      "all": "Todos",
+      "count": "{{n}} movimientos",
+      "empty": "Aún no hay movimientos.",
+      "cols": {
+        "date": "Fecha y hora",
+        "product": "Producto",
+        "type": "Tipo",
+        "qty": "Cantidad",
+        "before": "Stock antes",
+        "after": "Stock después",
+        "reason": "Motivo",
+        "user": "Quién"
+      },
+      "type": {
+        "ingreso": "Ingreso",
+        "ajuste": "Ajuste"
+      }
+    }
+  },
+  "scan": {
+    "button": "Escanear código",
+    "title": "Escanear código",
+    "close": "Cerrar",
+    "intro": "Usaremos tu cámara solo para leer el código. No guardamos imágenes.",
+    "continue": "Continuar",
+    "instruction": "Apunta al código de barras o QR",
+    "videoLabel": "Vista de la cámara para leer un código",
+    "read": "Código leído",
+    "typeCode": "Escribir el código",
+    "useCamera": "Usar la cámara",
+    "unknown": "No reconocemos este código",
+    "searchAsText": "Buscarlo como texto",
+    "scanAnother": "Escanear otro",
+    "external": "Este código lleva a otro sitio",
+    "externalHelp": "Por seguridad no lo abrimos. Puedes copiar la dirección.",
+    "copy": "Copiar dirección",
+    "copied": "Dirección copiada",
+    "noCamera": "No pudimos usar tu cámara. Revisa el permiso del navegador o escribe el código.",
+    "chooseProduct": "Este código coincide con varios productos. Elige uno:",
+    "chooseEquipo": "Este código coincide con varios equipos. Elige el tuyo:",
+    "serialOnly": "Este código identifica tu laptop, pero no sabemos su modelo",
+    "serialHelp": "Elige tu equipo por pasos; ahí también te mostramos dónde encontrar el modelo.",
+    "chooseBySteps": "Elegir mi equipo por pasos",
+    "equipoButton": "Escanear etiqueta de mi laptop",
+    "manual": { "label": "Código del producto o de la etiqueta", "placeholder": "Ej.: L19M3PF4 o 2000000000015", "submit": "Buscar" },
+    "announce": {
+      "product": "Código leído: {{nombre}}",
+      "equipo": "Código leído: {{nombre}}",
+      "several": "El código coincide con varios resultados. Elige uno de la lista."
+    }
+  },
+  "a11y": {
+    "title": "Preferencias de accesibilidad",
+    "intro": "Los ajustes se aplican al instante y se guardan en este navegador. Si no eliges nada, usamos los de tu dispositivo.",
+    "reset": "Restablecer",
+    "statement": "Declaración de accesibilidad",
+    "tema": { "label": "Tema", "sistema": "Según el sistema", "claro": "Claro", "oscuro": "Oscuro" },
+    "contraste": { "label": "Contraste", "sistema": "Según el sistema", "normal": "Normal", "alto": "Alto" },
+    "texto": { "label": "Tamaño del texto", "normal": "Normal", "grande": "Grande", "muy-grande": "Muy grande" },
+    "espaciado": { "label": "Espaciado del texto", "normal": "Normal", "ampliado": "Ampliado" },
+    "movimiento": { "label": "Movimiento", "sistema": "Según el sistema", "reducido": "Reducido" }
+  },
+  "a11yStatement": {
+    "title": "Declaración de accesibilidad",
+    "example": "TechSuply es un prototipo académico. Esta declaración describe el estado real del trabajo de accesibilidad y se actualiza con cada versión.",
+    "level": {
+      "title": "Nivel objetivo",
+      "body": "Nuestro objetivo es cumplir las pautas WCAG 2.1 nivel AA. Todavía no declaramos conformidad: la auditoría está en curso."
+    },
+    "done": {
+      "title": "Lo que ya hicimos",
+      "p1": "Se puede usar con teclado, con un foco visible y un enlace para saltar al contenido.",
+      "p2": "Los estados (stock, compatibilidad, errores, pasos) llevan ícono y texto, no solo color.",
+      "p3": "Hay tema claro, oscuro y de alto contraste, y el texto se puede agrandar y espaciar desde el pie de página.",
+      "p4": "Los avisos y los cambios importantes se anuncian a los lectores de pantalla; se respeta el movimiento reducido."
+    },
+    "limits": {
+      "title": "Limitaciones conocidas",
+      "p1": "Aún no completamos la prueba con lectores de pantalla ni la validación con personas con diversidad funcional.",
+      "p2": "El panel de investigador (herramienta interna del equipo) no forma parte de la tienda ni se audita.",
+      "p3": "Los textos de ayuda, políticas y contacto son de ejemplo."
+    },
+    "report": {
+      "title": "Reportar una barrera",
+      "body": "Si encuentras algo que no puedes usar, escríbenos a accesibilidad@techsuply.example (dirección de ejemplo) e indica la página y qué intentabas hacer."
+    }
+  },
+  "help": {
+    "title": "Ayuda",
+    "example": "TechSuply es un prototipo académico: los datos de contacto y las políticas de esta página son de ejemplo.",
+    "back": "Volver al inicio",
+    "contact": {
+      "title": "Ayuda y contacto",
+      "body": "Escríbenos a ayuda@techsuply.example o llama al 01 000 0000, de lunes a viernes de 9:00 a 18:00. Respondemos en un máximo de un día hábil."
+    },
+    "warranty": {
+      "title": "Garantía y devoluciones",
+      "p1": "Cada producto indica su garantía en meses en la ficha, junto al precio.",
+      "p2": "Si tu pedido llega con una falla, escríbenos con el código del pedido y lo revisamos.",
+      "p3": "Puedes pedir un cambio dentro de los 7 días siguientes a la entrega si el producto está sin uso y en su caja."
+    },
+    "compat": {
+      "title": "Cómo saber si una pieza es compatible",
+      "p1": "Indica tu laptop en «Mi equipo»: la tienda marcará cada producto con ✓ compatible, ✗ no compatible o ? sin datos.",
+      "p2": "El modelo está en la etiqueta de la parte de abajo de la laptop o en Windows, en Configuración › Sistema › Información.",
+      "p3": "Si armas una PC, el armador solo te ofrece piezas que calzan entre sí y te avisa si algo entra en conflicto."
+    }
   },
   "home": {
     "title": "Encuentra la pieza correcta y compatible con tu equipo",
@@ -717,11 +903,26 @@
     "summaryOne": "Revisa 1 campo",
     "celular": "Ingresa un celular de 9 dígitos que empiece con 9",
     "dni": "Ingresa los 8 dígitos de tu DNI",
-    "tarjeta": "Revisa el número de tu tarjeta",
+    "tarjeta": "El número de tu tarjeta no es válido. Revisa que tenga entre 13 y 19 dígitos y que estén bien escritos",
     "vencimiento": "Escribe la fecha como MM/AA (por ejemplo, 08/28)",
     "vencida": "Tu tarjeta está vencida. Usa otra",
     "cvv": "Ingresa los 3 dígitos del reverso de la tarjeta",
-    "codigoYape": "Ingresa los 6 dígitos del código de Yape"
+    "codigoYape": "Ingresa los 6 dígitos del código de Yape",
+    "requerido": {
+      "numero": "Ingresa el número de tu tarjeta",
+      "titular": "Ingresa el nombre que aparece en la tarjeta",
+      "vencimiento": "Ingresa la fecha de vencimiento (MM/AA)",
+      "cvv": "Ingresa el código de seguridad de 3 dígitos",
+      "celular": "Ingresa tu celular de 9 dígitos",
+      "codigo": "Ingresa el código de 6 dígitos de Yape",
+      "departamento": "Elige tu departamento",
+      "provincia": "Elige tu provincia",
+      "distrito": "Elige tu distrito",
+      "direccion": "Ingresa tu dirección (calle y número)",
+      "destinatario": "Ingresa el nombre de quien recibe",
+      "telefono": "Ingresa un celular de contacto de 9 dígitos",
+      "dni": "Ingresa los 8 dígitos de tu DNI"
+    }
   },
   "checkout": {
     "pageTitle": "Checkout",
@@ -768,10 +969,14 @@
       "step2": "Ingresa tu celular y el código aquí.",
       "phone": "Celular registrado en Yape",
       "code": "Código de aprobación (6 dígitos)",
-      "expires": "El código vence en pocos minutos."
+      "expires": "Son 6 dígitos y vence en pocos minutos."
     },
     "cardNumber": "Número de tarjeta",
     "cardHolder": "Nombre del titular",
+    "hint": {
+      "cardNumber": "Solo números, sin guiones. Entre 13 y 19 dígitos.",
+      "expiry": "Formato MM/AA, por ejemplo 08/28"
+    },
     "expiry": "Vencimiento",
     "cvv": "Código de seguridad (CVV)",
     "cvvHelpLabel": "Qué es el código de seguridad",

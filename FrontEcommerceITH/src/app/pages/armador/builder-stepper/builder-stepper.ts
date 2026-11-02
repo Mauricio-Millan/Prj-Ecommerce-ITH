@@ -49,7 +49,7 @@ const COLOR: Record<EstadoPaso, string> = { pendiente: 'text-muted', completo: '
             <span class="grid min-w-0">
               <span class="font-semibold">{{ p.clave | transloco }} @if (p.opcional) { <span class="font-normal text-muted">({{ 'builder.optional' | transloco }})</span> }</span>
               <span class="text-xs" [class]="color(p.estado)">{{ 'builder.state.' + p.estado | transloco }}</span>
-              @if (p.subtitulo) { <span class="truncate text-xs text-muted">{{ p.subtitulo }}</span> }
+              @if (p.subtitulo) { <span class="line-clamp-2 text-xs text-muted">{{ p.subtitulo }}</span> }
             </span>
           </button>
         </li>

@@ -37,7 +37,7 @@ import { StockBadge } from '../stock-badge/stock-badge';
         @if (compat(); as c) { <app-compat-badge [resultado]="c" /> }
         <button
           type="button"
-          class="min-h-11 rounded-control bg-primary px-3 text-sm font-semibold text-primary-foreground hover:bg-primary-hover disabled:cursor-not-allowed disabled:bg-surface-muted disabled:text-muted"
+          class="min-h-11 rounded-control bg-accent px-3 text-sm font-semibold text-accent-foreground hover:opacity-90 disabled:cursor-not-allowed disabled:bg-surface-muted disabled:text-muted"
           data-track="tarjeta-producto.agregar-carrito"
           [disabled]="agotado()"
           (click)="agregar.emit(producto())"

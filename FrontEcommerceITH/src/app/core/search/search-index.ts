@@ -1,8 +1,11 @@
 import { DatosIndice, Producto, ValorEspecificacion } from '../catalog/catalog.models';
 import { compactar, palabras } from './normalize';
 
-/** Peso de cada campo: una coincidencia en el nombre vale más que una en la descripción (plan § 1.2). */
-export const PESOS = { nombre: 10, categoria: 8, equipos: 8, marca: 6, especificaciones: 5, descripcion: 1 } as const;
+/**
+ * Peso de cada campo: una coincidencia en el nombre vale más que una en la descripción (plan § 1.2).
+ * La categoría pesa MÁS que el nombre (spec 017 CA-4.2): el tipo de pieza que se pide ("ram") debe ganarle a la marca o al equipo ("lenovo").
+ */
+export const PESOS = { nombre: 10, categoria: 12, equipos: 8, marca: 6, especificaciones: 5, descripcion: 1 } as const;
 
 export interface CampoIndexado {
   peso: number;

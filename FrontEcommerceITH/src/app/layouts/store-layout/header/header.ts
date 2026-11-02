@@ -138,7 +138,7 @@ import { SearchBox } from '../search-box/search-box';
           </li>
         }
         <li>
-          <a routerLink="/armador" routerLinkActive="font-semibold text-primary" data-track="armador.abrir" class="inline-flex min-h-11 items-center rounded-control px-3 text-sm font-medium text-primary hover:bg-surface-muted">{{ 'builder.nav' | transloco }}</a>
+          <a routerLink="/armador" routerLinkActive="ring-2 ring-primary ring-offset-2" data-track="armador.abrir" class="my-1 inline-flex min-h-10 items-center rounded-control bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-primary-hover">{{ 'builder.nav' | transloco }}</a>
         </li>
       </ul>
     </nav>

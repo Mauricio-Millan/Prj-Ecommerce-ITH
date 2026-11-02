@@ -27,6 +27,11 @@ import { LanguageSelector } from '../../shared/ui/language-selector/language-sel
               <app-icon name="panel" [size]="18" /> {{ 'admin.dashboard' | transloco }}
             </a>
           </li>
+          <li>
+            <a routerLink="/admin/inventario" routerLinkActive="bg-surface font-semibold text-primary" class="flex min-h-11 items-center gap-2 rounded-control px-3 text-sm hover:bg-surface" data-track="admin.inventario">
+              <app-icon name="escanear" [size]="18" /> {{ 'inventory.nav' | transloco }}
+            </a>
+          </li>
         </ul>
       </nav>
     </aside>

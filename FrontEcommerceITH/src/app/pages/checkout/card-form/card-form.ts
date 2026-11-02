@@ -26,26 +26,28 @@ const formatearVencimiento = (v: string) => {
       <div>
         <label for="pago-numero" class="mb-1 block text-sm font-semibold">{{ 'payment.cardNumber' | transloco }}</label>
         <div class="relative">
-          <input id="pago-numero" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="23" formControlName="numero" [class]="clase('numero')" [attr.aria-describedby]="err('numero') ? 'pago-numero-error' : null" (input)="formatearNumero($event)" />
+          <input id="pago-numero" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="23" formControlName="numero" [class]="clase('numero')" [attr.aria-describedby]="'pago-numero-formato' + (err('numero') ? ' pago-numero-error' : '')" (input)="formatearNumero($event)" />
           <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center gap-1 text-sm text-muted">
             <app-icon name="tarjeta" [size]="18" />
             @if (marca(); as m) { {{ 'payment.brand.' + m | transloco }} }
           </span>
         </div>
-        <app-field-error errorId="pago-numero-error" [codigo]="err('numero')" />
+        <p id="pago-numero-formato" class="mt-1 text-xs text-muted">{{ 'payment.hint.cardNumber' | transloco }}</p>
+        <app-field-error errorId="pago-numero-error" [codigo]="err('numero')" campo="numero" />
       </div>
 
       <div>
         <label for="pago-titular" class="mb-1 block text-sm font-semibold">{{ 'payment.cardHolder' | transloco }}</label>
         <input id="pago-titular" type="text" autocomplete="cc-name" formControlName="titular" [class]="clase('titular')" [attr.aria-describedby]="err('titular') ? 'pago-titular-error' : null" />
-        <app-field-error errorId="pago-titular-error" [codigo]="err('titular')" />
+        <app-field-error errorId="pago-titular-error" [codigo]="err('titular')" campo="titular" />
       </div>
 
       <div class="grid grid-cols-2 gap-4">
         <div>
           <label for="pago-vencimiento" class="mb-1 block text-sm font-semibold">{{ 'payment.expiry' | transloco }}</label>
-          <input id="pago-vencimiento" type="text" inputmode="numeric" autocomplete="cc-exp" maxlength="5" placeholder="MM/AA" formControlName="vencimiento" [class]="clase('vencimiento')" [attr.aria-describedby]="err('vencimiento') ? 'pago-vencimiento-error' : null" (input)="formatearFecha($event)" />
-          <app-field-error errorId="pago-vencimiento-error" [codigo]="err('vencimiento')" />
+          <input id="pago-vencimiento" type="text" inputmode="numeric" autocomplete="cc-exp" maxlength="5" placeholder="MM/AA" formControlName="vencimiento" [class]="clase('vencimiento')" [attr.aria-describedby]="'pago-vencimiento-formato' + (err('vencimiento') ? ' pago-vencimiento-error' : '')" (input)="formatearFecha($event)" />
+          <p id="pago-vencimiento-formato" class="mt-1 text-xs text-muted">{{ 'payment.hint.expiry' | transloco }}</p>
+          <app-field-error errorId="pago-vencimiento-error" [codigo]="err('vencimiento')" campo="vencimiento" />
         </div>
         <div>
           <label for="pago-cvv" class="mb-1 flex items-center justify-between text-sm font-semibold">
@@ -56,7 +58,7 @@ const formatearVencimiento = (v: string) => {
             </button>
           </label>
           <input id="pago-cvv" type="text" inputmode="numeric" autocomplete="cc-csc" maxlength="3" formControlName="cvv" [class]="clase('cvv')" [attr.aria-describedby]="err('cvv') ? 'pago-cvv-error' : null" />
-          <app-field-error errorId="pago-cvv-error" [codigo]="err('cvv')" />
+          <app-field-error errorId="pago-cvv-error" [codigo]="err('cvv')" campo="cvv" />
         </div>
       </div>
       @if (ayudaCvv()) {

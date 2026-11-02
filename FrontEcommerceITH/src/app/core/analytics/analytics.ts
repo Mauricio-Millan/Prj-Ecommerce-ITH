@@ -1,9 +1,12 @@
-import { DOCUMENT, Injectable, computed, inject, signal } from '@angular/core';
+import { DOCUMENT, Injectable, InjectionToken, computed, inject, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { GA_ID } from '../config/analytics';
+import { GTM_ID } from '../config/analytics';
 import { localStore } from '../storage/local-store';
 
 export type DecisionCookies = 'aceptado' | 'rechazado';
+
+/** ID del contenedor de Google Tag Manager; se puede reemplazar en las pruebas. */
+export const GTM_ID_TOKEN = new InjectionToken<string>('GTM_ID', { factory: () => GTM_ID });
 
 const CLAVE = 'consent_analytics';
 
@@ -30,19 +33,21 @@ const PERMITIDOS: Record<string, readonly string[]> = {
 };
 
 type Parametros = Record<string, string | number | boolean>;
-type VentanaGtag = Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void; [k: string]: unknown };
+type VentanaGtm = Window & { dataLayer?: Record<string, unknown>[] };
 
 /**
- * Google Analytics 4 con consentimiento previo. Hasta que el visitante acepta no se descarga nada de Google.
+ * Google Tag Manager con consentimiento previo. Hasta que el visitante acepta no se descarga nada de Google.
+ * La app solo empuja eventos a `dataLayer`; qué se envía a GA4 lo decide el contenedor (spec 013).
  * Se apaga en las sesiones de investigación (`?research=1`): esas se miden con el logger propio (spec 012).
  */
 @Injectable({ providedIn: 'root' })
 export class Analytics {
   private readonly router = inject(Router);
   private readonly doc = inject(DOCUMENT);
+  private readonly gtmId = inject(GTM_ID_TOKEN);
 
-  /** Hay un ID configurado. */
-  readonly disponible = GA_ID !== '';
+  /** Hay un contenedor configurado. */
+  readonly disponible = this.gtmId !== '';
   readonly decision = signal<DecisionCookies | null>(localStore.get<DecisionCookies>(CLAVE));
 
   private readonly listo = signal(false);
@@ -71,11 +76,12 @@ export class Analytics {
   }
 
   responder(decision: DecisionCookies): void {
+    const habiaCargado = this.cargado;
     localStore.set(CLAVE, decision);
     this.decision.set(decision);
     this.reabierto.set(false);
     if (decision === 'aceptado') this.activar();
-    else this.desactivar();
+    else this.desactivar(habiaCargado);
   }
 
   /** Enlace "Preferencias de cookies" del pie. */
@@ -92,7 +98,7 @@ export class Analytics {
       const v = d?.[clave];
       if (typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean') params[clave] = v;
     }
-    this.gtag('event', tipo, params);
+    this.empujar(tipo, params);
   }
 
   private puedeEnviar(): boolean {
@@ -105,7 +111,7 @@ export class Analytics {
     if (ruta === this.ultimaRuta) return;
     this.ultimaRuta = ruta;
     const win = this.doc.defaultView!;
-    this.gtag('event', 'page_view', { page_path: ruta, page_location: win.location.origin + ruta, page_title: this.doc.title });
+    this.empujar('page_view', { page_path: ruta, page_location: win.location.origin + ruta, page_title: this.doc.title });
   }
 
   /** Sin parámetros de URL (pueden llevar texto buscado) y sin códigos de pedido. */
@@ -117,33 +123,26 @@ export class Analytics {
   }
 
   private activar(): void {
-    const win = this.doc.defaultView as VentanaGtag | null;
+    const win = this.doc.defaultView as VentanaGtm | null;
     if (!win || !this.disponible || this.investigacion()) return;
-    win[`ga-disable-${GA_ID}`] = false;
     if (!this.cargado) {
+      // Mismo arranque que el fragmento oficial de Google, pero solo tras el consentimiento.
       win.dataLayer = win.dataLayer ?? [];
-      // gtag.js espera el objeto `arguments`, no un arreglo.
-      win.gtag = function () {
-        // eslint-disable-next-line prefer-rest-params
-        win.dataLayer!.push(arguments);
-      };
+      win.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
       const script = this.doc.createElement('script');
       script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      script.src = `https://www.googletagmanager.com/gtm.js?id=${this.gtmId}`;
       this.doc.head.appendChild(script);
-      this.gtag('js', new Date());
-      // Sin señales de Google ni personalización de anuncios: solo medición del uso de la tienda.
-      this.gtag('config', GA_ID, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false });
       this.cargado = true;
     }
     this.ultimaRuta = '';
     this.paginaVista();
   }
 
-  private desactivar(): void {
-    const win = this.doc.defaultView as VentanaGtag | null;
+  /** Un contenedor ya cargado no se puede descargar: si se retira el consentimiento, se recarga la página sin él. */
+  private desactivar(habiaCargado: boolean): void {
+    const win = this.doc.defaultView;
     if (!win) return;
-    win[`ga-disable-${GA_ID}`] = true; // si el script ya se cargó, deja de medir
     for (const cookie of this.doc.cookie.split(';')) {
       const nombre = cookie.split('=')[0].trim();
       if (!nombre.startsWith('_ga')) continue;
@@ -152,9 +151,10 @@ export class Analytics {
         this.doc.cookie = `${nombre}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/${dominio}`;
       }
     }
+    if (habiaCargado) win.location.reload();
   }
 
-  private gtag(...args: unknown[]): void {
-    (this.doc.defaultView as VentanaGtag | null)?.gtag?.(...args);
+  private empujar(evento: string, params: Parametros): void {
+    (this.doc.defaultView as VentanaGtm | null)?.dataLayer?.push({ event: evento, ...params });
   }
 }

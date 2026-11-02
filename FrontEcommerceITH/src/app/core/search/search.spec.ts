@@ -118,6 +118,11 @@ describe('consultas de control de la spec 002 (datos reales)', () => {
     expect(skus('bateria para mi lenovo ideapad 3')[2]).toBe('BAT-L17C3PF1');
   });
 
+  it('spec 017 CA-4.1: "ram para mi lenovo que va lenta" → memorias RAM primero, no baterías', () => {
+    const primeros = skus('ram para mi lenovo que va lenta').slice(0, 3);
+    expect(primeros.every((s) => s.startsWith('RAM-'))).withContext(primeros.join(', ')).toBeTrue();
+  });
+
   it('bateria lenvo → una batería Lenovo, y avisa la corrección (CA-1.4, CA-3.4)', () => {
     const r = buscarTexto('bateria lenvo');
     expect(r.resultados[0].producto.nombre).toContain('Lenovo');

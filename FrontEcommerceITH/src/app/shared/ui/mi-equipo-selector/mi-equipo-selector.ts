@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@a
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { Equipo, Marca } from '../../../core/catalog/catalog.models';
+import { ScanService } from '../../../core/scan/scan.service';
 import { buscarEquipos, equiposDe, marcasConEquipos } from '../../../core/compat/equipos.logic';
 import { Icon } from '../icon/icon';
 
@@ -13,7 +14,7 @@ export interface DatosSelector {
 
 export interface EleccionEquipo {
   equipoId: number;
-  forma: 'pasos' | 'busqueda';
+  forma: 'pasos' | 'busqueda' | 'escaneo';
 }
 
 /**
@@ -47,7 +48,7 @@ export interface EleccionEquipo {
             role="combobox"
             autocomplete="off"
             aria-autocomplete="list"
-            class="min-h-11 w-full rounded-control border border-border bg-surface px-3 text-sm placeholder:text-muted"
+            class="min-h-11 w-full rounded-control border border-border-control bg-surface px-3 text-sm placeholder:text-muted"
             [placeholder]="'compat.selector.placeholder' | transloco"
             [attr.aria-expanded]="hayLista()"
             [attr.aria-controls]="hayLista() ? 'mi-equipo-lista' : null"
@@ -56,6 +57,11 @@ export interface EleccionEquipo {
             (input)="escribir($any($event.target).value)"
             (keydown)="teclear($event)"
           />
+          @if (escaner.disponible) {
+            <button type="button" data-zone="escaner" data-track="equipo.escanear-etiqueta" class="inline-flex min-h-11 items-center justify-center gap-2 rounded-control border border-border-control px-3 text-sm font-semibold hover:bg-surface-muted" (click)="escanear()">
+              <app-icon name="escanear" [size]="18" /> {{ 'scan.equipoButton' | transloco }}
+            </button>
+          }
           @if (hayLista()) {
             <ul id="mi-equipo-lista" role="listbox" [attr.aria-label]="'compat.selector.results' | transloco" class="overflow-hidden rounded-card border border-border">
               @for (e of resultados(); track e.id; let i = $index) {
@@ -87,7 +93,7 @@ export interface EleccionEquipo {
           <label for="mi-equipo-marca" class="text-xs text-muted">{{ 'compat.selector.brand' | transloco }}</label>
           <select
             id="mi-equipo-marca"
-            class="min-h-11 w-full rounded-control border border-border bg-surface px-3 text-sm"
+            class="min-h-11 w-full rounded-control border border-border-control bg-surface px-3 text-sm"
             (change)="marcaId.set(+$any($event.target).value || null)"
           >
             <option value="">{{ 'compat.selector.brandPlaceholder' | transloco }}</option>
@@ -141,6 +147,7 @@ export interface EleccionEquipo {
 export class MiEquipoSelector {
   protected readonly ref = inject<DialogRef<EleccionEquipo>>(DialogRef);
   private readonly datos = inject<DatosSelector>(DIALOG_DATA);
+  protected readonly escaner = inject(ScanService);
 
   protected readonly texto = signal('');
   protected readonly activa = signal(-1);
@@ -176,6 +183,13 @@ export class MiEquipoSelector {
       // Enter sin marcar nada elige el primero: quien escribe el código exacto llega con un solo gesto (H7).
       this.elegir(this.resultados()[this.activa() >= 0 ? this.activa() : 0], 'busqueda');
     }
+  }
+
+  /** Spec 014, HU-3: leer la etiqueta de la laptop. Un modelo reconocido se elige solo; si no, se vuelve a este selector. */
+  protected async escanear(): Promise<void> {
+    const s = await this.escaner.abrir('mi-equipo');
+    if (s?.accion === 'equipo') this.ref.close({ equipoId: s.equipoId, forma: 'escaneo' });
+    else if (s?.accion === 'escribir') document.getElementById('mi-equipo-buscar')?.focus();
   }
 
   protected elegir(e: Equipo, forma: EleccionEquipo['forma']): void {
