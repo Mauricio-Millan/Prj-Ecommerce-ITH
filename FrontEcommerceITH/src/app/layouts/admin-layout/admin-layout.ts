@@ -14,7 +14,7 @@ import { LanguageSelector } from '../../shared/ui/language-selector/language-sel
   host: { class: 'flex min-h-dvh flex-col md:flex-row' },
   template: `
     <aside class="print:hidden border-b border-border bg-surface-muted md:w-60 md:border-r md:border-b-0">
-      <a routerLink="/admin" class="block px-4 py-4 text-xl font-bold tracking-tight text-primary">TechSuply</a>
+      <a routerLink="/admin" class="block px-4 py-4 text-xl font-bold tracking-tight text-primary">ByteZone</a>
       <nav [attr.aria-label]="'admin.nav' | transloco">
         <ul class="flex flex-wrap gap-1 px-2 pb-2 md:flex-col">
           <li>

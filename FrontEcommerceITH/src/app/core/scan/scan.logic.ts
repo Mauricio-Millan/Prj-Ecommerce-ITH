@@ -31,6 +31,32 @@ const esNumerico = (c: string) => /^\d+$/.test(c);
 /** Una lectura numérica con aspecto de EAN pero con el dígito mal es casi siempre una mala lectura: no se busca (H5). */
 const lecturaDudosa = (c: string) => esNumerico(c) && [8, 12, 13].includes(c.length) && !eanValido(c);
 
+/** Un modelo más corto que esto aparecería por casualidad dentro de cualquier texto largo. */
+const MIN_CARACTERES_MODELO = 4;
+
+const codigosDe = (e: Equipo): string[] => [e.modelo, e.codigo_modelo ?? '', ...(e.codigos ?? [])].filter(Boolean);
+
+/**
+ * Equipos que identifica un texto. Primero por igualdad exacta (la etiqueta trae solo el modelo); si no, porque el modelo o el código
+ * **aparece dentro** del texto: el QR de una laptop suele ser una dirección o una línea larga (modelo, serie, fecha), no solo el modelo.
+ */
+function equiposEn(texto: string, equipos: readonly Equipo[]): Equipo[] {
+  const k = clave(texto);
+  const exactos = equipos.filter((e) => codigosDe(e).some((x) => clave(x) === k));
+  if (exactos.length) return exactos;
+  const compacto = compactar(texto);
+  return equipos.filter((e) => codigosDe(e).some((x) => clave(x).length >= MIN_CARACTERES_MODELO && compacto.includes(clave(x))));
+}
+
+/** Una dirección puede traer `%20` y similares; si está mal escapada se usa tal cual. */
+const decodificar = (s: string): string => {
+  try {
+    return decodeURIComponent(s);
+  } catch {
+    return s;
+  }
+};
+
 export interface CatalogoEscaneable {
   productos: readonly Producto[];
   equipos: readonly Equipo[];
@@ -56,7 +82,9 @@ export function resolverCodigo(texto: string, datos: CatalogoEscaneable, origen:
     } catch {
       /* dirección mal formada: se trata como externa */
     }
-    return { tipo: 'externo', url: bruto };
+    // Un QR de otro sitio no se abre, pero puede nombrar el modelo de la laptop (ej.: soporte del fabricante con el modelo en la dirección).
+    const deEquipo = equiposEn(decodificar(bruto), datos.equipos);
+    return deEquipo.length ? { tipo: 'equipo', equipos: deEquipo } : { tipo: 'externo', url: bruto };
   }
 
   const c = compactar(bruto);
@@ -64,11 +92,14 @@ export function resolverCodigo(texto: string, datos: CatalogoEscaneable, origen:
   const k = clave(bruto);
 
   if (origen === 'mi-equipo') {
-    const equipos = datos.equipos.filter((e) => [e.modelo, e.codigo_modelo ?? '', ...(e.codigos ?? [])].some((x) => x && clave(x) === k));
+    const equipos = equiposEn(bruto, datos.equipos);
     return equipos.length ? { tipo: 'equipo', equipos } : { tipo: 'ninguno' };
   }
 
   const productos = datos.productos.filter((p) => p.activo !== false && [p.sku, p.numero_parte ?? '', p.codigo_barras ?? ''].some((x) => x && clave(x) === k));
   if (productos.length === 1) return { tipo: 'producto', producto: productos[0] };
-  return productos.length ? { tipo: 'varios', productos } : { tipo: 'ninguno' };
+  if (productos.length) return { tipo: 'varios', productos };
+  // Ningún producto: si es la etiqueta o el QR de una laptop, se reconoce el equipo (se usa para ver sus repuestos).
+  const equipos = equiposEn(bruto, datos.equipos);
+  return equipos.length ? { tipo: 'equipo', equipos } : { tipo: 'ninguno' };
 }

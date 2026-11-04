@@ -1,7 +1,7 @@
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 import { Dialog } from '@angular/cdk/dialog';
 import { Overlay } from '@angular/cdk/overlay';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, ElementRef, afterNextRender, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -23,7 +23,7 @@ import { SearchBox } from '../search-box/search-box';
   selector: 'app-header',
   imports: [RouterLink, RouterLinkActive, TranslocoPipe, Icon, LanguageSelector, CurrencySelector, SearchBox, CdkMenuTrigger, CdkMenu, CdkMenuItem],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'block sticky top-0 z-30 border-b border-border bg-surface print:hidden' },
+  host: { class: 'block sticky top-0 z-30 border-b border-border bg-surface print:hidden', '(document:keydown.escape)': 'cerrarSubmenu()' },
   template: `
     <p class="flex items-center justify-center gap-2 bg-primary px-4 py-1 text-xs text-primary-foreground sm:text-sm">
       <app-icon name="envio" [size]="16" />
@@ -44,7 +44,7 @@ import { SearchBox } from '../search-box/search-box';
         <app-icon name="menu" />
       </button>
 
-      <a routerLink="/" class="rounded-control text-xl font-bold tracking-tight text-primary" data-track="logo.inicio">TechSuply</a>
+      <a routerLink="/" class="rounded-control text-xl font-bold tracking-tight text-primary" data-track="logo.inicio">ByteZone</a>
 
       <app-search-box class="order-last w-full md:order-none md:max-w-xl md:flex-1" />
 
@@ -118,18 +118,19 @@ import { SearchBox } from '../search-box/search-box';
           </a>
         }
 
-        <!-- Siempre visible, también en el celular (CA-1.5, H1). -->
+        <!-- Siempre visible, también en el celular (CA-1.5, H1). El nombre sale del contenido visible ("Carrito 2 productos"),
+             no de un aria-label: así contiene lo que se ve y el control por voz funciona (WCAG 2.5.3, 000 CA-1.7). -->
         <a
           routerLink="/carrito"
           data-zone="carrito"
           data-track="carrito.abrir"
           class="relative inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-control px-2 text-sm hover:bg-surface-muted"
-          [attr.aria-label]="cantidad() === 0 ? ('header.cart' | transloco) : cantidad() === 1 ? ('header.cartCountOne' | transloco) : ('header.cartCount' | transloco: { n: cantidad() })"
         >
           <app-icon name="carrito" />
-          <span class="hidden lg:inline">{{ 'header.cart' | transloco }}</span>
+          <span class="sr-only lg:not-sr-only">{{ 'header.cart' | transloco }}</span>
           @if (cantidad() > 0) {
-            <span class="absolute -top-0.5 -right-0.5 inline-flex min-h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1 text-xs font-bold text-accent-foreground" aria-hidden="true">{{ cantidad() }}</span>
+            <span class="absolute -top-0.5 -right-0.5 inline-flex min-h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1 text-xs font-bold text-accent-foreground">{{ cantidad() }}</span>
+            <span class="sr-only">{{ (cantidad() === 1 ? 'header.cartUnitOne' : 'header.cartUnits') | transloco }}</span>
           }
         </a>
       </div>
@@ -138,8 +139,8 @@ import { SearchBox } from '../search-box/search-box';
     <nav class="hidden border-t border-border md:block" data-zone="categorias" [attr.aria-label]="'header.categories' | transloco">
       <ul class="mx-auto flex max-w-7xl gap-1 px-4">
         @for (grupo of categorias(); track grupo.categoria.slug) {
-          <!-- ponytail: el submenú se abre con :hover y :focus-within (sin Esc). Si el APF3 exige cerrarlo con Esc (WCAG 1.4.13), pasar a cdkMenuBar. -->
-          <li class="group relative">
+          <!-- El submenú se abre con :hover y :focus-within; Esc lo oculta hasta que el puntero o el foco salen del grupo (WCAG 1.4.13, 001 CA-2.5). -->
+          <li class="group relative" (mouseenter)="submenuOculto.set(false)" (mouseleave)="submenuOculto.set(false)" (focusin)="alCruzarGrupo($event)" (focusout)="alCruzarGrupo($event)">
             <a
               class="inline-flex min-h-11 items-center rounded-control px-3 text-sm hover:bg-surface-muted"
               routerLinkActive="font-semibold text-primary"
@@ -147,7 +148,7 @@ import { SearchBox } from '../search-box/search-box';
               [attr.data-track]="'categorias.' + grupo.categoria.slug"
             >{{ grupo.categoria.clave_i18n | transloco }}</a>
             @if (grupo.hijas.length) {
-              <ul class="invisible absolute top-full left-0 z-40 min-w-56 rounded-card border border-border bg-surface p-1 opacity-0 shadow-overlay group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+              <ul data-submenu [style.visibility]="submenuOculto() ? 'hidden' : null" class="invisible absolute top-full left-0 z-40 min-w-56 rounded-card border border-border bg-surface p-1 opacity-0 shadow-overlay group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                 @for (hija of grupo.hijas; track hija.slug) {
                   <li>
                     <a
@@ -177,6 +178,39 @@ export class Header {
   private readonly dialog = inject(Dialog);
   protected readonly voz = inject(VoiceService);
   private readonly overlay = inject(Overlay);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
+  protected readonly submenuOculto = signal(false);
+
+  constructor() {
+    // El encabezado está pegado arriba: su alto va a `scroll-padding-top` para que el foco no quede debajo (WCAG 2.4.11).
+    const raiz = document.documentElement.style;
+    const destruir = inject(DestroyRef);
+    afterNextRender(() => {
+      if (typeof ResizeObserver === 'undefined') return;
+      const el = this.host.nativeElement;
+      const medir = new ResizeObserver(() => raiz.setProperty('--alto-encabezado', `${el.offsetHeight}px`));
+      medir.observe(el);
+      destruir.onDestroy(() => {
+        medir.disconnect();
+        raiz.removeProperty('--alto-encabezado');
+      });
+    });
+  }
+
+  /** Esc oculta el submenú abierto por puntero o foco, sin mover ninguno de los dos (WCAG 1.4.13). */
+  protected cerrarSubmenu(): void {
+    this.submenuOculto.set(true);
+    // Si el foco estaba dentro del submenú (que ahora se oculta), vuelve a su categoría.
+    const activo = document.activeElement;
+    const submenu = activo?.closest('[data-submenu]');
+    if (submenu && this.host.nativeElement.contains(submenu)) submenu.parentElement?.querySelector<HTMLElement>(':scope > a')?.focus();
+  }
+
+  /** Al entrar o salir del grupo con el foco (no al moverse dentro de él), el submenú vuelve a poder abrirse. */
+  protected alCruzarGrupo(evento: FocusEvent): void {
+    const grupo = evento.currentTarget as HTMLElement;
+    if (!grupo.contains(evento.relatedTarget as Node | null)) this.submenuOculto.set(false);
+  }
 
   protected abrirAccesibilidad(): void {
     this.dialog.open(A11yPanel, { ariaLabelledBy: 'a11y-titulo' });

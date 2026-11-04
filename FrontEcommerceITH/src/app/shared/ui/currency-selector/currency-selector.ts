@@ -17,7 +17,7 @@ const SIMBOLO: Record<Moneda, string> = { PEN: 'S/', USD: '$' };
       data-track="selector-moneda.abrir"
       class="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-control px-1 text-sm hover:bg-surface-muted sm:px-2"
       [cdkMenuTriggerFor]="menu"
-      [attr.aria-label]="('currency.label' | transloco) + ': ' + ('currency.' + currency.currency() | transloco)"
+      [attr.aria-label]="'currency.trigger' | transloco: { visible: simbolo[currency.currency()] + ' ' + currency.currency(), nombre: ('currency.' + currency.currency() | transloco) }"
     >
       <span class="font-semibold">{{ simbolo[currency.currency()] }}</span>
       <span class="hidden sm:inline">{{ currency.currency() }}</span>

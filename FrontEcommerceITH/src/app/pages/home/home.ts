@@ -75,7 +75,7 @@ export default class Home {
   protected readonly destacados = toSignal(this.catalog.destacados(8), { initialValue: [] });
 
   constructor() {
-    inject(Title).setTitle('TechSuply');
+    inject(Title).setTitle('ByteZone');
   }
 
   protected agregar(producto: Producto): void {

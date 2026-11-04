@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { ChangeDetectionStrategy, Component, ElementRef, effect, inject, viewChild } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { Analytics } from '../../../core/analytics/analytics';
 
@@ -13,6 +14,7 @@ import { Analytics } from '../../../core/analytics/analytics';
   template: `
     @if (analytics.mostrarAviso()) {
       <section
+        #aviso
         class="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-surface p-4 shadow-overlay print:hidden"
         role="region"
         [attr.aria-label]="'cookies.title' | transloco"
@@ -37,4 +39,21 @@ import { Analytics } from '../../../core/analytics/analytics';
 })
 export class CookieBanner {
   protected readonly analytics = inject(Analytics);
+  private readonly aviso = viewChild<ElementRef<HTMLElement>>('aviso');
+
+  constructor() {
+    // Mientras el aviso está abierto, la página reserva su alto abajo (`scroll-padding-bottom` en styles.css):
+    // así ningún elemento enfocado queda tapado por él (WCAG 2.4.11, 013 CA-1.8).
+    const raiz = inject(DOCUMENT).documentElement.style;
+    effect((alLimpiar) => {
+      const el = this.aviso()?.nativeElement;
+      if (!el || typeof ResizeObserver === 'undefined') return;
+      const medir = new ResizeObserver(() => raiz.setProperty('--alto-aviso', `${el.offsetHeight}px`));
+      medir.observe(el);
+      alLimpiar(() => {
+        medir.disconnect();
+        raiz.removeProperty('--alto-aviso');
+      });
+    });
+  }
 }

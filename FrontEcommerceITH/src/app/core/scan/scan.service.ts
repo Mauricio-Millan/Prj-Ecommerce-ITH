@@ -22,6 +22,8 @@ interface DetectorNativo {
 }
 
 const INTERVALO_MS = 200;
+/** Barras de producto y de logística, y los códigos 2D (QR, Data Matrix) que traen las etiquetas de las laptops. Solo se piden los que el navegador soporta. */
+const FORMATOS = ['ean_13', 'ean_8', 'upc_a', 'upc_e', 'code_128', 'code_39', 'code_93', 'itf', 'codabar', 'qr_code', 'data_matrix', 'aztec', 'pdf417'];
 
 /**
  * Cámara + `BarcodeDetector` (spec 014, plan § 4). Con Chrome en Android la API nativa existe y no pesa nada; sin ella el botón
@@ -42,8 +44,10 @@ export class ScanService {
     } catch (e) {
       throw ((e as DOMException).name === 'NotAllowedError' || (e as DOMException).name === 'SecurityError' ? 'permiso_denegado' : 'sin_camara') satisfies ErrorCamara;
     }
-    const Detector = (globalThis as unknown as { BarcodeDetector: new () => DetectorNativo }).BarcodeDetector;
-    const detector = new Detector();
+    const Detector = (globalThis as unknown as { BarcodeDetector: (new (o?: { formats: string[] }) => DetectorNativo) & { getSupportedFormats?: () => Promise<string[]> } }).BarcodeDetector;
+    const soportados = (await Detector.getSupportedFormats?.().catch(() => [] as string[])) ?? [];
+    const formatos = soportados.length ? FORMATOS.filter((f) => soportados.includes(f)) : [];
+    const detector = new Detector(formatos.length ? { formats: formatos } : undefined);
     video.srcObject = flujo;
     await video.play().catch(() => undefined);
 

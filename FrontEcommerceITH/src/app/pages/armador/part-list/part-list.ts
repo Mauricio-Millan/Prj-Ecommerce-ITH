@@ -41,9 +41,9 @@ export interface PiezaVista {
       }
 
       @if (visibles().length) {
-        <ul role="radiogroup" [attr.aria-label]="'builder.pieces' | transloco" class="grid gap-2">
+        <!-- Los role="radio" son hijos directos del radiogroup, sin <ul>/<li> en medio (WCAG 1.3.1, 008 CA-2.6). -->
+        <div role="radiogroup" [attr.aria-label]="'builder.pieces' | transloco" class="grid gap-2">
           @for (v of visibles(); track v.producto.sku) {
-            <li>
               <button
                 type="button"
                 role="radio"
@@ -86,9 +86,8 @@ export interface PiezaVista {
                   </span>
                 </span>
               </button>
-            </li>
           }
-        </ul>
+        </div>
       } @else {
         <!-- Sin opciones: se explica y se ofrece cambiar la pieza que lo limita (CA-2.5, H9). -->
         <div class="grid gap-2 rounded-card border border-border bg-surface p-4 text-sm">

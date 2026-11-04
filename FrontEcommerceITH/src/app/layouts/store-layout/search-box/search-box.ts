@@ -6,9 +6,11 @@ import { Router } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { debounceTime, map, of, switchMap } from 'rxjs';
 import { Producto } from '../../../core/catalog/catalog.models';
+import { MiEquipoService } from '../../../core/compat/mi-equipo.service';
 import { DetectorLector } from '../../../core/scan/lector-usb';
 import { SalidaEscaner, ScanService } from '../../../core/scan/scan.service';
 import { InteractionLogger } from '../../../core/telemetry/interaction-logger';
+import { ToastService } from '../../../shared/ui/toast/toast';
 import { MIN_CARACTERES_SUGERENCIA, SearchApi } from '../../../core/search/search.api';
 import { Icon } from '../../../shared/ui/icon/icon';
 import { Price } from '../../../shared/ui/price/price';
@@ -115,6 +117,8 @@ export class SearchBox {
   private readonly search = inject(SearchApi);
   protected readonly escaner = inject(ScanService);
   private readonly logger = inject(InteractionLogger);
+  private readonly miEquipo = inject(MiEquipoService);
+  private readonly toast = inject(ToastService);
   private readonly lector = new DetectorLector();
 
   protected readonly posiciones: ConnectedPosition[] = [{ originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top', offsetY: 4 }];
@@ -200,7 +204,12 @@ export class SearchBox {
   private aplicar(s: SalidaEscaner | undefined): void {
     if (s?.accion === 'producto') this.router.navigate(['/producto', s.sku]);
     else if (s?.accion === 'buscar') this.router.navigate(['/buscar'], { queryParams: { q: s.q } });
-    else if (s?.accion === 'escribir') document.getElementById(this.inputId())?.focus();
+    else if (s?.accion === 'equipo') {
+      // El código era el de una laptop: se recuerda como "Mi equipo" y se abren los repuestos para ver qué le sirve.
+      this.miEquipo.indicar(s.equipoId, 'escaneo');
+      this.toast.show('compat.set', 'exito', [], { equipo: this.miEquipo.nombre() });
+      this.router.navigate(['/catalogo/repuestos-laptop']);
+    } else if (s?.accion === 'escribir') document.getElementById(this.inputId())?.focus();
   }
 
   /** Una consulta vacía o de solo espacios no hace nada (CA-1.1, H5). */

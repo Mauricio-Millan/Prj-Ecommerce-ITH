@@ -62,6 +62,34 @@ describe('resolverCodigo (spec 014)', () => {
   });
 });
 
+describe('QR de una laptop (spec 014)', () => {
+  const asus = eq(2, 'Zenbook 14 OLED', 'UX3405MA', ['Zenbook 14 OLED', 'UX3405MA']);
+  const d = { ...datos, equipos: [...datos.equipos, asus] };
+
+  it('un QR con una dirección de otro sitio que nombra el modelo se reconoce como equipo, sin abrir la dirección', () => {
+    const r = resolverCodigo('https://www.asus.com/support/?model=UX3405MA&sn=ABC123', d, 'buscador', TIENDA);
+    expect(r.tipo).toBe('equipo');
+  });
+
+  it('un QR de texto largo con el modelo adentro se reconoce como equipo, en "mi-equipo" y en el buscador', () => {
+    for (const o of ['mi-equipo', 'buscador'] as const) expect(resolverCodigo('ASUS|UX3405MA|SN:R9N0CV123|2024-03', d, o).tipo).withContext(o).toBe('equipo');
+  });
+
+  it('un QR de otro sitio que no nombra ningún equipo sigue siendo externo (no se abre)', () => {
+    expect(resolverCodigo('https://www.asus.com/support/', d, 'buscador', TIENDA).tipo).toBe('externo');
+  });
+
+  it('un producto exacto sigue ganando sobre un equipo, y un texto sin coincidencias no es nada', () => {
+    expect(resolverCodigo('BAT-L19M3PF4', d, 'buscador').tipo).toBe('producto');
+    expect(resolverCodigo('SN:R9N0CV123|2024-03', d, 'buscador').tipo).toBe('ninguno');
+  });
+
+  it('un modelo demasiado corto no se busca dentro de textos largos (evita falsos positivos)', () => {
+    const corto = { ...d, equipos: [eq(3, 'X1', 'X1', ['X1'])] };
+    expect(resolverCodigo('ASUS|UX3405MA|X1CARBON', corto, 'buscador').tipo).toBe('ninguno');
+  });
+});
+
 describe('DetectorLector (spec 014, HU-2)', () => {
   const teclear = (d: DetectorLector, texto: string, intervalo: number, inicio = 1000): string | null => {
     let t = inicio;

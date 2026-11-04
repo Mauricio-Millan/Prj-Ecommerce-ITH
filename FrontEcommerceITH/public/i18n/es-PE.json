@@ -16,8 +16,8 @@
     "login": "Iniciar sesión",
     "logout": "Cerrar sesión",
     "admin": "Panel de administración",
-    "cartCount": "Carrito, {{n}} productos",
-    "cartCountOne": "Carrito, 1 producto",
+    "cartUnits": "productos",
+    "cartUnitOne": "producto",
     "orders": "Mis pedidos"
   },
   "category": {
@@ -48,10 +48,12 @@
     "otros_perifericos": "Audífonos, webcams y parlantes"
   },
   "language": {
-    "label": "Idioma"
+    "label": "Idioma",
+    "trigger": "{{codigo}}, idioma: {{nombre}}"
   },
   "currency": {
     "label": "Moneda",
+    "trigger": "{{visible}}, moneda: {{nombre}}",
     "PEN": "Soles (S/)",
     "USD": "Dólares ($)",
     "penUnavailable": "No disponible: todavía no hay un tipo de cambio registrado. Los precios se muestran en dólares.",
@@ -77,7 +79,7 @@
     "warranty": "Garantía y devoluciones",
     "compat": "Cómo saber si es compatible",
     "accessibility": "Accesibilidad",
-    "rights": "© 2026 TechSuply · Prototipo académico"
+    "rights": "© 2026 ByteZone · Prototipo académico"
   },
   "adminNav": {
     "products": "Productos",
@@ -485,6 +487,7 @@
     "read": "Código leído",
     "typeCode": "Escribir el código",
     "useCamera": "Usar la cámara",
+    "readContent": "Lo que leímos",
     "unknown": "No reconocemos este código",
     "searchAsText": "Buscarlo como texto",
     "scanAnother": "Escanear otro",
@@ -520,7 +523,7 @@
   },
   "a11yStatement": {
     "title": "Declaración de accesibilidad",
-    "example": "TechSuply es un prototipo académico. Esta declaración describe el estado real del trabajo de accesibilidad y se actualiza con cada versión.",
+    "example": "ByteZone es un prototipo académico. Esta declaración describe el estado real del trabajo de accesibilidad y se actualiza con cada versión.",
     "level": {
       "title": "Nivel objetivo",
       "body": "Nuestro objetivo es cumplir las pautas WCAG 2.1 nivel AA. Todavía no declaramos conformidad: la auditoría está en curso."
@@ -540,16 +543,16 @@
     },
     "report": {
       "title": "Reportar una barrera",
-      "body": "Si encuentras algo que no puedes usar, escríbenos a accesibilidad@techsuply.example (dirección de ejemplo) e indica la página y qué intentabas hacer."
+      "body": "Si encuentras algo que no puedes usar, escríbenos a accesibilidad@bytezone.example (dirección de ejemplo) e indica la página y qué intentabas hacer."
     }
   },
   "help": {
     "title": "Ayuda",
-    "example": "TechSuply es un prototipo académico: los datos de contacto y las políticas de esta página son de ejemplo.",
+    "example": "ByteZone es un prototipo académico: los datos de contacto y las políticas de esta página son de ejemplo.",
     "back": "Volver al inicio",
     "contact": {
       "title": "Ayuda y contacto",
-      "body": "Escríbenos a ayuda@techsuply.example o llama al 01 000 0000, de lunes a viernes de 9:00 a 18:00. Respondemos en un máximo de un día hábil."
+      "body": "Escríbenos a ayuda@bytezone.example o llama al 01 000 0000, de lunes a viernes de 9:00 a 18:00. Respondemos en un máximo de un día hábil."
     },
     "warranty": {
       "title": "Garantía y devoluciones",
@@ -635,7 +638,7 @@
       "sample": "Texto de ejemplo del prototipo: no tiene validez legal.",
       "terminos": {
         "title": "Términos y condiciones",
-        "body": "Al crear una cuenta aceptas usar TechSuply para comprar repuestos y componentes tecnológicos de forma legítima, brindar datos verdaderos y respetar las condiciones de envío, garantía y devolución publicadas en la tienda."
+        "body": "Al crear una cuenta aceptas usar ByteZone para comprar repuestos y componentes tecnológicos de forma legítima, brindar datos verdaderos y respetar las condiciones de envío, garantía y devolución publicadas en la tienda."
       },
       "privacidad": {
         "title": "Política de privacidad",
@@ -1042,6 +1045,7 @@
   },
   "catalog": {
     "breadcrumbs": "Ruta de navegación",
+    "resultsHeading": "Productos",
     "home": "Inicio",
     "loading": "Cargando productos",
     "showing": "Mostrando {{desde}}–{{hasta}} de {{total}} productos",

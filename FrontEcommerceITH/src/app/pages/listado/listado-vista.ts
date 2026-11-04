@@ -61,7 +61,8 @@ const TAMANO = 12;
                 <app-price-note class="ml-2" />
               }
             </p>
-            <div class="flex items-center gap-2">
+            <!-- flex-wrap: a 320 px "Ordenar por" baja a otra línea en vez de desbordar la página (WCAG 1.4.10, 002 CA-5.13). -->
+            <div class="flex min-w-0 flex-wrap items-center gap-2">
               <!-- Solo en el celular: abre el panel lateral con los filtros (CA-5.10). -->
               <button
                 type="button"
@@ -77,6 +78,8 @@ const TAMANO = 12;
           </div>
 
           @if (filtrados().length) {
+            <!-- Las tarjetas usan h3: este h2 evita saltar de h1 a h3 (WCAG 1.3.1, 001 CA-3.9). -->
+            <h2 class="sr-only">{{ 'catalog.resultsHeading' | transloco }}</h2>
             <div data-zone="resultados" class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               @for (p of pagina().items; track p.sku; let i = $index) {
                 <app-product-card [producto]="p" [prioritaria]="i < 4" [compat]="miEquipo.evaluar(p)" (agregar)="agregar($event)" />

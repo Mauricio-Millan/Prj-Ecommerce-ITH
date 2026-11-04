@@ -17,7 +17,7 @@ import { CAMPO, CAMPO_ERROR } from '../../../shared/ui/form-classes';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section data-zone="formulario-checkout" class="grid gap-3" aria-labelledby="boleta-titulo">
-      <h3 id="boleta-titulo" class="text-sm font-semibold">{{ 'checkout.receiptData' | transloco }}</h3>
+      <h2 id="boleta-titulo" class="text-sm font-semibold">{{ 'checkout.receiptData' | transloco }}</h2>
       <p class="text-sm">{{ 'checkout.holder' | transloco }}: <span class="font-medium">{{ titular() }}</span></p>
 
       @if (mostrarCampo()) {

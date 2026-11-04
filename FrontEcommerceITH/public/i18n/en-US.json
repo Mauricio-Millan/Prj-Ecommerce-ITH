@@ -16,8 +16,8 @@
     "login": "Sign in",
     "logout": "Sign out",
     "admin": "Admin panel",
-    "cartCount": "Cart, {{n}} items",
-    "cartCountOne": "Cart, 1 item",
+    "cartUnits": "items",
+    "cartUnitOne": "item",
     "orders": "My orders"
   },
   "category": {
@@ -48,10 +48,12 @@
     "otros_perifericos": "Headphones, webcams and speakers"
   },
   "language": {
-    "label": "Language"
+    "label": "Language",
+    "trigger": "{{codigo}}, language: {{nombre}}"
   },
   "currency": {
     "label": "Currency",
+    "trigger": "{{visible}}, currency: {{nombre}}",
     "PEN": "Peruvian soles (S/)",
     "USD": "US dollars ($)",
     "penUnavailable": "Unavailable: no exchange rate has been registered yet. Prices are shown in dollars.",
@@ -77,7 +79,7 @@
     "warranty": "Warranty and returns",
     "compat": "How to know if it is compatible",
     "accessibility": "Accessibility",
-    "rights": "© 2026 TechSuply · Academic prototype"
+    "rights": "© 2026 ByteZone · Academic prototype"
   },
   "adminNav": {
     "products": "Products",
@@ -485,6 +487,7 @@
     "read": "Code read",
     "typeCode": "Type the code",
     "useCamera": "Use the camera",
+    "readContent": "What we read",
     "unknown": "We do not recognize this code",
     "searchAsText": "Search it as text",
     "scanAnother": "Scan another",
@@ -520,7 +523,7 @@
   },
   "a11yStatement": {
     "title": "Accessibility statement",
-    "example": "TechSuply is an academic prototype. This statement describes the real state of the accessibility work and is updated with each version.",
+    "example": "ByteZone is an academic prototype. This statement describes the real state of the accessibility work and is updated with each version.",
     "level": {
       "title": "Target level",
       "body": "Our goal is to meet WCAG 2.1 level AA. We do not claim conformance yet: the audit is in progress."
@@ -540,16 +543,16 @@
     },
     "report": {
       "title": "Report a barrier",
-      "body": "If you find something you cannot use, write to accessibility@techsuply.example (example address) and tell us the page and what you were trying to do."
+      "body": "If you find something you cannot use, write to accessibility@bytezone.example (example address) and tell us the page and what you were trying to do."
     }
   },
   "help": {
     "title": "Help",
-    "example": "TechSuply is an academic prototype: the contact details and policies on this page are examples.",
+    "example": "ByteZone is an academic prototype: the contact details and policies on this page are examples.",
     "back": "Back to home",
     "contact": {
       "title": "Help and contact",
-      "body": "Write to help@techsuply.example or call 01 000 0000, Monday to Friday from 9:00 to 18:00. We answer within one business day."
+      "body": "Write to help@bytezone.example or call 01 000 0000, Monday to Friday from 9:00 to 18:00. We answer within one business day."
     },
     "warranty": {
       "title": "Warranty and returns",
@@ -635,7 +638,7 @@
       "sample": "Sample text for the prototype: it has no legal value.",
       "terminos": {
         "title": "Terms and conditions",
-        "body": "By creating an account you agree to use TechSuply to buy technology parts and components legitimately, to provide true data and to respect the shipping, warranty and return conditions published in the store."
+        "body": "By creating an account you agree to use ByteZone to buy technology parts and components legitimately, to provide true data and to respect the shipping, warranty and return conditions published in the store."
       },
       "privacidad": {
         "title": "Privacy policy",
@@ -985,6 +988,7 @@
   },
   "catalog": {
     "breadcrumbs": "Breadcrumb",
+    "resultsHeading": "Products",
     "home": "Home",
     "loading": "Loading products",
     "showing": "Showing {{desde}}–{{hasta}} of {{total}} products",

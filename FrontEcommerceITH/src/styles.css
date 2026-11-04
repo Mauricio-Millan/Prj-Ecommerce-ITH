@@ -6,6 +6,15 @@
     background-color: var(--color-surface);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    /* El encabezado (pegado arriba) y el aviso de cookies (fijo abajo) escriben su alto aquí:
+       el foco nunca queda detrás de ellos (WCAG 2.4.11, 013 CA-1.8). */
+    scroll-padding-top: var(--alto-encabezado, 0px);
+    scroll-padding-bottom: var(--alto-aviso, 0px);
+  }
+
+  /* Espacio al final para que lo último de la página pueda subir por encima del aviso de cookies. */
+  body {
+    padding-bottom: var(--alto-aviso, 0px);
   }
 
   /* Foco siempre visible al navegar con teclado (S07). */

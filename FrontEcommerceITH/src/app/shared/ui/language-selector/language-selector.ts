@@ -15,7 +15,7 @@ import { Icon } from '../icon/icon';
       data-track="selector-idioma.abrir"
       class="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-control px-1 text-sm hover:bg-surface-muted sm:px-2"
       [cdkMenuTriggerFor]="menu"
-      [attr.aria-label]="('language.label' | transloco) + ': ' + actual().nativeName"
+      [attr.aria-label]="'language.trigger' | transloco: { codigo: actual().code.slice(0, 2).toUpperCase(), nombre: actual().nativeName }"
     >
       <app-icon name="idioma" [size]="18" />
       <span class="uppercase">{{ actual().code.slice(0, 2) }}</span>

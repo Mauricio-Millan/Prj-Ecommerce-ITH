@@ -14,7 +14,7 @@ const UI_KEY = 'research_ui';
 const CONSERVAR = (k: string) => k.startsWith('research_') || k === 'lang' || k === 'currency';
 
 /** Cuentas de prueba (spec 006 plan § 1.1): cliente1 sin DNI (cuenta de la T2), cliente2 con DNI, admin. */
-const CUENTAS_PRUEBA = ['cliente1@gmail.com', 'cliente2@gmail.com', 'admin@techsuply.pe'];
+const CUENTAS_PRUEBA = ['cliente1@gmail.com', 'cliente2@gmail.com', 'admin@bytezone.pe'];
 
 const BTN ='min-h-9 rounded-control border border-border px-2 text-sm hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-50';
 

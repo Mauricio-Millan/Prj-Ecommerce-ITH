@@ -31,6 +31,8 @@ export interface OpcionesToast {
 }
 
 const DURACION_MS = 6000;
+/** Un aviso con acción ("Deshacer") dura al menos esto y siempre se pausa con el foco o el puntero (WCAG 2.2.1, spec 018 CA-12.6). */
+const DURACION_CON_ACCION_MS = 10_000;
 
 interface Reloj {
   timer?: ReturnType<typeof setTimeout>;
@@ -48,8 +50,10 @@ export class ToastService {
   show(clave: string, tipo: ToastTipo = 'info', acciones: ToastAccion[] = [], params?: Record<string, unknown>, opciones: OpcionesToast = {}): void {
     const id = ++this.siguienteId;
     this.avisos.update((lista) => [...lista, { id, clave, tipo, acciones, params, alIgnorar: opciones.alIgnorar }]);
-    if (opciones.pausarAlEnfocar) this.pausables.add(id);
-    this.relojes.set(id, { restante: opciones.duracionMs ?? DURACION_MS, desde: 0 });
+    const conAccion = acciones.length > 0;
+    if (opciones.pausarAlEnfocar || conAccion) this.pausables.add(id);
+    const duracion = opciones.duracionMs ?? DURACION_MS;
+    this.relojes.set(id, { restante: conAccion ? Math.max(duracion, DURACION_CON_ACCION_MS) : duracion, desde: 0 });
     this.arrancar(id);
   }
 
@@ -60,7 +64,7 @@ export class ToastService {
     reloj.timer = setTimeout(() => this.cerrar(id), reloj.restante);
   }
 
-  /** Detiene el temporizador mientras el aviso tiene el foco o el puntero encima (solo los que lo pidieron). */
+  /** Detiene el temporizador mientras el aviso tiene el foco o el puntero encima (los que lo pidieron y todos los que tienen acción). */
   pausar(id: number): void {
     const reloj = this.relojes.get(id);
     if (!reloj || !this.pausables.has(id) || reloj.timer === undefined) return;

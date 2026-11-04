@@ -25,9 +25,9 @@ import { QuantityInput } from '../../../shared/ui/quantity-input/quantity-input'
       </a>
 
       <div class="grid min-w-0 flex-1 gap-2">
-        <h3 class="font-medium">
+        <h2 class="font-medium">
           <a [id]="'linea-' + producto().sku" [routerLink]="['/producto', producto().sku]" data-track="linea-carrito.abrir" class="hover:underline">{{ producto().nombre }}</a>
-        </h3>
+        </h2>
         <p data-zone="precio" class="text-sm text-muted">{{ unitario() }}</p>
 
         @if (agotada()) {

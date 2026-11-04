@@ -12,7 +12,7 @@ import { LanguageSelector } from '../../shared/ui/language-selector/language-sel
   host: { class: 'flex min-h-dvh flex-col bg-surface-muted' },
   template: `
     <header class="mx-auto flex w-full max-w-md items-center justify-between px-4 py-4">
-      <a routerLink="/" class="text-xl font-bold tracking-tight text-primary">TechSuply</a>
+      <a routerLink="/" class="text-xl font-bold tracking-tight text-primary">ByteZone</a>
       <app-language-selector />
     </header>
     <main class="mx-auto w-full max-w-md flex-1 px-4">

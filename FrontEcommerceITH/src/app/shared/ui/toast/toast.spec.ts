@@ -40,10 +40,25 @@ describe('ToastService', () => {
     expect(toast.avisos()).toEqual([]);
   });
 
-  it('un aviso normal vence a los 6 s aunque se intente pausar', () => {
+  it('un aviso sin acción vence a los 6 s aunque se intente pausar', () => {
     toast.show('cart.added');
     toast.pausar(toast.avisos()[0].id);
     tick(6001);
+    expect(toast.avisos()).toEqual([]);
+  });
+
+  it('un aviso con acción ("Deshacer") dura 10 s y se pausa con el foco aunque no lo pida (WCAG 2.2.1)', () => {
+    toast.show('cart.removed', 'info', [{ clave: 'cart.undo', ejecutar: () => {} }]);
+    const id = toast.avisos()[0].id;
+
+    tick(9000);
+    expect(toast.avisos().length).toBe(1);
+    toast.pausar(id);
+    tick(60_000);
+    expect(toast.avisos().length).toBe(1);
+
+    toast.reanudar(id);
+    tick(1001);
     expect(toast.avisos()).toEqual([]);
   });
 
@@ -56,7 +71,7 @@ describe('ToastService', () => {
     toast.show('b', 'info', [{ clave: 'x', ejecutar: () => {} }], undefined, { alIgnorar: ignorar });
     const aviso = toast.avisos()[0];
     toast.usar(aviso, aviso.acciones[0]);
-    tick(6001);
+    tick(10_001);
     expect(ignorar).toHaveBeenCalledTimes(1);
 
     toast.show('c', 'info', [], undefined, { alIgnorar: ignorar });

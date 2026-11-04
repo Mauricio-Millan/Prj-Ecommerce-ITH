@@ -207,10 +207,10 @@ export default class ProductoPage implements OnDestroy {
   });
 
   constructor() {
-    // Título de la pestaña: nombre del producto + "· TechSuply" (CA-7.4).
+    // Título de la pestaña: nombre del producto + "· ByteZone" (CA-7.4).
     effect(() => {
       const v = this.vista();
-      this.title.setTitle(v ? `${v.producto.nombre} · TechSuply` : 'TechSuply');
+      this.title.setTitle(v ? `${v.producto.nombre} · ByteZone` : 'ByteZone');
     });
     // Al pasar a otro producto (p. ej. desde "Relacionados") la cantidad vuelve a 1.
     effect(() => {

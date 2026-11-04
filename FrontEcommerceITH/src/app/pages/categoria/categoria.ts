@@ -117,7 +117,7 @@ export default class Categoria {
 
   constructor() {
     // El título de la pestaña es el nombre de la categoría (CA-2.3).
-    effect(() => this.title.setTitle(`${this.nombre()} · TechSuply`));
+    effect(() => this.title.setTitle(`${this.nombre()} · ByteZone`));
   }
 
   protected irAlBuscador(): void {

@@ -78,6 +78,7 @@ const CIERRE_TRAS_LEER_MS = 700;
               @if (origen === 'mi-equipo') {
                 <p class="text-sm text-muted">{{ 'scan.serialHelp' | transloco }}</p>
               }
+              <p class="break-all rounded-control bg-surface-muted p-2 text-xs"><span class="font-semibold">{{ 'scan.readContent' | transloco }}:</span> {{ codigo() }}</p>
               @if (origen === 'buscador') {
                 <button type="button" data-track="escaner.buscar-como-texto" class="min-h-11 rounded-control bg-primary px-4 font-semibold text-primary-foreground hover:bg-primary-hover" (click)="cerrarCon({ accion: 'buscar', q: codigo() })">{{ 'scan.searchAsText' | transloco }}</button>
               }

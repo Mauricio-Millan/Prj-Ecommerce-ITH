@@ -16,7 +16,7 @@ import { LanguageSelector } from '../../shared/ui/language-selector/language-sel
   template: `
     <header class="border-b border-border bg-surface">
       <div class="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2">
-        <a routerLink="/" class="text-xl font-bold tracking-tight text-primary" data-track="logo.inicio">TechSuply</a>
+        <a routerLink="/" class="text-xl font-bold tracking-tight text-primary" data-track="logo.inicio">ByteZone</a>
         <p class="flex items-center gap-1 text-sm font-medium text-success"><app-icon name="candado" [size]="16" /> {{ 'checkout.secure' | transloco }}</p>
         <a routerLink="/carrito" data-track="checkout.volver-carrito" class="ml-auto inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary hover:underline">
           <app-icon name="volver" [size]="18" /> {{ 'checkout.backToCart' | transloco }}

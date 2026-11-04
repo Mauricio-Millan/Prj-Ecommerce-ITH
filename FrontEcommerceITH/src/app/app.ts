@@ -11,7 +11,8 @@ import { VoiceBar } from './shared/ui/voice-bar/voice-bar';
   selector: 'app-root',
   imports: [RouterOutlet, Toast, CookieBanner, VoiceBar],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<router-outlet /><app-toast /><app-cookie-banner /><app-voice-bar />`,
+  // El aviso de cookies va primero en el DOM (se ve abajo por `position: fixed`): es lo primero que se enfoca con Tab (013 CA-1.8).
+  template: `<app-cookie-banner /><router-outlet /><app-toast /><app-voice-bar />`,
 })
 export class App {
   constructor() {

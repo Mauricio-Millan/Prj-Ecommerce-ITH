@@ -183,8 +183,8 @@ export default class Buscar {
   private readonly tituloPestana = translateSignal('search.title', computed(() => ({ q: this.vista()?.q ?? '' })));
 
   constructor() {
-    // "Resultados para «…» · TechSuply" (plan § 4.4).
-    effect(() => this.title.setTitle(`${this.tituloPestana()} · TechSuply`));
+    // "Resultados para «…» · ByteZone" (plan § 4.4).
+    effect(() => this.title.setTitle(`${this.tituloPestana()} · ByteZone`));
   }
 
   /** Un clic aplica el filtro de subcategoría (`sub=`) y vuelve a la página 1 (CA-3.3). */
