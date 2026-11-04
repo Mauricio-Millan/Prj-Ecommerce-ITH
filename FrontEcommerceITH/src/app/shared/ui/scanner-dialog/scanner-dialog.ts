@@ -88,10 +88,21 @@ const CIERRE_TRAS_LEER_MS = 700;
           }
           @case ('externo') {
             <div class="grid gap-3">
-              <p class="flex items-center gap-2 font-semibold"><app-icon name="advertencia" [size]="22" /> {{ 'scan.external' | transloco }}</p>
-              <p class="text-sm text-muted">{{ 'scan.externalHelp' | transloco }}</p>
-              <p class="break-all rounded-control bg-surface-muted p-2 text-xs">{{ codigo() }}</p>
-              <button type="button" data-track="escaner.copiar" class="min-h-11 rounded-control bg-primary px-4 font-semibold text-primary-foreground hover:bg-primary-hover" (click)="copiar()">{{ (copiado() ? 'scan.copied' : 'scan.copy') | transloco }}</button>
+              @if (modelo(); as m) {
+                <!-- La dirección nombra una laptop que todavía no está en el catálogo: se dice cuál, en vez de "lleva a otro sitio". -->
+                <p class="flex items-center gap-2 font-semibold"><app-icon name="advertencia" [size]="22" /> {{ 'scan.modelNotListed' | transloco: { modelo: m } }}</p>
+                <p class="text-sm text-muted">{{ 'scan.modelNotListedHelp' | transloco }}</p>
+                @if (origen === 'buscador') {
+                  <button type="button" data-track="escaner.buscar-modelo" class="min-h-11 rounded-control bg-primary px-4 font-semibold text-primary-foreground hover:bg-primary-hover" (click)="cerrarCon({ accion: 'buscar', q: m })">{{ 'scan.searchModel' | transloco: { modelo: m } }}</button>
+                } @else {
+                  <button type="button" data-track="escaner.escribir-codigo" class="min-h-11 rounded-control bg-primary px-4 font-semibold text-primary-foreground hover:bg-primary-hover" (click)="cerrarCon({ accion: 'escribir' })">{{ 'scan.chooseBySteps' | transloco }}</button>
+                }
+              } @else {
+                <p class="flex items-center gap-2 font-semibold"><app-icon name="advertencia" [size]="22" /> {{ 'scan.external' | transloco }}</p>
+                <p class="text-sm text-muted">{{ 'scan.externalHelp' | transloco }}</p>
+                <p class="break-all rounded-control bg-surface-muted p-2 text-xs">{{ codigo() }}</p>
+                <button type="button" data-track="escaner.copiar" class="min-h-11 rounded-control bg-primary px-4 font-semibold text-primary-foreground hover:bg-primary-hover" (click)="copiar()">{{ (copiado() ? 'scan.copied' : 'scan.copy') | transloco }}</button>
+              }
               <button type="button" data-track="escaner.escanear-otro" class="min-h-11 rounded-control border border-border-control px-4 font-semibold hover:bg-surface-muted" (click)="arrancar()">{{ 'scan.scanAnother' | transloco }}</button>
             </div>
           }
@@ -141,6 +152,7 @@ export class ScannerDialog implements OnDestroy {
   protected readonly camaraDisponible = this.scan.disponible;
   protected readonly estado = signal<Estado>('intro');
   protected readonly codigo = signal('');
+  protected readonly modelo = signal<string | null>(null);
   protected readonly opciones = signal<Opcion[]>([]);
   protected readonly copiado = signal(false);
   protected readonly anuncio = signal<{ clave: string; params?: Record<string, string> } | null>(null);
@@ -229,8 +241,9 @@ export class ScannerDialog implements OnDestroy {
       }
       case 'externo':
         this.registrar('sin_coincidencia', formato, ms);
+        this.modelo.set(r.modelo ?? null);
         this.estado.set('externo');
-        this.anuncio.set({ clave: 'scan.external' });
+        this.anuncio.set(r.modelo ? { clave: 'scan.modelNotListed', params: { modelo: r.modelo } } : { clave: 'scan.external' });
         return;
       default:
         this.registrar('sin_coincidencia', formato, ms);

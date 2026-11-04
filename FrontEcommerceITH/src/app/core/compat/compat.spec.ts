@@ -116,8 +116,8 @@ describe('compatibilidad con "Mi equipo" (datos reales)', () => {
       expect(buscarEquipos('macbook', compat.equipos, c.marcas)).toEqual([]);
       expect(buscarEquipos('   ', compat.equipos, c.marcas)).toEqual([]);
     });
-    it('el selector por pasos ofrece las 3 marcas con equipos', () => {
-      expect(marcasConEquipos(compat.equipos, c.marcas).map((m) => m.nombre)).toEqual(['Dell', 'HP', 'Lenovo']);
+    it('el selector por pasos ofrece las 4 marcas con equipos', () => {
+      expect(marcasConEquipos(compat.equipos, c.marcas).map((m) => m.nombre)).toEqual(['ASUS', 'Dell', 'HP', 'Lenovo']);
     });
   });
 });

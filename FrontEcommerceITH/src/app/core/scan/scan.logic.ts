@@ -1,5 +1,5 @@
 import { Equipo, Producto } from '../catalog/catalog.models';
-import { compactar } from '../search/normalize';
+import { compactar, normalizar } from '../search/normalize';
 
 export type OrigenEscaneo = 'buscador' | 'mi-equipo' | 'inventario';
 
@@ -7,7 +7,8 @@ export type ResolucionCodigo =
   | { tipo: 'producto'; producto: Producto }
   | { tipo: 'varios'; productos: Producto[] }
   | { tipo: 'equipo'; equipos: Equipo[] }
-  | { tipo: 'externo'; url: string }
+  /** `modelo`: la dirección nombra un modelo de laptop que aún no está en el catálogo (ej.: `?model2Name=UM3406HA`). */
+  | { tipo: 'externo'; url: string; modelo?: string }
   | { tipo: 'ninguno' };
 
 /** Dígito verificador de EAN-8, UPC-A (12) y EAN-13 (spec 014, plan § 3). Otros largos no son EAN. */
@@ -38,14 +39,31 @@ const codigosDe = (e: Equipo): string[] => [e.modelo, e.codigo_modelo ?? '', ...
 
 /**
  * Equipos que identifica un texto. Primero por igualdad exacta (la etiqueta trae solo el modelo); si no, porque el modelo o el código
- * **aparece dentro** del texto: el QR de una laptop suele ser una dirección o una línea larga (modelo, serie, fecha), no solo el modelo.
+ * **aparece dentro** del texto como palabra completa: el QR de una laptop suele ser una dirección o una línea larga (modelo, serie, fecha).
+ * Palabra completa y no subcadena: los tokens aleatorios de una dirección (`qsid=kI5Wl9…`) podrían contener un código corto como `82H8`.
  */
 function equiposEn(texto: string, equipos: readonly Equipo[]): Equipo[] {
   const k = clave(texto);
   const exactos = equipos.filter((e) => codigosDe(e).some((x) => clave(x) === k));
   if (exactos.length) return exactos;
-  const compacto = compactar(texto);
-  return equipos.filter((e) => codigosDe(e).some((x) => clave(x).length >= MIN_CARACTERES_MODELO && compacto.includes(clave(x))));
+  const conBordes = (s: string) => ` ${normalizar(s)} `;
+  const palabras = conBordes(texto);
+  return equipos.filter((e) => codigosDe(e).some((x) => compactar(x).length >= MIN_CARACTERES_MODELO && palabras.includes(conBordes(x))));
+}
+
+/** Parámetros con los que los fabricantes nombran el modelo en la dirección del QR: `model`, `modelName`, `model2Name` (ASUS), `modelo`. */
+const PARAM_MODELO = /^model/i;
+
+/** El modelo que nombra una dirección, si lo hace. Solo se aceptan valores con aspecto de modelo (letras, números y guiones). */
+function modeloEnDireccion(bruto: string): string | undefined {
+  try {
+    for (const [nombre, valor] of new URL(bruto).searchParams) {
+      if (PARAM_MODELO.test(nombre) && /^[a-z0-9][a-z0-9 _-]{3,39}$/i.test(valor.trim())) return valor.trim();
+    }
+  } catch {
+    /* dirección mal formada: no nombra nada */
+  }
+  return undefined;
 }
 
 /** Una dirección puede traer `%20` y similares; si está mal escapada se usa tal cual. */
@@ -83,8 +101,11 @@ export function resolverCodigo(texto: string, datos: CatalogoEscaneable, origen:
       /* dirección mal formada: se trata como externa */
     }
     // Un QR de otro sitio no se abre, pero puede nombrar el modelo de la laptop (ej.: soporte del fabricante con el modelo en la dirección).
-    const deEquipo = equiposEn(decodificar(bruto), datos.equipos);
-    return deEquipo.length ? { tipo: 'equipo', equipos: deEquipo } : { tipo: 'externo', url: bruto };
+    // El parámetro de modelo manda: es más preciso que el resto de la dirección.
+    const modelo = modeloEnDireccion(bruto);
+    const porModelo = modelo ? equiposEn(modelo, datos.equipos) : [];
+    const deEquipo = porModelo.length ? porModelo : equiposEn(decodificar(bruto), datos.equipos);
+    return deEquipo.length ? { tipo: 'equipo', equipos: deEquipo } : { tipo: 'externo', url: bruto, ...(modelo ? { modelo } : {}) };
   }
 
   const c = compactar(bruto);

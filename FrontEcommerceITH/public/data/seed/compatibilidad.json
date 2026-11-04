@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "equipos": [
     {
       "id": 1,
@@ -50,6 +50,21 @@
       "especificaciones": {},
       "codigos": [
         "Inspiron 15 3511"
+      ]
+    },
+    {
+      "id": 5,
+      "marca_id": 7,
+      "modelo": "Zenbook 14 OLED UM3406HA",
+      "codigo_modelo": "UM3406HA",
+      "especificaciones": {
+        "tipo_ram": "LPDDR5X",
+        "formato_ram": "Soldada"
+      },
+      "codigos": [
+        "Zenbook 14 OLED UM3406HA",
+        "UM3406HA",
+        "UM3406"
       ]
     }
   ],

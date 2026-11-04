@@ -84,6 +84,32 @@ describe('QR de una laptop (spec 014)', () => {
     expect(resolverCodigo('SN:R9N0CV123|2024-03', d, 'buscador').tipo).toBe('ninguno');
   });
 
+  const QR_ASUS = 'https://www.asus.com/us/laptops/for-home/zenbook/asus-zenbook-14-oled-um3406/helpdesk_knowledge/?model2Name=UM3406HA&qsid=kI5Wl9MZlBCSStf2/jaRdw==';
+  const zenbook = eq(5, 'Zenbook 14 OLED UM3406HA', 'UM3406HA', ['Zenbook 14 OLED UM3406HA', 'UM3406HA', 'UM3406']);
+
+  it('el QR real de una Zenbook (model2Name) se reconoce como ese equipo en el buscador y en "mi-equipo"', () => {
+    for (const o of ['buscador', 'mi-equipo'] as const) {
+      const r = resolverCodigo(QR_ASUS, { ...datos, equipos: [...datos.equipos, zenbook] }, o, TIENDA);
+      expect(r.tipo).withContext(o).toBe('equipo');
+      if (r.tipo === 'equipo') expect(r.equipos.map((e) => e.id)).toEqual([5]);
+    }
+  });
+
+  it('un QR que nombra un modelo sin registrar sigue sin abrirse, pero informa el modelo', () => {
+    const r = resolverCodigo(QR_ASUS, datos, 'buscador', TIENDA);
+    expect(r).toEqual({ tipo: 'externo', url: QR_ASUS, modelo: 'UM3406HA' });
+  });
+
+  it('un parámetro de modelo con un valor sin aspecto de modelo se ignora', () => {
+    const r = resolverCodigo('https://x.example/?model=<script>', datos, 'buscador', TIENDA);
+    expect(r).toEqual({ tipo: 'externo', url: 'https://x.example/?model=<script>' });
+  });
+
+  it('un código corto dentro de un token aleatorio de la dirección no es una coincidencia', () => {
+    expect(resolverCodigo('https://x.example/ayuda?qsid=kI582H8Wl9', datos, 'buscador', TIENDA).tipo).toBe('externo');
+    expect(resolverCodigo('LOTE-A82H8B|2024', datos, 'buscador').tipo).toBe('ninguno');
+  });
+
   it('un modelo demasiado corto no se busca dentro de textos largos (evita falsos positivos)', () => {
     const corto = { ...d, equipos: [eq(3, 'X1', 'X1', ['X1'])] };
     expect(resolverCodigo('ASUS|UX3405MA|X1CARBON', corto, 'buscador').tipo).toBe('ninguno');

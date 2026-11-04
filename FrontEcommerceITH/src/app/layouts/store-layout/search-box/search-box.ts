@@ -190,10 +190,11 @@ export class SearchBox {
     const t0 = performance.now();
     this.logger.track('scan_start', { origen: 'buscador', fuente: 'lector_usb' });
     const r = await this.escaner.resolver(codigo, 'buscador');
-    const resultado = r.tipo === 'producto' ? 'producto' : r.tipo === 'varios' ? 'varios' : 'sin_coincidencia';
+    const resultado = r.tipo === 'producto' ? 'producto' : r.tipo === 'varios' ? 'varios' : r.tipo === 'equipo' ? 'equipo' : 'sin_coincidencia';
     this.logger.track('scan_result', { origen: 'buscador', fuente: 'lector_usb', resultado, formato: 'lector_usb', ms: Math.round(performance.now() - t0) });
     if (r.tipo === 'producto') this.router.navigate(['/producto', r.producto.sku]);
-    else this.router.navigate(['/buscar'], { queryParams: { q: codigo } });
+    else if (r.tipo === 'equipo' && r.equipos.length === 1) this.aplicar({ accion: 'equipo', equipoId: r.equipos[0].id });
+    else this.router.navigate(['/buscar'], { queryParams: { q: r.tipo === 'externo' ? (r.modelo ?? codigo) : codigo } });
   }
 
   protected async escanear(): Promise<void> {
